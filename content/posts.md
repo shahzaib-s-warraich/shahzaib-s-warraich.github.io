@@ -8,38 +8,11 @@
 
 ---
 
-# `pip install vest`
-
-*2020.7.1*. I really like [Wealthfront](https://wealthfront.com), so I decided
-to create my own robo-advisor which I call
-[Vest](https://pypi.org/project/vest/). Vest features a command line interface
-built with [Click](https://click.palletsprojects.com/en/7.x/) and connects with
-[Robinhood](https://robinhood.com) via an unofficial Python API [Robin
-$tocks](https://robin-stocks.readthedocs.io/en/latest/index.html). Feel free to
-take a look at Vest on my [GitHub](https://github.com/mattf1n/vest)!
-:chart_with_upwards_trend:
-
----
-
-# VimMarp.vim
-
-*2020.6.17*. I created a plugin for my current favorite text editor
-[Vim](https://www.vim.org) to allow me to write presentations in markdown and
-render them as I go using the [Marp CLI](https://marp.app). This was my first
-time writing a Vim plugin and my first time using Vim script. [This online
-guide](https://learnvimscriptthehardway.stevelosh.com) was very helpful. Check
-out the [VimMarp repository](https://github.com/mattf1n/VimMarp) on my GitHub!
-:keyboard:
-
----
-
 # Camping in Cottonwood Wash
 
 *2020.5.14*. This last weekend, [Caitlyn](http://caitlyndang.com) and I
-backpacked up Cottonwood Wash in Utah's San Rafael Swell. There was not a soul
-to be seen and it was a truly beautiful canyon all to ourselves. We even
-spotted some petroglyphs. We were told about this canyon by my uncle
-and found our way there using two outdated maps and some help from the locals.
+backpacked up Cottonwood Wash in Utah's San Rafael Swell, a beautiful canyon all to ourselves. We even
+spotted some petroglyphs. 
 :mountain:
 
 ![1983 USGS map of Mexican Mountain](img/UT_Mexican Mountain_250561_1983_24000.jpg)
