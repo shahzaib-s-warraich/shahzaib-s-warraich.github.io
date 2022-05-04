@@ -7,8 +7,6 @@ nocite: '@*'
 
 I am a Pre-doctoral Young Investigator at [The Allen Institute for Artificial Intelligence (AI2)](allenai.org). I graduated from Harvard in May, 2021. I research computational linguistics.
 
----
-
 # Publications
 
 Matthew Finlayson, Kyle Richardon, Ashish Sabharwal, Peter Clark. 2022. *What Makes Instruction Learning Hard? An Investigation and a New Challenge in a Synthetic Environment*. 
