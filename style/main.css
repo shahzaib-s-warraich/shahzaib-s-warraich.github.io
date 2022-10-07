@@ -32,7 +32,7 @@ body {
 	-webkit-hyphens: auto;
 	hyphens: auto;
   line-height: 1.35em;
-  font-size: 1.1em;
+  /* font-size: 1.1em; */
   text-rendering: optimizeLegibility;
   font-feature-settings: "kern" on;
 } 
