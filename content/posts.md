@@ -1,7 +1,47 @@
+# Configuring Zathura
+
+*2022.10.11*
+
+I finally got Zathura (the pdf viewer) configured the way I want it on MacOS.
+I installed using homebrew following these 
+[instructions](https://github.com/zegervdv/homebrew-zathura).
+I set up an automator script to launch Zathura for me according to this 
+[gist](https://gist.github.com/agzam/76d761804330cc8c4600fccda952ed1c).
+Brew's Zathura doesn't install man pages, so I found them 
+[online](https://www.mankier.com/5/zathurarc).
+I chose my colors based on the blacks and whites in the [pencil](https://github.com/preservim/vim-colors-pencil) colorscheme.
+
+Here's my zathurarc file:
+```
+set selection-clipboard clipboard
+set guioptions ""
+set window-title-basename true
+
+set recolor true
+set recolor-keephue true
+set recolor-lightcolor \#F1F1F1
+set recolor-darkcolor \#181818
+set default-bg \#E5E6E6
+set completion-bg \#181818
+set completion-fg \#F1F1F1
+set completion-group-bg \#181818
+set completion-group-fg \#F1F1F1
+set completion-highlight-fg \#181818
+set inputbar-bg \#181818
+set inputbar-fg \#F1F1F1
+set statusbar-bg \#181818
+set statusbar-fg \#F1F1F1
+```
+
+Good luck! :page_facing_up:
+
+---
 
 # Washington State
 
-*2021.1.20.* I learned some Blender and used some open source elevation data to make a nice looking relief map of Washington State. Check out how I made it [here](https://github.com/mattf1n/Relief-Map).
+*2021.1.20* 
+
+I learned some Blender and used some open source elevation data to make a nice looking relief map of Washington State. Check out how I made it [here](https://github.com/mattf1n/Relief-Map).
 :round_pushpin:
 
 ![Rendered relief map of WA](img/wa.png)
@@ -10,7 +50,9 @@
 
 # Camping in Cottonwood Wash
 
-*2020.5.14*. This last weekend, [Caitlyn](http://caitlyndang.com) and I
+*2020.5.14*
+
+This last weekend, [Caitlyn](http://caitlyndang.com) and I
 backpacked up Cottonwood Wash in Utah's San Rafael Swell, a beautiful canyon all to ourselves. We even
 spotted some petroglyphs. 
 :mountain:
@@ -21,7 +63,9 @@ spotted some petroglyphs.
 
 # Course notes from CS183
 
-*2020.4.20*. [These are my notes](files/lecture.pdf) from the course CS183:
+*2020.4.20* 
+
+[These are my notes](files/lecture.pdf) from the course CS183:
 Foundations of Machine Learning. They are imperfect and incomplete but I really
 enjoyed making them. If you would like to make edits [email
 me](mailto:matthewbfinlayson@gmail.com) and I can send you the source code.
@@ -73,7 +117,9 @@ me](mailto:matthewbfinlayson@gmail.com) and I can send you the source code.
 
 # [iloveyoumatthew.com](https://Iloveyoumatthew.com)
 
-*2020.4.16*. My [girlfriend](https://caitlyndang.com) made me this love-letter
+*2020.4.16*
+
+My [partner](https://caitlyndang.com) made me this love-letter
 website for Valentines day. I love it! (I hope I'm not embarrassing myself too
 much here.) :heart: 
 

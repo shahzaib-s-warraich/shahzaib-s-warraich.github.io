@@ -66,7 +66,7 @@ pre, kbd, code {
 
 pre {
   padding: 6px;
-  overflow:scroll
+  /* overflow:scroll */
 }
 
 pre code {
