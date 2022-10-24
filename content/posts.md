@@ -1,3 +1,7 @@
+# GOES16 live world map 
+
+---
+
 # Configuring Zathura
 
 *2022.10.11*
@@ -7,8 +11,6 @@ I installed using homebrew following these
 [instructions](https://github.com/zegervdv/homebrew-zathura).
 I set up an automator script to launch Zathura for me according to this 
 [gist](https://gist.github.com/agzam/76d761804330cc8c4600fccda952ed1c).
-Brew's Zathura doesn't install man pages, so I found them 
-[online](https://www.mankier.com/5/zathurarc).
 I chose my colors based on the blacks and whites in the [pencil](https://github.com/preservim/vim-colors-pencil) colorscheme.
 
 Here's my zathurarc file:

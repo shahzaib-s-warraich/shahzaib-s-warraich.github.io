@@ -22,6 +22,9 @@ Ashish Sabharwal,
 Peter Clark,
 and Ashwin Kalyan.\
 EMNLP 2022.
+[\[pdf\]]()
+[\[data\]](https://github.com/allenai/Lila)
+[\[model\]](https://huggingface.co/allenai/bhaskara)
 
 "Decomposed Prompting: A Modular Approach for Solving Complex Tasks". \
 Tushar Khot, Harsh Trivedi, **Matthew Finlayson**, Yao Fu, Kyle Richardson, Peter Clark and Ashish Sabharwal. \
