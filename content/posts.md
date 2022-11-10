@@ -1,7 +1,3 @@
-# GOES16 live world map 
-
----
-
 # Configuring Zathura
 
 *2022.10.11*
