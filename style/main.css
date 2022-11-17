@@ -1,8 +1,4 @@
-
 :root{
-  --serif: 'Latin Modern Roman';
-  --mono: 'Latin Modern Mono';
-  --caps: 'Latin Modern Roman Caps';
   --bg1-l: whitesmoke;
   --fg1-l: #444;
   --fg2-l: #666;
@@ -21,51 +17,39 @@
 }
 
 body {
-  font-family: var(--serif);
+  /* font-family: monospace; */
   background-color: var(--bg1);
   color: var(--fg1);
-  max-width: 650px;
+  max-width: 80ch;
 	margin: 4em auto;
   padding: 0 1.5em;
-  text-align: justify;
-	-moz-hyphens: auto;
-	-webkit-hyphens: auto;
-	hyphens: auto;
   line-height: 1.35em;
-  /* font-size: 1.1em; */
   text-rendering: optimizeLegibility;
   font-feature-settings: "kern" on;
 } 
 
-h1 {
-  font-size: 1.5em;
-}
-
 nav h1 {
-  text-align: inherit;
   font-weight: normal;
-  font-size: 2em;
-  line-height: 1em;
+  /* font-size: 2em; */
+  /* line-height: 1em; */
 }
 
-dl dt {
-  font-weight: bold;
+h1 {
+  margin-top: 32px;
+  font-size:16px;
 }
-dl dd {
-  margin-bottom: 1em;
-}
+
 em {
     font-style: italic;
 }
 pre, kbd, code {
-  font-family: var(--mono);
   background-color: var(--bg2);
   border-radius: 3px;
-  padding: 0 3px;
+  /* padding: 0 3px; */
 }
 
 pre {
-  padding: 6px;
+  padding: 0 1ch;
   /* overflow:scroll */
 }
 
@@ -75,13 +59,6 @@ pre code {
 
 cite, q, blockquote {
     font-style: italic;
-}
-
-sub, sup {
-    font-size: 50%;
-}
-
-small {
 }
 
 nav, footer, figcaption {
@@ -108,8 +85,6 @@ hr {
 
 a {
   color: var(--link-color);
-  font-family: var(--caps);
-  letter-spacing: 0.02em;
   text-decoration: none;
   background-color: transparent; }
   a:hover, a:focus {

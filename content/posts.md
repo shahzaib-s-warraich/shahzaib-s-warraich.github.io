@@ -111,13 +111,13 @@ me](mailto:matthewbfinlayson@gmail.com) and I can send you the source code.
 
 <!--Oh, and I added a [favicon](https://favicon.io/). :nail_care: -->
 
----
+<!-- --- -->
 
-# [iloveyoumatthew.com](https://Iloveyoumatthew.com)
+<!-- # [iloveyoumatthew.com](https://Iloveyoumatthew.com) -->
 
-*2020.4.16*
+<!-- *2020.4.16* -->
 
-My [partner](https://caitlyndang.com) made me this love-letter
-website for Valentines day. I love it! (I hope I'm not embarrassing myself too
-much here.) :heart: 
+<!-- My [partner](https://caitlyndang.com) made me this love-letter -->
+<!-- website for Valentines day. I love it! (I hope I'm not embarrassing myself too -->
+<!-- much here.) :heart: --> 
 
