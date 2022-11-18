@@ -20,7 +20,7 @@ body {
   /* font-family: monospace; */
   background-color: var(--bg1);
   color: var(--fg1);
-  max-width: 80ch;
+  max-width: 60ch;
 	margin: 4em auto;
   padding: 0 1.5em;
   line-height: 1.35em;
