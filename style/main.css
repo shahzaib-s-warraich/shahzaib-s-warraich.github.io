@@ -18,9 +18,10 @@
 
 body {
   /* font-family: monospace; */
+  font-family: 'Palatino', 'Latin Modern Roman';
   background-color: var(--bg1);
   color: var(--fg1);
-  max-width: 60ch;
+  max-width: 65ch;
 	margin: 4em auto;
   padding: 0 1.5em;
   line-height: 1.35em;
@@ -28,21 +29,27 @@ body {
   font-feature-settings: "kern" on;
 } 
 
+td {
+  vertical-align: top;
+  padding-bottom: 8px;
+}
+
 nav h1 {
   font-weight: normal;
-  /* font-size: 2em; */
+  font-size: 1.5em;
   /* line-height: 1em; */
 }
 
 h1 {
-  margin-top: 32px;
-  font-size:16px;
+  margin-top: 24px;
+  font-size:18px;
 }
 
 em {
     font-style: italic;
 }
 pre, kbd, code {
+  font-family: 'Latin Modern Mono', monospace;
   background-color: var(--bg2);
   border-radius: 3px;
   /* padding: 0 3px; */
@@ -105,11 +112,11 @@ figcaption {
 }
 
 
-@media (prefers-color-scheme: dark) {
-  :root{
-    --bg1: var(--bg1-d);
-    --fg1: var(--fg1-d);
-    --bg2: var(--bg2-d);
-    --fg2: var(--fg2-d);
-    --link-color: var(--link-color-d);
-}
+/* @media (prefers-color-scheme: dark) { */
+/*   :root{ */
+/*     --bg1: var(--bg1-d); */
+/*     --fg1: var(--fg1-d); */
+/*     --bg2: var(--bg2-d); */
+/*     --fg2: var(--fg2-d); */
+/*     --link-color: var(--link-color-d); */
+/* } */
