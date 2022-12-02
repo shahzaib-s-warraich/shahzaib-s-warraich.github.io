@@ -21,7 +21,7 @@ body {
   font-family: 'Palatino', 'Latin Modern Roman';
   background-color: var(--bg1);
   color: var(--fg1);
-  max-width: 65ch;
+  max-width: 600px;
 	margin: 4em auto;
   padding: 0 1.5em;
   line-height: 1.35em;
@@ -34,24 +34,39 @@ td {
   padding-bottom: 8px;
 }
 
-nav h1 {
+main h1 {
+  margin-top: 24px;
+  font-size:18px;
+}
+
+ol {
+  counter-reset: bib;
+}
+
+ol > li {
+  list-style: none;
+  position: relative;
+  margin-bottom: 8px;
+}
+
+ol > li:before {
+  counter-increment: bib;
+  content: "[" counter(bib) "] ";
+  position: absolute;
+  left: -2em;
+}
+
+header h1 {
   font-weight: normal;
   font-size: 1.5em;
   /* line-height: 1em; */
 }
 
-h1 {
-  margin-top: 24px;
-  font-size:18px;
-}
-
-em {
-    font-style: italic;
-}
 pre, kbd, code {
-  font-family: 'Latin Modern Mono', monospace;
+  font-family: 'Consolas', monospace;
   background-color: var(--bg2);
   border-radius: 3px;
+  overflow: auto;
   /* padding: 0 3px; */
 }
 
@@ -64,15 +79,15 @@ pre code {
   padding: 0px;
 }
 
-cite, q, blockquote {
+blockquote {
     font-style: italic;
 }
 
-nav, footer, figcaption {
+header, nav, footer, figcaption {
   text-align: center;
 }
 
-footer {
+address {
   color: var(--fg2);
 }
 
@@ -102,7 +117,8 @@ img {
   max-width: 100%;
 }
 
-nav img {
+header img {
+  text-align: center;
   border-radius: 50%;
   max-width: 20%;
 }

@@ -1,56 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Matthew Finlayson's personal website.">
-  
-  <title>Matt Fin</title>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Matthew Finlayson's personal website.">
+    <title>Matt Fin</title>
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
+    <link rel="manifest" href="favicon/site.webmanifest">
+    <link rel="stylesheet" href="style/main.css">
+    <link rel="stylesheet" href="https://lalten.github.io/lmweb/style/latinmodern-mono.css" type="text/css" charset="utf-8"/>
+    <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  </head>
 
-  <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
-  <link rel="manifest" href="favicon/site.webmanifest">
+  <body>
+    <nav>
+        <ul>
+          <li><a href="index.html">Matthew Finlayson</a></li>
+        </ul>
+      <!-- <hr> -->
+    </nav>
+    <main>
 
-  <!--Fonts-->
-  <link rel="stylesheet" href="style/latinmodern-roman-caps.css" type="text/css" charset="utf-8" />
-  <link rel="stylesheet" href="style/latinmodern-mono.css" type="text/css" charset="utf-8" />
-  <link rel="stylesheet" href="style/latinmodern-roman.css" type="text/css" charset="utf-8" />
-  <link rel="stylesheet" href="style/main.css">
-  
-  <!--TeX-->
-  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      <h1>Putting word count in Vim statusline for LaTeX files</h1>
+      <p><em>2022.11.28</em></p>
+      <p>This ftplugin updates the word count in the statusline on every save. 
+      More frequent updates slow Vim down and cause random rendering problems.
+      <pre><code>" .vim/after/ftplugin/tex.vim
 
-</head>
+function CountWords()
+  silent return systemlist('texcount ' .. expand('%:p'))[2]
+endfunction
 
-<body>
-<main>
-<nav>
-  <!-- <img src='./img/profile.jpeg'> -->
-  <h1 id="matthew-finlayson">Matthew Finlayson</h1>
-  <ul>
-    <li><a href="index.html"><small>Home</small></a></li>
-    <li><a href="posts.html"><small>Posts</small></a></li>
-    <li><a href="files/matthew_finlayson.pdf", target="_blank"><small>Resume</a></small></li>
-  </ul>
-</nav>
+let b:wordcount = CountWords()
 
-<h1>GOES-16 map</h1>
-<p><em>2022.11.18</em></p>
-<p>
-I wrote a script to retrieve and composite the latest GOES-16 satellite image of Earth. GitHub link coming soon.
-</p>
-<figure>
-  <img src="img/fulldisk.png"/>
-  <figcaption>Earth 5 minutes before I ran my script.</figcaption>
-</figure>
+augroup tex
+  autocmd! * &lt;buffer&gt;
+  autocmd BufWritePost &lt;buffer&gt; :let b:wordcount = CountWords()
+augroup END
 
-<h1 id="configuring-zathura">Configuring Zathura</h1>
-<p><em>2022.10.11</em></p>
-<p>I finally got Zathura (the pdf viewer) configured the way I want it on MacOS. I installed using homebrew following these <a href="https://github.com/zegervdv/homebrew-zathura">instructions</a>. I set up an automator script to launch Zathura for me according to this <a href="https://gist.github.com/agzam/76d761804330cc8c4600fccda952ed1c">gist</a>. I chose my colors based on the blacks and whites in the <a href="https://github.com/preservim/vim-colors-pencil">pencil</a> colorscheme.</p>
-<p>Here’s my zathurarc file:</p>
-<pre><code>set selection-clipboard clipboard
+setlocal statusline=%{b:wordcount}
+      </code></pre>
+      </p>
+
+      <h1>GOES-16 map</h1>
+      <p><em>2022.11.18</em></p>
+      <p>
+      I wrote a script to retrieve and composite the latest GOES-16 satellite image of Earth. GitHub link coming soon.
+      </p>
+      <figure>
+        <img src="img/fulldisk.png"/>
+        <figcaption>Earth 5 minutes before I ran my script.</figcaption>
+      </figure>
+
+      <h1 id="configuring-zathura">Configuring Zathura</h1>
+      <p><em>2022.10.11</em></p>
+      <p>I finally got Zathura (the pdf viewer) configured the way I want it on MacOS. I installed using homebrew following these <a href="https://github.com/zegervdv/homebrew-zathura">instructions</a>. I set up an automator script to launch Zathura for me according to this <a href="https://gist.github.com/agzam/76d761804330cc8c4600fccda952ed1c">gist</a>. I chose my colors based on the blacks and whites in the <a href="https://github.com/preservim/vim-colors-pencil">pencil</a> colorscheme.</p>
+      <p>Here’s my zathurarc file:</p>
+      <pre><code>set selection-clipboard clipboard
 set guioptions &quot;&quot;
 set window-title-basename true
 
@@ -68,78 +76,68 @@ set inputbar-bg \#181818
 set inputbar-fg \#F1F1F1
 set statusbar-bg \#181818
 set statusbar-fg \#F1F1F1</code></pre>
-<p>Good luck! <span class="emoji" data-emoji="page_facing_up">📄</span></p>
+      <p>Good luck! <span class="emoji" data-emoji="page_facing_up">📄</span></p>
 
-<h1 id="washington-state">Washington State</h1>
-<p><em>2021.1.20</em></p>
-<p>I learned some Blender and used some open source elevation data to make a nice looking relief map of Washington State. Check out how I made it <a href="https://github.com/mattf1n/Relief-Map">here</a>. <span class="emoji" data-emoji="round_pushpin">📍</span></p>
-<figure>
-<img src="img/wa.png" alt="Rendered relief map of WA" /><figcaption aria-hidden="true">Rendered relief map of WA</figcaption>
-</figure>
+      <h1 id="washington-state">Washington State</h1>
+      <p><em>2021.1.20</em></p>
+      <p>I learned some Blender and used some open source elevation data to make a nice looking relief map of Washington State. Check out how I made it <a href="https://github.com/mattf1n/Relief-Map">here</a>. <span class="emoji" data-emoji="round_pushpin">📍</span></p>
+      <figure>
+        <img src="img/wa.png" alt="Rendered relief map of WA" /><figcaption aria-hidden="true">Rendered relief map of WA</figcaption>
+      </figure>
 
-<h1 id="camping-in-cottonwood-wash">Camping in Cottonwood Wash</h1>
-<p><em>2020.5.14</em></p>
-<p>This last weekend, <a href="http://caitlyndang.com">Caitlyn</a> and I backpacked up Cottonwood Wash in Utah’s San Rafael Swell, a beautiful canyon all to ourselves. We even spotted some petroglyphs. <span class="emoji" data-emoji="mountain">⛰️</span></p>
-<figure>
-<img src="img/UT_Mexican%20Mountain_250561_1983_24000.jpg" alt="1983 USGS map of Mexican Mountain" /><figcaption aria-hidden="true">1983 USGS map of Mexican Mountain</figcaption>
-</figure>
+      <h1 id="camping-in-cottonwood-wash">Camping in Cottonwood Wash</h1>
+      <p><em>2020.5.14</em></p>
+      <p>This last weekend, <a href="http://caitlyndang.com">Caitlyn</a> and I backpacked up Cottonwood Wash in Utah’s San Rafael Swell, a beautiful canyon all to ourselves. We even spotted some petroglyphs. <span class="emoji" data-emoji="mountain">⛰️</span></p>
+      <figure>
+        <img src="img/UT_Mexican%20Mountain_250561_1983_24000.jpg" alt="1983 USGS map of Mexican Mountain" /><figcaption aria-hidden="true">1983 USGS map of Mexican Mountain</figcaption>
+      </figure>
 
-<h1 id="course-notes-from-cs183">Course notes from CS183</h1>
-<p><em>2020.4.20</em></p>
-<p><a href="files/lecture.pdf">These are my notes</a> from the course CS183: Foundations of Machine Learning. They are imperfect and incomplete but I really enjoyed making them. If you would like to make edits <a href="mailto:matthewbfinlayson@gmail.com">email me</a> and I can send you the source code. <span class="emoji" data-emoji="notebook">📓</span></p>
-<!------->
-<!--# The TNT game -->
-<!--*2020.4.18*. While taking a class on theoretical computer science last semester-->
-<!--someone showed me [the NAND game](http://nandgame.com/). The idea of the game-->
-<!--is to start from a [NAND gate](https://en.wikipedia.org/wiki/NAND_gate) and-->
-<!--build a series of [boolean-->
-<!--circuits](https://en.wikipedia.org/wiki/Boolean_circuit) of increasing-->
-<!--complexity until you build a computer in a surprisingly few number of rounds.-->
-<!--While reading the book *[Gödel, Escher,-->
-<!--Bach](https://en.wikipedia.org/wiki/Gödel,_Escher,_Bach)* by Douglas-->
-<!--Hofstadter, I began imagining a similar 'game' where the user begins with a-->
-<!--small set of axioms and rules from  which they build theorems of increasing-->
-<!--complexity. The axioms and rules could come from Hofstadter's [TNT-->
-<!--system](https://en.wikipedia.org/wiki/Typographical_Number_Theory).  The game-->
-<!--would begin by establishing basic properties of addition, multiplication, and-->
-<!--so on, eventually proving profound mathematical concepts like Fermat's last-->
-<!--theorem (about which I would recommend reading [this book by Simon-->
-<!--Singh](https://www.goodreads.com/book/show/38412.Fermat_s_Enigma).) -->
-<!--I'm not sure exactly how something like [Gödel's incompleteness-->
-<!--theorems](https://en.wikipedia.org/wiki/G%C3%B6del%27s_incompleteness_theorems)-->
-<!--could be incorporated into the game. It's something I will have to keep-->
-<!--thinking about. :space_invader: -->
-<!------->
-<!--# Notice anything new?-->
-<!--*2020.4.17*. I overhauled the look of this site by ditching-->
-<!--[Marx](https://github.com/mblode/marx) and making my own custom CSS file. I-->
-<!--wanted an academic look for the site so I found [Latin-->
-<!--Modern](https://github.com/slashfoo/lmweb) for web (LM is the $\LaTeX$ default-->
-<!--font.) Also, inspired by [Butterick's Practical-->
-<!--Typography](https://practicaltypography.com/) which is an amazing online book,-->
-<!--I decided to go with more subtle links. They are now all [small caps](). The-->
-<!--downside of this is that links do not pop out so much. Upside is that the focus-->
-<!--is now more on the text!-->
-<!--Oh, and I added a [favicon](https://favicon.io/). :nail_care: -->
-<!-- --- -->
-<!-- # [iloveyoumatthew.com](https://Iloveyoumatthew.com) -->
-<!-- *2020.4.16* -->
-<!-- My [partner](https://caitlyndang.com) made me this love-letter -->
-<!-- website for Valentines day. I love it! (I hope I'm not embarrassing myself too -->
-<!-- much here.) :heart: -->
-
-<footer>
-<small> 
-
-  <ul>
-    <li>mattbnfin at gmail dot com</li> 
-    <li><a href='https://github.com/mattf1n'>GitHub</a></li>
-    <li><a href='https://twitter.com/mattf1n'>Twitter</a></li>
-  </ul>
+      <h1 id="course-notes-from-cs183">Course notes from CS183</h1>
+      <p><em>2020.4.20</em></p>
+      <p><a href="files/lecture.pdf">These are my notes</a> from the course CS183: Foundations of Machine Learning. They are imperfect and incomplete but I really enjoyed making them. If you would like to make edits <a href="mailto:matthewbfinlayson@gmail.com">email me</a> and I can send you the source code. <span class="emoji" data-emoji="notebook">📓</span></p>
+      <!------->
+      <!--# The TNT game -->
+      <!--*2020.4.18*. While taking a class on theoretical computer science last semester-->
+      <!--someone showed me [the NAND game](http://nandgame.com/). The idea of the game-->
+      <!--is to start from a [NAND gate](https://en.wikipedia.org/wiki/NAND_gate) and-->
+      <!--build a series of [boolean-->
+      <!--circuits](https://en.wikipedia.org/wiki/Boolean_circuit) of increasing-->
+      <!--complexity until you build a computer in a surprisingly few number of rounds.-->
+      <!--While reading the book *[Gödel, Escher,-->
+      <!--Bach](https://en.wikipedia.org/wiki/Gödel,_Escher,_Bach)* by Douglas-->
+      <!--Hofstadter, I began imagining a similar 'game' where the user begins with a-->
+      <!--small set of axioms and rules from  which they build theorems of increasing-->
+      <!--complexity. The axioms and rules could come from Hofstadter's [TNT-->
+      <!--system](https://en.wikipedia.org/wiki/Typographical_Number_Theory).  The game-->
+      <!--would begin by establishing basic properties of addition, multiplication, and-->
+      <!--so on, eventually proving profound mathematical concepts like Fermat's last-->
+      <!--theorem (about which I would recommend reading [this book by Simon-->
+      <!--Singh](https://www.goodreads.com/book/show/38412.Fermat_s_Enigma).) -->
+      <!--I'm not sure exactly how something like [Gödel's incompleteness-->
+      <!--theorems](https://en.wikipedia.org/wiki/G%C3%B6del%27s_incompleteness_theorems)-->
+      <!--could be incorporated into the game. It's something I will have to keep-->
+      <!--thinking about. :space_invader: -->
+      <!------->
+      <!--# Notice anything new?-->
+      <!--*2020.4.17*. I overhauled the look of this site by ditching-->
+      <!--[Marx](https://github.com/mblode/marx) and making my own custom CSS file. I-->
+      <!--wanted an academic look for the site so I found [Latin-->
+      <!--Modern](https://github.com/slashfoo/lmweb) for web (LM is the $\LaTeX$ default-->
+      <!--font.) Also, inspired by [Butterick's Practical-->
+      <!--Typography](https://practicaltypography.com/) which is an amazing online book,-->
+      <!--I decided to go with more subtle links. They are now all [small caps](). The-->
+      <!--downside of this is that links do not pop out so much. Upside is that the focus-->
+      <!--is now more on the text!-->
+      <!--Oh, and I added a [favicon](https://favicon.io/). :nail_care: -->
+      <!-- --- -->
+      <!-- # [iloveyoumatthew.com](https://Iloveyoumatthew.com) -->
+      <!-- *2020.4.16* -->
+      <!-- My [partner](https://caitlyndang.com) made me this love-letter -->
+      <!-- website for Valentines day. I love it! (I hope I'm not embarrassing myself too -->
+      <!-- much here.) :heart: -->
 
 
-</small>
-</footer>
 
 
-</main></body></html>
+
+    </main></body></html>
