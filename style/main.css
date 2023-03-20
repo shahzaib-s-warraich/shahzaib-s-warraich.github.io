@@ -17,8 +17,6 @@
 }
 
 body {
-  /* font-family: monospace; */
-  /* font-family: system-ui, 'Palatino', 'Latin Modern Roman'; */
   background-color: var(--bg1);
   color: var(--fg1);
   padding: 1.5em;
@@ -35,8 +33,9 @@ main {
   max-width: 600px;
 }
 
-header, nav {
-  max-width: 300px;
+#sidebar {
+  flex: 1 1 100px;
+  padding-right: 1.5em;
 }
 
 td {
