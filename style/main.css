@@ -131,11 +131,11 @@ figcaption {
 }
 
 
-/* @media (prefers-color-scheme: dark) { */
-/*   :root{ */
-/*     --bg1: var(--bg1-d); */
-/*     --fg1: var(--fg1-d); */
-/*     --bg2: var(--bg2-d); */
-/*     --fg2: var(--fg2-d); */
-/*     --link-color: var(--link-color-d); */
-/* } */
+@media (prefers-color-scheme: dark) {
+  :root{
+    --bg1: var(--bg1-d);
+    --fg1: var(--fg1-d);
+    --bg2: var(--bg2-d);
+    --fg2: var(--fg2-d);
+    --link-color: var(--link-color-d);
+}
