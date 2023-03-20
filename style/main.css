@@ -1,5 +1,5 @@
 :root{
-  --bg1-l: whitesmoke;
+  --bg1-l: #FFF;
   --fg1-l: #444;
   --fg2-l: #666;
   --bg2-l: #e5e5e5;
@@ -18,25 +18,30 @@
 
 body {
   /* font-family: monospace; */
-  font-family: 'Palatino', 'Latin Modern Roman';
+  /* font-family: system-ui, 'Palatino', 'Latin Modern Roman'; */
   background-color: var(--bg1);
   color: var(--fg1);
-  max-width: 600px;
-	margin: 4em auto;
-  padding: 0 1.5em;
-  line-height: 1.35em;
+  padding: 1.5em;
   text-rendering: optimizeLegibility;
   font-feature-settings: "kern" on;
+	margin: auto;
+  max-width: 900px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
 } 
+
+main {
+  max-width: 600px;
+}
+
+header, nav {
+  max-width: 300px;
+}
 
 td {
   vertical-align: top;
   padding-bottom: 8px;
-}
-
-main h1 {
-  margin-top: 24px;
-  font-size:18px;
 }
 
 ol {
@@ -56,23 +61,27 @@ ol > li:before {
   left: -2em;
 }
 
-header h1 {
+h1 {
   font-weight: normal;
-  font-size: 1.5em;
-  /* line-height: 1em; */
+  font-size: 1.2em;
+  /* text-transform: uppercase; */
 }
 
+/* header h1 { */
+/*   font-weight: normal; */
+/*   font-size: 1.5em; */
+/*   /1* line-height: 1em; *1/ */
+/* } */
+
 pre, kbd, code {
-  font-family: 'Consolas', monospace;
+  font-family: monospace;
   background-color: var(--bg2);
   border-radius: 3px;
   overflow: auto;
-  /* padding: 0 3px; */
 }
 
 pre {
-  padding: 0 1ch;
-  /* overflow:scroll */
+  padding: 1em 1em;
 }
 
 pre code {
@@ -83,10 +92,6 @@ blockquote {
     font-style: italic;
 }
 
-header, nav, footer, figcaption {
-  text-align: center;
-}
-
 address {
   color: var(--fg2);
 }
@@ -95,8 +100,8 @@ nav ul, footer ul {
   padding: 0px;
 }
 
-nav li, footer li {
-  display: inline-block;
+nav li {
+  display: inline;
   padding: 0 1%;
 }
 
@@ -110,7 +115,7 @@ a {
   text-decoration: none;
   background-color: transparent; }
   a:hover, a:focus {
-    font-weight: bold;
+    text-shadow: 0px 0px 1px;
 }
 
 img {
@@ -118,9 +123,8 @@ img {
 }
 
 header img {
-  text-align: center;
-  border-radius: 50%;
-  max-width: 20%;
+  border-radius: 25%;
+  height: 4em;
 }
 
 figcaption {
