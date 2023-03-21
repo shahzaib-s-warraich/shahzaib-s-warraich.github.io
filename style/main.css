@@ -23,14 +23,17 @@ body {
   text-rendering: optimizeLegibility;
   font-feature-settings: "kern" on;
 	margin: auto;
+  margin-top: 10%;
   max-width: 900px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  align-items: baseline;
 } 
 
 main {
   max-width: 600px;
+  min-width: 0;
 }
 
 #sidebar {
@@ -63,14 +66,7 @@ ol > li:before {
 h1 {
   font-weight: normal;
   font-size: 1.2em;
-  /* text-transform: uppercase; */
 }
-
-/* header h1 { */
-/*   font-weight: normal; */
-/*   font-size: 1.5em; */
-/*   /1* line-height: 1em; *1/ */
-/* } */
 
 pre, kbd, code {
   font-family: monospace;
@@ -91,10 +87,6 @@ blockquote {
     font-style: italic;
 }
 
-address {
-  color: var(--fg2);
-}
-
 nav ul, footer ul {
   padding: 0px;
 }
@@ -112,9 +104,10 @@ hr {
 a {
   color: var(--link-color);
   text-decoration: none;
-  background-color: transparent; }
-  a:hover, a:focus {
-    text-shadow: 0px 0px 1px;
+  background-color: transparent; 
+}
+
+a:hover, a:focus {
 }
 
 img {
@@ -127,7 +120,7 @@ header img {
 }
 
 figcaption {
-  font-style: italic;
+  /* font-style: italic; */
 }
 
 
