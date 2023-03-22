@@ -119,8 +119,8 @@ header img {
   height: 4em;
 }
 
-figcaption {
-  /* font-style: italic; */
+figcaption, time {
+  font-style: italic;
 }
 
 
