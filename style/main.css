@@ -22,8 +22,7 @@ body {
   padding: 1.5em;
   text-rendering: optimizeLegibility;
   font-feature-settings: "kern" on;
-	margin: auto;
-  margin-top: 10%;
+	margin: 10% auto;
   max-width: 900px;
   display: flex;
   flex-wrap: wrap;
@@ -63,9 +62,13 @@ ol > li:before {
   left: -2em;
 }
 
-h1 {
+table {
+  border-spacing: 10px 0;
+}
+
+h1, h2 {
   font-weight: normal;
-  font-size: 1.2em;
+  /* font-size: 1.2em; */
 }
 
 pre, kbd, code {
