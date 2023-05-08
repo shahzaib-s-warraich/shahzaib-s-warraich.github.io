@@ -65,6 +65,10 @@ h1, h2, h3 {
   /* font-size: 1.2em; */
 }
 
+h1 {
+  font-size: 1.5em;
+}
+
 pre, kbd, code {
   font-family: monospace;
   background-color: var(--bg2);
@@ -113,14 +117,21 @@ img {
 
 header img {
   border-radius: 50%;
-  max-width: 200px;
+  max-width: 100px;
+  /* image-rendering: pixelated; */
 }
+
+footer img {
+  width: 100px;
+  image-rendering: pixelated;
+}
+
 
 figcaption, time {
   font-style: italic;
 }
 
-header, nav {
+header, nav, footer {
   text-align: center
 }
 
