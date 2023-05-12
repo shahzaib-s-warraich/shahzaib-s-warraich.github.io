@@ -131,7 +131,7 @@ figcaption, time {
   font-style: italic;
 }
 
-header, nav, footer {
+header, nav, footer, figure {
   text-align: center
 }
 
