@@ -38,7 +38,7 @@ In particular, the elements of $\Delta_d$ are $d$-dimensional tuples of positive
 $$\vec{u}\in\Delta_d,\quad\vec{u}=(u_1,u_2,\ldots,u_d),\quad u_i>0,\quad\sum_{i=1}^du_i=1.$$
 
 
-![$\Delta_d$ is also known as the $d$-simplex. Here we visualize the 3-simplex. Vectors like $\hat{p}$ that lie on the $d$-simplex are valid probability distributions over $d$ items.](tikz/img/simplex.png)
+![$\Delta_d$ is also known as the $d$-simplex. Here we visualize the 3-simplex. Vectors like the one shown above ($\hat{p}$) that lie on the 3-simplex are valid probability distributions over 3 items.](tikz/img/simplex.png)
 
 To add two vectors $u,v\in\Delta_d$, we multiply them element-wise and divide by their sum
 $$\vec{u}\oplus_{\Delta_d}\vec{v}=\frac{\vec{u}\odot\vec{v}}{\sum_{i=1}^du_iv_i}.$$
@@ -84,7 +84,7 @@ Having shown additivity and homogeneity we have proven that the softmax function
 
 ![A linear map $W$ composed with the softmax function projects language model hidden states to probability distributions.](tikz/img/model.png)
 
-![Because the composed low-rank projection $W$ and the softmax function are linear, their composed image is a strict linear subspace of $\Delta_v$ the vector space of distributions over a vocabulary of size $v$.](tikz/img/toy.png)
+![Because the low-rank projection $W$ and the softmax function are linear, their composed image is a strict linear subspace of $\Delta_v$ the vector space of distributions over a vocabulary of size $v$.](tikz/img/toy.png)
 
 In [my recent paper](https://arxiv.org/abs/2310.01693), we use this knowledge to develop a better generation algorithm for language models that directly addresses this source of model errors!
 
