@@ -1,0 +1,16 @@
+\begin{tikzpicture}
+  \node[draw, label=Input] (input) {\texttt{Taylor} \rule{0.25cm}{0.15mm}};
+  \node[draw, label=Model] (model) [right=of input] {BlackBox};
+  \node[draw] (matmul) [right=of model] {MatMul};
+  \node[rectangle split, rectangle split parts=3, draw, label=Hidden state $\vh$] (h) [below=of matmul] {};
+  \node[draw, label=Embedding/softmax matrix] (W) [above=of matmul] {$\mW$};
+  \node[draw] (softmax) [right=of matmul] {SoftMax};
+  \node[rectangle split, rectangle split parts=7, draw, label=Output probs $\hat\vp$] (p) [right=of softmax] {};
+  \node[draw, dashed, fit=(matmul) (softmax), label={[xshift=0.5cm]Softmax bottleneck}] () {};
+  \draw[->] (input) to (model);
+  \draw[->] (model) to node[inner sep=0] (hout) {} (matmul);
+  \draw[->] (hout) |- (h);
+  \draw[->] (W) to (matmul);
+  \draw[->] (matmul) to (softmax);
+  \draw[->] (softmax) to (p);
+\end{tikzpicture}

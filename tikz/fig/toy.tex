@@ -1,0 +1,73 @@
+\begin{tikzpicture}
+  \begin{scope}[shift={(1,0)}]
+    \node (b1) at (0,2) [circle,fill,inner sep=1pt] {};
+    \node[label=left:$\vh$] at (b1) {};
+    \node (c1) at (0,1) [circle,fill,inner sep=1pt] {};
+    \node (a1) at (0,0) [circle,fill,inner sep=1pt] {};
+    \draw[<->] (0,-0.2) -- (0,2.2);
+    \node[anchor=south] (R) at (0,2.5) {$\mathbb R^d$};
+  \end{scope}
+  \begin{scope}[shift={(1.5,0)}]
+    \node[anchor=south] (R3) at (1,2.5) {$\mathbb R^v$};
+    \begin{axis}[
+        width=4cm,
+        height=4cm,
+        xmax=1,
+        ymax=1,
+        zmax=1,
+        xmin=-1,
+        ymin=-1,
+        zmin=-1,
+        ticks=none,
+        tick style={draw=none},
+        % title=$\mathbb R^v$
+      ]
+      \node (b2) at (0.55, 0.71, 0.29) [circle,fill,inner sep=1pt] {};
+      \node (c2) at (0,0,0) [circle,fill,inner sep=1pt] {};
+      \node (a2) at (-0.55, -0.71, -0.29) [circle,fill,inner sep=1pt] {};
+      % \draw[->] (0,0,0) -- (.4,0,0);
+      % \draw[->] (0,0,0) -- (0,.4,0);
+      % \draw[->] (0,0,0) -- (0,0,.4);
+      \addplot3 [<->, domain=-1.4:1.4,samples=10, samples y=0] ({x*0.55}, {x*0.71}, {x*0.29});
+    \end{axis}
+  \end{scope}
+  \draw[dotted] (b1) to[out=east,in=north west] (b2);
+  \draw[dotted] (c1) to[out=east,in=north west] (c2);
+  \draw[dotted] (a1) to[out=east,in=north west] (a2);
+  \draw[->] (R) -- node [above] {$\mW$} (R3);
+  \begin{scope}[shift={(4.5,0)}]
+    \node[anchor=south] (Delta) at (1.3,2.5) {$\Delta_v$};
+    \begin{ternaryaxis}[
+        width=4cm,
+        ternary limits relative=false,
+        grid=none,
+        ticks=none,
+        % xtick={0,1},
+        % ytick={0,1},
+        % ztick={0,1},
+        % title=$\Delta_v$
+      ]
+      \node (b3) at (
+      {exp(2*0.55)/(exp(2*0.55)+exp(2*0.71)+exp(2*0.29))}, 
+      {exp(2*0.71)/(exp(2*0.55)+exp(2*0.71)+exp(2*0.29))}, 
+      {exp(2*0.29)/(exp(2*0.55)+exp(2*0.71)+exp(2*0.29))}
+      ) [circle,fill,inner sep=1pt] {};
+      \node[label=below:$\hat\vp$] at (b3) {};
+      \node (c3) at ({1/3},{1/3},{1/3}) [circle,fill,inner sep=1pt] {};
+      \addplot3 [<->, domain=-7:7,samples=20, samples y=0] (
+      {exp(x * 0.55)/(exp(x*0.55)+exp(x*0.71)+exp(x*0.29))}, 
+      {exp(x * 0.71)/(exp(x*0.55)+exp(x*0.71)+exp(x*0.29))}, 
+      {exp(x * 0.29)/(exp(x*0.55)+exp(x*0.71)+exp(x*0.29))}
+      );
+      \node (a3) at (
+      {exp(-2*0.55)/(exp(-2*0.55)+exp(-2*0.71)+exp(-2*0.29))}, 
+      {exp(-2*0.71)/(exp(-2*0.55)+exp(-2*0.71)+exp(-2*0.29))}, 
+      {exp(-2*0.29)/(exp(-2*0.55)+exp(-2*0.71)+exp(-2*0.29))}
+      ) [circle,fill,inner sep=1pt] {};
+    \end{ternaryaxis}
+  \end{scope}
+  \draw[dotted] (b2) to[out=south east,in=north] (b3);
+  \draw[dotted] (c2) to[out=south east,in=north] (c3);
+  \draw[dotted] (a2) to[out=south east,in=north] (a3);
+  \draw[->] (R3) -- node [above] {$\softmax$} (Delta);
+\end{tikzpicture}

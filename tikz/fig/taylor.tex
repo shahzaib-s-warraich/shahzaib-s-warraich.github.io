@@ -1,0 +1,31 @@
+\begin{tikzpicture}
+  \begin{semilogyaxis}[
+      ybar, 
+      bar shift=0pt,
+      log origin=infty,
+      width=\textwidth,
+      height=6cm,
+      bar width=1,
+      ticks=none,
+      xlabel=Token (sorted by probability),
+      ylabel=Log probability,
+      title={\texttt{Taylor} \rule{1cm}{0.15mm}},
+    ]
+    \addplot table[col sep=comma] {data/0_ba.csv}
+    node [pos=0, pin=right:\texttt{Swift}] {}
+    node [pos={15/47}, pin=\texttt{had}] {}
+    node [pos={37/47}, pin={[pin distance=40pt]95:\texttt{Martinez}}] {}
+    node [pos={44/47}, pin={[pin distance=30pt]85:\texttt{Richardson}}] {}
+    node [pos={47/47}, pin=above right:\texttt{Kits}] {}
+    ;
+    \addplot table[col sep=comma] {data/0_not_ba.csv}
+    node [pos={0/35}, pin=above left:\texttt{Sw}] {}
+    node [pos={1/47}, pin=above:\texttt{"}] {}
+    node [pos={10/35}, pin=above right:\texttt{S}] {}
+    ;
+    \legend{Accepted by ours, Not accepted by ours}
+    \draw[thick, purple] (37.5,0 |- current axis.south) -- node[anchor=east, near end] {nucleus} (37.5,1 |- current axis.north);
+    \draw[thick, purple] (40.5,0 |- current axis.south) -- node[anchor=west, near end] {$\eta$} (40.5,1 |- current axis.north);
+    \draw[thick, purple] (05.5,0 |- current axis.south) -- node[anchor=west, near end] {$\epsilon$} (5.5,1 |- current axis.north);
+  \end{semilogyaxis}
+\end{tikzpicture}

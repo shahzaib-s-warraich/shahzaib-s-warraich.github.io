@@ -1,0 +1,26 @@
+\begin{tikzpicture}
+  \draw[->] (0,0,0) -- (2,0,0);
+  \draw[->] (0,0,0) -- (0,2,0) node[anchor=south] {$\mathbb{R}^v$};
+  \draw[->] (0,0,0) -- (0,0,2);
+  \draw[->, shorten >=1pt] (0,0,0) -- (0.5,0.3,0.2) node[anchor=south west] {$\hat\vp$};
+  \draw[fill, fill opacity=0.2] (1,0,0) -- (0,1,0) -- (0,0,1) -- cycle;
+  \node[fill=black,circle,inner sep=1pt] at (0.5,0.3,0.2) {};
+  \coordinate (a1) at (0,0,1);
+  \coordinate (a2) at (0,1,0);
+  \begin{scope}[shift={(3,0)}]
+    \begin{ternaryaxis}[
+        width=4cm,
+        ternary limits relative=false,
+        grid=none,
+        ticks=none,
+      ]
+      \coordinate (b1) at (0,1,0);
+      \coordinate (b2) at (1,0,0);
+      \node[label={[anchor=south]$\hat\vp$}] at (0.3,0.2,0.5) 
+      [circle,fill,inner sep=1pt] {};
+    \end{ternaryaxis}
+    \draw[dotted] (a1) -- (b1);
+    \draw[dotted] (a2) -- (b2);
+    \node[anchor=south] at (1.25,2,0) {$\Delta_v$};
+  \end{scope}
+\end{tikzpicture}
