@@ -1,7 +1,9 @@
 ---
-title: Visualization Gallery
+title: Visualizations
 author: "[Matthew Finlayson](index.html)"
 ---
+
+These are some visualizations I have made over the years, both for academia and for fun!
 
 ![Relief map of Washington State (Blender) [[Code]](https://github.com/mattf1n/Relief-Map)](img/wa.png) 
 

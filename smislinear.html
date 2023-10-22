@@ -155,12 +155,12 @@
 <h1 class="title">The Softmax Function is Linear</h1>
 <p class="author"><a href="index.html">Matthew Finlayson</a></p>
 </header>
-<p>Note: this post assumes basic linear algebra knowledge.</p>
-<p>I recently polled Twitter’s knowledge that the softmax function is linear. The result was mostly disbelief.</p>
+<p><a href="https://x.com/mattf1n/status/1709997521580195963?s=20">I asked my Twitter followers</a> if they knew that the softmax function is linear. The result was disbelief.</p>
+<!-- <blockquote class="twitter-tweet"><p lang="en" dir="ltr">Did you know that the softmax function is linear?</p>&mdash; Matthew Finlayson (@mattf1n) <a href="https://twitter.com/mattf1n/status/1709997521580195963?ref_src=twsrc%5Etfw">October 5, 2023</a></blockquote> <script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script> -->
 <figure>
-<img src="img/poll.png" alt="A Twitter poll. The majority of respondents did not believe that the softmax function is linear." /><figcaption aria-hidden="true">A Twitter poll. The majority of respondents did not believe that the softmax function is linear.</figcaption>
+<img src="img/poll.png" alt="My Twitter poll. The majority of respondents did not believe that the softmax function is linear." /><figcaption aria-hidden="true">My Twitter poll. The majority of respondents did not believe that the softmax function is linear.</figcaption>
 </figure>
-<p>In this post, I’ll give a short proof of the softmax function’s linearity by showing that the softmax function is a linear map from real vectors of <span class="math inline">\(d\)</span> dimensions (<span class="math inline">\(\mathbb{R}^d\)</span>) to probability distributions over <span class="math inline">\(d\)</span> variables (<span class="math inline">\(\Delta_d)\)</span>. We will begin by defining both the softmax function and linear maps.</p>
+<p>In this post, I’ll give a short proof that the softmax function is a linear map from real vectors of <span class="math inline">\(d\)</span> dimensions (<span class="math inline">\(\mathbb{R}^d\)</span>) to probability distributions over <span class="math inline">\(d\)</span> variables (<span class="math inline">\(\Delta_d)\)</span>. I will assume some basic understanding of linear algebra. We will begin by defining both the softmax function and linear maps.</p>
 <p><span class="math display">\[\mathrm{softmax}(\vec{x})=\frac{\exp\vec{x}}{\sum_i\exp x_i}\]</span></p>
 <dl>
 <dt>Linear map</dt>
@@ -174,33 +174,29 @@
 <li>The softmax function satisfies homogeneity.</li>
 </ol>
 <h2 id="mathbbrd-and-delta_d-are-real-vector-spaces"><span class="math inline">\(\mathbb{R}^d\)</span> and <span class="math inline">\(\Delta_d\)</span> are real vector spaces</h2>
-<p><a href="https://en.wikipedia.org/wiki/Vector_space#Coordinate_space"><span class="math inline">\(\mathbb{R}^d\)</span> is a canonical vector space</a>, where vector addition is defined as <span class="math display">\[(u_1,u_2,\ldots,u_d)\oplus_{\mathbb{R}^d}(v_1,v_2,\ldots,v_d)=(u_1+v_1, u_2+v_2, \ldots, u_d+v_d)\]</span> and scalar multiplication as <span class="math display">\[\lambda\otimes_{\mathbb{R}^d}(u_1,u_2,\ldots,u_d)=(\lambda u_1,\lambda u_2, \ldots,\lambda u_d).\]</span></p>
-<p><a href="https://golem.ph.utexas.edu/category/2016/06/how_the_simplex_is_a_vector_sp.html">It is an underappreciated fact that <span class="math inline">\(\Delta_d\)</span> is also a real vector space</a>. In particular, the elements of <span class="math inline">\(\Delta_d\)</span> are <span class="math inline">\(d\)</span>-dimensional tuples of positive reals whose entries sum to 1, <span class="math display">\[\vec{u}\in\Delta_d,\quad\vec{u}=(u_1,u_2,\ldots,u_d),\quad u_i&gt;0,\quad\sum_{i=1}^du_i=1.\]</span></p>
+<p><a href="https://en.wikipedia.org/wiki/Vector_space#Coordinate_space"><span class="math inline">\(\mathbb{R}^d\)</span> is a canonical vector space</a>, where vector addition is defined as <span class="math display">\[(u_1,u_2,\ldots,u_d)\oplus_{\mathbb{R}^d}(v_1,v_2,\ldots,v_d)=(u_1+v_1, u_2+v_2, \ldots, u_d+v_d)\]</span> and scalar multiplication as <span class="math display">\[\lambda\otimes_{\mathbb{R}^d}(u_1,u_2,\ldots,u_d)=(\lambda u_1,\lambda u_2, \ldots,\lambda u_d).\]</span> For convenience, we will denote <span class="math inline">\(\vec{u}\oplus_{\mathbb{R}^d}\vec{v}\)</span> as <span class="math inline">\(\vec{u}+\vec{v}\)</span>, and <span class="math inline">\(\lambda\otimes_{\mathbb{R}^d}\vec{u}\)</span> as <span class="math inline">\(\lambda\vec{u}\)</span>, as this is common notation for vector arithmetic in <span class="math inline">\(\mathbb{R}^d\)</span>.</p>
+<p><a href="https://golem.ph.utexas.edu/category/2016/06/how_the_simplex_is_a_vector_sp.html">It is an underappreciated fact that <span class="math inline">\(\Delta_d\)</span> is also a real vector space</a>. In particular, the elements of <span class="math inline">\(\Delta_d\)</span> are <span class="math inline">\(d\)</span>-dimensional tuples of positive reals whose entries sum to 1 <span class="math display">\[\Delta_d=\left\{\vec{u}\in(0,\infty)^d \mid \sum_{i=1}^du_i=1\right\}.\]</span></p>
 <figure>
 <img src="tikz/img/simplex.png" alt="\Delta_d is also known as the d-simplex. Here we visualize the 3-simplex. Vectors like the one shown above (\hat{p}) that lie on the 3-simplex are valid probability distributions over 3 items." /><figcaption aria-hidden="true"><span class="math inline">\(\Delta_d\)</span> is also known as the <span class="math inline">\(d\)</span>-simplex. Here we visualize the 3-simplex. Vectors like the one shown above (<span class="math inline">\(\hat{p}\)</span>) that lie on the 3-simplex are valid probability distributions over 3 items.</figcaption>
 </figure>
-<p>To add two vectors <span class="math inline">\(u,v\in\Delta_d\)</span>, we multiply them element-wise and divide by their sum <span class="math display">\[\vec{u}\oplus_{\Delta_d}\vec{v}=\frac{\vec{u}\odot\vec{v}}{\sum_{i=1}^du_iv_i}.\]</span> To multiply a vector <span class="math inline">\(\vec{u}\in\Delta_d\)</span> by a scalar <span class="math inline">\(\lambda\in\mathbb{R}\)</span>, we exponentiate elements by <span class="math inline">\(\lambda\)</span> <span class="math display">\[\lambda\otimes_{\Delta_d}(u_1,u_2,\ldots,u_d)=(u_1^\lambda,u_2^\lambda,\ldots,u_d^\lambda).\]</span></p>
+<p>To add two vectors <span class="math inline">\(u,v\in\Delta_d\)</span>, we multiply them element-wise and divide by their sum <span class="math display">\[\vec{u}\oplus_{\Delta_d}\vec{v}=\frac{\vec{u}\odot\vec{v}}{\sum_{i=1}^du_iv_i}.\]</span> To multiply a vector <span class="math inline">\(\vec{u}\in\Delta_d\)</span> by a scalar <span class="math inline">\(\lambda\in\mathbb{R}\)</span>, we exponentiate elements by <span class="math inline">\(\lambda\)</span> and renormalize <span class="math display">\[
+\lambda\otimes_{\Delta_d}(u_1,u_2,\ldots,u_d)
+=\frac{(u_1^\lambda,u_2^\lambda,\ldots,u_d^\lambda)}{\sum_{i=1}^du_i^\lambda}.
+\]</span> For convenience, we will denote these operations as <span class="math inline">\(\oplus\)</span> and <span class="math inline">\(\otimes\)</span>, dropping the subscript.</p>
 <h2 id="additivity">Additivity</h2>
-<p>Our goal is to show that for all vectors <span class="math inline">\(\vec u,\vec v\in \mathbb{R}^d\)</span> <span class="math display">\[\mathrm{softmax}(\vec u\oplus_{\mathbb{R}^d}\vec v)=\mathrm{softmax}(\vec u)\oplus_{\Delta_d}\mathrm{softmax}(\vec v).\]</span> Jumping right in, <span class="math display">\[\begin{aligned}
-\mathrm{softmax}(\vec u \oplus_{\mathbb{R}^d} \vec v) &amp;= \frac{\exp(\vec u\oplus_{\mathbb{R}^d}\vec v)}{\sum_{i=1}^d\exp(\vec{u}\oplus_{\mathbb{R}^d}\vec{v})_i} &amp; \text{softmax defn}\\
-&amp;= \frac{\exp(\vec u\oplus_{\mathbb{R}^d}\vec v)}{\sum_{i=1}^d\exp(u_i+v_i)} &amp; \oplus_{\mathbb{R}^d}\text{ defn}\\
+<p>Our goal is to show that for all vectors <span class="math inline">\(\vec u,\vec v\in \mathbb{R}^d\)</span> <span class="math display">\[\mathrm{softmax}(\vec u+\vec v)=\mathrm{softmax}(\vec u)\oplus\mathrm{softmax}(\vec v).\]</span> Jumping right in, <span class="math display">\[\begin{aligned}
+\mathrm{softmax}(\vec u + \vec v) &amp;= \frac{\exp(\vec u+\vec v)}{\sum_{i=1}^d\exp(u_i+v_i)} &amp; \text{softmax defn}\\
 &amp;= \frac{\exp(\vec{u})\odot\exp(\vec{v})}{\sum_{i=1}^d\exp(u_i)\exp(v_i)} &amp; \text{exp identity} \\
-&amp;= \frac{
-  \frac{\exp(\vec{u})}{\sum_{i=1}^d\exp(u_i)}
-  \odot\frac{\exp(\vec{v})}{\sum_{i=1}^d\exp(v_i)}
-}{
-  \sum_{i=1}^d\frac{\exp(u_i)}{\sum_{i=1}^d\exp(u_i)}\frac{\exp(v_i)}{\sum_{i=1}^d\exp(v_i)}
-} 
-&amp; \times\frac{\left(\frac{1}{\sum_{i=1}^d\exp(v_i)\sum_{i=1}^d\exp(u_i)}\right)}{\left(\frac{1}{\sum_{i=1}^d\exp(v_i)\sum_{i=1}^d\exp(u_i)}\right)} \\
-&amp;= \frac{\exp(\vec{u})}{\sum_{i=1}^d\exp(u_i)}\oplus_{\Delta_d}\frac{\exp(\vec{v})}{\sum_{i=1}^d\exp(v_i)} &amp; \oplus_{\Delta_d}\text{ defn} \\
-&amp;= \mathrm{softmax}(\vec{u})\oplus_{\Delta_d}\mathrm{softmax}(\vec{v}) &amp; \text{softmax defn.}
+&amp;= \frac{\exp(\vec{u})}{\sum_{i=1}^d\exp(u_i)}\oplus\frac{\exp(\vec{v})}{\sum_{i=1}^d\exp(v_i)} &amp; \oplus\text{ defn} \\
+&amp;= \mathrm{softmax}(\vec{u})\oplus\mathrm{softmax}(\vec{v}) &amp; \text{softmax defn.}
 \end{aligned}\]</span></p>
 <h2 id="homogeneity">Homogeneity</h2>
-<p>Our goal is to show that for all vectors <span class="math inline">\(\vec u\in \mathbb{R}^d\)</span> and <span class="math inline">\(\lambda\in\mathbb{R}\)</span>, <span class="math display">\[\lambda\otimes_{\Delta_d}\mathrm{softmax}(\vec u)=\mathrm{softmax}(\lambda\otimes_{\mathbb{R}^d}\vec u).\]</span> This comes even more easily than additivity, <span class="math display">\[\begin{aligned}
-\lambda\otimes_{\Delta_d}\mathrm{softmax}(\vec u) 
-&amp;= \frac{\exp(\vec{u})^\lambda}{\sum_{i=1}^d\exp(u_i)^\lambda}  &amp; \text{$\otimes_{\Delta_d}$, softmax defns}\\
-&amp;= \frac{\exp(\lambda\otimes_{\mathbb{R}^d}\vec{u})}{\sum_{i=1}^d\exp(\lambda\otimes_{\mathbb{R}^d}\vec{u})_i} &amp; \text{exp identity}\\
-&amp;=\mathrm{softmax}(\lambda\otimes_{\mathbb{R}^d}\vec u) &amp; \text{softmax defn.}
+<p>Our goal is to show that for all vectors <span class="math inline">\(\vec u\in \mathbb{R}^d\)</span> and <span class="math inline">\(\lambda\in\mathbb{R}\)</span>, <span class="math display">\[\lambda\otimes\mathrm{softmax}(\vec u)=\mathrm{softmax}(\lambda\vec u).\]</span> By a similar derivation, <span class="math display">\[\begin{aligned}
+\lambda\otimes\mathrm{softmax}(\vec u) 
+&amp;= \lambda\otimes\frac{\exp(\vec{u})}{\sum_{i=1}^d\exp(u_i)}  &amp; \text{softmax defn}\\
+&amp;= \frac{\exp(\vec{u})^\lambda}{\sum_{i=1}^d\exp(u_i)^\lambda}  &amp; \text{$\otimes$ defn}\\
+&amp;= \frac{\exp(\lambda\vec{u})}{\sum_{i=1}^d\exp(\lambda\vec{u})_i} &amp; \text{exp identity}\\
+&amp;=\mathrm{softmax}(\lambda\vec u) &amp; \text{softmax defn.}
 \end{aligned}\]</span></p>
 <h2 id="conclusion">Conclusion</h2>
 <p>Having shown additivity and homogeneity we have proven that the softmax function is a linear map! Why is this important? For one, this knowledge can give us intuition for how <a href="https://arxiv.org/abs/1711.03953">the softmax bottleneck</a> limits the possible outputs of language models.</p>
@@ -210,7 +206,7 @@
 <figure>
 <img src="tikz/img/toy.png" alt="Because the low-rank projection W and the softmax function are linear, their composed image is a strict linear subspace of \Delta_v the vector space of distributions over a vocabulary of size v." /><figcaption aria-hidden="true">Because the low-rank projection <span class="math inline">\(W\)</span> and the softmax function are linear, their composed image is a strict linear subspace of <span class="math inline">\(\Delta_v\)</span> the vector space of distributions over a vocabulary of size <span class="math inline">\(v\)</span>.</figcaption>
 </figure>
-<p>In <a href="https://arxiv.org/abs/2310.01693">my recent paper</a>, we use this knowledge to develop a better generation algorithm for language models that directly addresses this source of model errors!</p>
+<p>In <a href="https://arxiv.org/abs/2310.01693">my recent paper</a>, we use this knowledge to develop a better generation algorithm for language models that directly addresses this source of model errors.</p>
 <hr />
 <p>Thank you for reading! For questions and comments, you are welcome to email me at <a href="mailto:mattbnfin@gmail.com">mattbnfin@gmail.com</a>.</p>
 </body>
