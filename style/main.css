@@ -4,9 +4,9 @@
   --fg2-l: #666;
   --bg2-l: #e5e5e5;
   --link-color-l: #0062cc; 
-  --bg1-d: #222;
+  --bg1-d: #333;
   --bg2-d: #333;
-  --fg1-d: whitesmoke;
+  --fg1-d: #ccc;
   --fg2-d: #b5b5b5;
   --link-color-d: #528dcc;
   --bg1: var(--bg1-l);
@@ -17,17 +17,15 @@
 }
 
 body {
-  background-color: var(--bg1);
+  background-color: var(--bg1); 
   color: var(--fg1);
   padding: 1.5em;
   text-rendering: optimizeLegibility;
   font-feature-settings: "kern" on;
 	margin: 5% auto;
   max-width: 600px;
-  /* display: flex; */
-  /* flex-wrap: wrap; */
-  /* justify-content: space-between; */
-  /* align-items: baseline; */
+  text-align: justify;
+  hyphens: auto;
 } 
 
 main {
@@ -109,6 +107,7 @@ a {
 }
 
 a:hover, a:focus {
+  font-weight: bold;
 }
 
 img {
