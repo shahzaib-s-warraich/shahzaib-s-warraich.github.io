@@ -107,7 +107,7 @@ a {
 }
 
 a:hover, a:focus {
-  font-weight: bold;
+  /* font-weight: bold; */
 }
 
 img {
