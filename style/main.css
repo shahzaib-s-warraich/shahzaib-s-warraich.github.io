@@ -37,7 +37,7 @@ td {
   padding-bottom: 8px;
 }
 
-ol {
+body {
   counter-reset: bib;
 }
 
