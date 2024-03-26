@@ -3,6 +3,8 @@ title: Deep BA Sampling
 author: '[Matthew Finlayson](https://mattf1n.github.io)'
 ---
 
+TL;DR: we can use *any* intermediate LM representation to prove that a subset of next-token candidates have non-zero probability.
+
 In my paper ["Closing the Curious Case of Neural Text Degeneration"](https://openreview.net/forum?id=dONpC9GL1o),
 we show that when a LM outputs the embedding $h$, 
 and we assume that the model outputs the distribution $\hat{p}$ 
