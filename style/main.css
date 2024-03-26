@@ -1,12 +1,12 @@
 :root{
   --bg1-l: #FFF;
+  --bg2-l: #e5e5e5;
   --fg1-l: #444;
   --fg2-l: #666;
-  --bg2-l: #e5e5e5;
   --link-color-l: #0062cc; 
-  --bg1-d: #333;
+  --bg1-d: #000;
   --bg2-d: #333;
-  --fg1-d: #ccc;
+  --fg1-d: #bbb;
   --fg2-d: #b5b5b5;
   --link-color-d: #528dcc;
   --bg1: var(--bg1-l);
@@ -27,6 +27,15 @@ body {
   text-align: justify;
   hyphens: auto;
 } 
+
+@media (min-width: 1100px) {
+  aside {
+    float: right;
+    margin-right: -120px;
+    min-width: 100px;
+    clear: both;
+  }
+}
 
 main {
   min-width: 0;
@@ -63,10 +72,6 @@ h1, h2, h3 {
   /* font-size: 1.2em; */
 }
 
-h1 {
-  font-size: 1.5em;
-}
-
 pre, kbd, code {
   font-family: monospace;
   background-color: var(--bg2);
@@ -96,7 +101,7 @@ nav li {
 }
 
 hr {
-    border: 0.5px solid var(--bg2);
+    border: 0.5px solid;
     margin: 2em;
 }
 
@@ -117,7 +122,6 @@ img {
 header img {
   border-radius: 50%;
   max-width: 100px;
-  /* image-rendering: pixelated; */
 }
 
 footer img {
