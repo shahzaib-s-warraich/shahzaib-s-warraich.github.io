@@ -22,11 +22,11 @@ body {
   padding: 1.5em;
   text-rendering: optimizeLegibility;
   font-feature-settings: "kern" on;
-	margin: 5% auto;
-  max-width: 600px;
-  text-align: justify;
   hyphens: auto;
+  line-height: 1.35;
+  margin: 5%;
 } 
+
 
 @media (min-width: 1100px) {
   aside {
@@ -37,13 +37,18 @@ body {
   }
 }
 
+header {
+}
+
 main {
-  min-width: 0;
+  text-align: justify;
+  max-width: 65ch;
+	margin: auto;
 }
 
 td {
   vertical-align: top;
-  padding-bottom: 8px;
+  padding-bottom: 0.5rem;
 }
 
 body {
@@ -53,30 +58,44 @@ body {
 ol > li {
   list-style: none;
   position: relative;
-  margin-bottom: 8px;
+  margin-bottom: 1.5rem;
 }
 
 ol > li:before {
   counter-increment: bib;
   content: "[" counter(bib) "] ";
   position: absolute;
-  left: -2em;
+  left: -2rem;
 }
 
 table {
-  border-spacing: 10px 0;
+  border-spacing: 0.5rem 0;
 }
 
-h1, h2, h3 {
+h1, h2{
   font-weight: normal;
-  /* font-size: 1.2em; */
+}
+
+h2 {
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  margin-top: 4em;
+  margin-bottom: 2em;
+  letter-spacing: 0.1em;
 }
 
 pre, kbd, code {
   font-family: monospace;
   background-color: var(--bg2);
-  border-radius: 3px;
+  border-radius: 0.25rem;
   overflow: auto;
+}
+
+li small a {
+  background-color: var(--fg1);
+  color: var(--bg1);
+  border-radius: 0.25rem;
+  padding: 1pt 3pt;
 }
 
 pre {
@@ -93,11 +112,12 @@ blockquote {
 
 nav ul, footer ul {
   padding: 0px;
+  hyphens: none;
 }
 
 nav li {
   display: inline;
-  padding: 5px;
+  padding: 0.5rem;
 }
 
 hr {
@@ -133,6 +153,7 @@ footer img {
 figcaption, time {
   font-style: italic;
 }
+
 
 header, nav, footer, figure {
   text-align: center
