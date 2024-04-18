@@ -93,13 +93,20 @@ pre, kbd, code {
   background-color: var(--bg2);
   border-radius: 0.25rem;
   overflow: auto;
+  padding: 1pt 2pt;
 }
 
 li small a {
   background-color: var(--fg1);
   color: var(--bg1);
   border-radius: 0.25rem;
-  padding: 1pt 3pt;
+  padding: 1pt 2pt;
+}
+
+details p {
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+  border: 1px solid;
 }
 
 pre {
