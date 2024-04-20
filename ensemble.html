@@ -202,17 +202,21 @@ class="math display">\[\boldsymbol{p}\boldsymbol{W}_i =
 \boldsymbol{\hat{p}}_i\boldsymbol{W}_i\]</span> for <span
 class="math inline">\(i=1,2,\ldots,n\)</span> where <span
 class="math inline">\(\boldsymbol{\hat{p}}_i\)</span> is model <span
-class="math inline">\(i\)</span>’s next-token distribution. Note that if
-<span class="math inline">\(nd=v\)</span> then there is only one such
-solution, and if <span class="math inline">\(nd&gt;v\)</span> there will
-be no such solution, in which case we might opt for the least squares
-solution.</p>
-<p>In the case where <span class="math inline">\(nd &lt; v\)</span>
-there will be many solutions, and it is not clear to me which solution
-to choose here. Since the models are trained to minimize cross entropy
-with the true distribution we can choose a solution that minimizes the
-sum of the models’ cross entropy <span
-class="math display">\[\boldsymbol{p}^\ast = \arg\min_\boldsymbol{p}
+class="math inline">\(i\)</span>’s next-token distribution. It appears
+that sampling from some solution <span class="math inline">\(\boldsymbol
+p\)</span> to the above equation would be a principled approach to
+sampling from the union, since both models “agree” that this could be
+the true distribution.</p>
+<p>Note that if <span class="math inline">\(nd=v\)</span> then there is
+only one such solution, and if <span
+class="math inline">\(nd&gt;v\)</span> there will be no such solution,
+in which case we might opt for the least squares solution. In the case
+where <span class="math inline">\(nd &lt; v\)</span> there will be many
+solutions, and it is not clear to me which solution to choose here.
+Since the models are trained to minimize cross entropy with the true
+distribution we can choose a solution that minimizes the sum of the
+models’ cross entropy <span class="math display">\[\boldsymbol{p}^\ast =
+\arg\min_\boldsymbol{p}
 -\sum_{i=1}^n\boldsymbol{p}^\top\log\boldsymbol{\hat{p}}_i,\]</span>
 which can be found via linear programming. If we don’t want any one
 models’ cross entropy to be high, I believe we can also solve for <span

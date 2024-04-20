@@ -14,9 +14,10 @@ it is possible to exactly pinpoint the set of possible true distributions
 as the solutions $\boldsymbol{p}$ that satisfy the constraints 
 $$\boldsymbol{p}\boldsymbol{W}_i = \boldsymbol{\hat{p}}_i\boldsymbol{W}_i$$
 for $i=1,2,\ldots,n$ where $\boldsymbol{\hat{p}}_i$ is model $i$'s next-token distribution.
+It appears that sampling from some solution $\boldsymbol p$ to the above equation would be a principled approach to sampling from the union, since both models "agree" that this could be the true distribution.
+
 Note that if $nd=v$ then there is only one such solution,
 and if $nd>v$ there will be no such solution, in which case we might opt for the least squares solution.
-
 In the case where $nd < v$ there will be many solutions, 
 and it is not clear to me which solution to choose here.
 Since the models are trained to minimize cross entropy with the true distribution
