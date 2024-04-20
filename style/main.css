@@ -23,7 +23,7 @@ body {
   text-rendering: optimizeLegibility;
   font-feature-settings: "kern" on;
   hyphens: auto;
-  line-height: 1.45;
+  line-height: 1.35;
   margin-top: 5%;
 } 
 
@@ -59,6 +59,7 @@ ol > li {
   list-style: none;
   position: relative;
   margin-bottom: 1.5rem;
+  line-height: 1.45;
 }
 
 ol > li:before {
