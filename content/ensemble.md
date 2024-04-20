@@ -18,11 +18,18 @@ Note that if $nd=v$ then there is only one such solution,
 and if $nd>v$ there will be no such solution, in which case we might opt for the least squares solution.
 
 In the case where $nd < v$ there will be many solutions, 
-but since the models are trained to minimize cross entropy with the true distribution
+and it is not clear to me which solution to choose here.
+Since the models are trained to minimize cross entropy with the true distribution
 we can choose a solution that minimizes the sum of the models' cross entropy
-$$\boldsymbol{p}^\ast = \arg\min_\boldsymbol{p} \sum_{i=1}^n\boldsymbol{p}^\top\log\boldsymbol{\hat{p}}_i$$
+$$\boldsymbol{p}^\ast = \arg\min_\boldsymbol{p} -\sum_{i=1}^n\boldsymbol{p}^\top\log\boldsymbol{\hat{p}}_i,$$
 which can be found via linear programming.
 If we don't want any one models' cross entropy to be high, 
 I believe we can also solve for
 $$\boldsymbol{p}^\ast = \arg\min_\boldsymbol{p} \sum_{i=1}^n(\boldsymbol{p}^\top\log\boldsymbol{\hat{p}}_i)^2$$
 using quadratic programming.
+Note that without the linear constraints,
+these solutions would simply be the one-hot vector indicating 
+$$\arg\min_i-\sum_{j=1}^n\log\hat{p}_{ij}.$$
+Alternative approaches might be to minimize the under-estimation of the token log-probabilities, 
+or minimize the true probability distributions cross entropy with the predicted distributions.
+It is not clear to me yet whether any of these strategies or assumptions are equivalent or better than one another.
