@@ -24,26 +24,39 @@ body {
   font-feature-settings: "kern" on;
   hyphens: auto;
   line-height: 1.35;
+  max-width: 65ch;
+	margin: auto;
   margin-top: 5%;
 } 
 
-
-@media (min-width: 1100px) {
-  aside {
-    float: right;
-    margin-right: -120px;
-    min-width: 100px;
-    clear: both;
-  }
+header, nav, footer, figure {
+  text-align: center
 }
 
-header {
+header img {
+  border-radius: 50%;
+  width: 100px;
+}
+
+aside {
+  font-size: 0.9rem;
+  color: gray;
+  padding-left: 1rem;
+  border-left: solid 1px gray;
+}
+
+@media (min-width: 155ch) {
+  aside {
+    float: right;
+    margin-right: -45ch;
+    width: 40ch;
+    clear: both;
+    text-align: left;
+  }
 }
 
 main {
   text-align: justify;
-  max-width: 65ch;
-	margin: auto;
 }
 
 td {
@@ -152,11 +165,6 @@ img {
   max-width: 100%;
 }
 
-header img {
-  border-radius: 50%;
-  max-width: 100px;
-}
-
 footer img {
   width: 100px;
   image-rendering: pixelated;
@@ -167,10 +175,6 @@ figcaption, time {
   font-style: italic;
 }
 
-
-header, nav, footer, figure {
-  text-align: center
-}
 
 @media (prefers-color-scheme: dark) {
   :root{
