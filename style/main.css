@@ -27,6 +27,7 @@ body {
   max-width: 65ch;
 	margin: auto;
   margin-top: 5%;
+  text-align: justify;
 } 
 
 header, nav, footer, figure {
@@ -41,22 +42,21 @@ header img {
 aside {
   font-size: 0.9rem;
   color: gray;
-  padding-left: 1rem;
-  border-left: solid 1px gray;
+  padding: 0.5rem 1rem;
+  border: solid 1px gray;
 }
 
 @media (min-width: 155ch) {
   aside {
     float: right;
     margin-right: -45ch;
-    width: 40ch;
+    width: 38ch;
     clear: both;
     text-align: left;
   }
 }
 
 main {
-  text-align: justify;
 }
 
 td {
