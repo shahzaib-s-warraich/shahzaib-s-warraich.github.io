@@ -5,7 +5,7 @@
   <meta name="generator" content="pandoc" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   <meta name="author" content="Matthew Finlayson" />
-  <title>Decoding strategies and entropy</title>
+  <title>Decoding Strategies and Entropy</title>
   <style>
     code{white-space: pre-wrap;}
     span.smallcaps{font-variant: small-caps;}
@@ -33,20 +33,21 @@
 </head>
 <body>
 <header id="title-block-header">
-<h1 class="title">Decoding strategies and entropy</h1>
+<h1 class="title">Decoding Strategies and Entropy</h1>
 <p class="author">Matthew Finlayson</p>
 </header>
+<h2 id="hypothesis">Hypothesis</h2>
 <p>My hypothesis is that we can characterize the relationships between
 different decoding methods and hyperparameters by looking at their
 entropy. We can use these relationships to predict which decoding method
 is most appropriate for a task (a task is a metric plus a set of
 instances over which to measure) without doing an expensive exhaustive
 hyperparameter sweep.</p>
-<p>The entropy of a decoding strategy with parameter <span
+The entropy of a decoding strategy with parameter <span
 class="math inline">\(p\)</span> is the expected entropy of the
 next-token distributions for all contexts sampled from a language. This
 can be estimated by finding the average next-token entropy over a
-corpus.</p>
+corpus.
 <aside>
 This is not the only way to define the entropy of a decoding strategy,
 and only makes sense for token-level decoding strategies like top-p or

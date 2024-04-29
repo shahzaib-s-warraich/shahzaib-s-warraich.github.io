@@ -41,22 +41,19 @@ header img {
 
 aside {
   font-size: 0.9rem;
-  color: gray;
   padding: 0.5rem 1rem;
-  border: solid 1px gray;
+  border: solid 1px;
+  margin-top: 1rem;
 }
 
 @media (min-width: 155ch) {
   aside {
     float: right;
     margin-right: -45ch;
+    margin-top: 0;
     width: 38ch;
     clear: both;
-    text-align: left;
   }
-}
-
-main {
 }
 
 td {
@@ -84,6 +81,7 @@ ol > li:before {
 
 table {
   border-spacing: 0.5rem 0;
+  border-left: 1pt solid;
 }
 
 h1, h2{
@@ -96,10 +94,11 @@ h1 {
 
 h2 {
   text-transform: uppercase;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
+  letter-spacing: 0.1em;
   margin-top: 4em;
   margin-bottom: 2em;
-  letter-spacing: 0.1em;
+  /* border-bottom: 1pt solid black; */
 }
 
 pre, kbd, code {
@@ -110,7 +109,7 @@ pre, kbd, code {
   padding: 1pt 2pt;
 }
 
-li small a {
+small a {
   background-color: var(--fg1);
   color: var(--bg1);
   border-radius: 0.25rem;
