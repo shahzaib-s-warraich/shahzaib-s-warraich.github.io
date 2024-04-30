@@ -10,7 +10,8 @@ We can use these relationships to predict which decoding method is most appropri
 (a task is a metric plus a set of instances over which to measure) 
 without doing an expensive exhaustive hyperparameter sweep. 
 
-The entropy of a decoding strategy with parameter $p$ is the expected entropy of the next-token distributions for all contexts sampled from a language. This can be estimated by finding the average next-token entropy over a corpus. 
+The entropy of a decoding strategy with parameter $p$ is the expected entropy of the next-token distributions for all contexts sampled from a language. 
+This can be estimated by finding the average next-token entropy over a corpus. 
 <aside> 
 This is not the only way to define the entropy of a decoding strategy,
 and only makes sense for token-level decoding strategies like top-p or temperature.
