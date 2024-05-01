@@ -117,102 +117,111 @@
         <li><a href="https://github.com/justinchiu/openlogprobs">OpenLogProbs</a>: a library for obtaining logprobs from API-protected language models.</li>
         <li><a href="https://github.com/mattf1n/ss">SS.py</a>: my personal command line tool for searching and citing academic papers via Semantic Scholar.</li>
       </ul>
-      <h2 id=Publications>Publications and preprints</h2>
+      <h2 id=Publications>Preprints & publications</h2>
       <ol>
         <li>
-          <q>Logits of API-Protected LLMs Leak Proprietary Information</q>.<br>
-          <strong>Matthew Finlayson</strong>, Xiang Ren, and Swabha Swa&shy;yam&shy;dip&shy;ta.<br>
-          <cite>ArXiv</cite>, <time>2024</time>.
+          <p>Matthew Finlayson, Xiang Ren, and Swabha Swa&shy;yam&shy;dip&shy;ta<p>
+          <h3>Logits of API-Protected LLMs Leak Proprietary Information</h3>
+          <cite>ArXiv</cite> 
+          <time>2024</time>
           <small>
-            <a href="https://arxiv.org/abs/2403.09539">PDF</a>
+            <a href="https://arxiv.org/abs/2403.09539">Paper</a>
           </small>
-          <details>
-            <summary>Abstract</summary>
-            <p>
-            The commercialization of large language models (LLMs) has led to the
-            common practice of restricting access to proprietary models via a
-            limited API. In this work we show that, with only a conservative
-            assumption about the model architecture, it is possible to learn a
-            surprisingly large amount of non-public information about an
-            API-protected LLM from a relatively small number of API queries (e.g.,
-            costing under $1000 USD for OpenAI’s <code>gpt-3.5-turbo</code>). Our
-            findings are centered on one key observation: most modern LLMs suffer
-            from a softmax bottleneck, which restricts the model outputs to a linear
-            subspace of the full output space. We exploit this fact to unlock
-            several capabilities, including (but not limited to) obtaining cheap
-            full-vocabulary outputs, auditing for specific types of model updates,
-            identifying the source LLM given a single full LLM output, and even
-            efficiently discovering the LLM’s hidden size. Our empirical
-            investigations show the effectiveness of our methods, which allow us to
-            estimate the embedding size of OpenAI’s <code>gpt-3.5-turbo</code> to be
-            about 4096. Lastly, we discuss ways that LLM providers can guard against
-            these attacks, as well as how these capabilities can be viewed as a
-            feature (rather than a bug) by allowing for greater transparency and
-            accountability.
-            </p>
-          </details>
+          <!-- <details> -->
+          <!--   <summary>Abstract</summary> -->
+          <!--   <p> -->
+          <!--   The commercialization of large language models (LLMs) has led to the -->
+          <!--   common practice of restricting access to proprietary models via a -->
+          <!--   limited API. In this work we show that, with only a conservative -->
+          <!--   assumption about the model architecture, it is possible to learn a -->
+          <!--   surprisingly large amount of non-public information about an -->
+          <!--   API-protected LLM from a relatively small number of API queries (e.g., -->
+          <!--   costing under $1000 USD for OpenAI’s <code>gpt-3.5-turbo</code>). Our -->
+          <!--   findings are centered on one key observation: most modern LLMs suffer -->
+          <!--   from a softmax bottleneck, which restricts the model outputs to a linear -->
+          <!--   subspace of the full output space. We exploit this fact to unlock -->
+          <!--   several capabilities, including (but not limited to) obtaining cheap -->
+          <!--   full-vocabulary outputs, auditing for specific types of model updates, -->
+          <!--   identifying the source LLM given a single full LLM output, and even -->
+          <!--   efficiently discovering the LLM’s hidden size. Our empirical -->
+          <!--   investigations show the effectiveness of our methods, which allow us to -->
+          <!--   estimate the embedding size of OpenAI’s <code>gpt-3.5-turbo</code> to be -->
+          <!--   about 4096. Lastly, we discuss ways that LLM providers can guard against -->
+          <!--   these attacks, as well as how these capabilities can be viewed as a -->
+          <!--   feature (rather than a bug) by allowing for greater transparency and -->
+          <!--   accountability. -->
+          <!--   </p> -->
+          <!-- </details> -->
         </li>
         <li>
-          <q>Closing the Curious Case of Neural Text Degeneration</q>.<br>
-          <strong>Matthew Finlayson</strong>, John Hewitt, Alexander Koller, Swabha Swa&shy;yam&shy;dip&shy;ta, and Ashish Sabharwal.<br>
-          <cite>ICLR</cite>, <time>2024</time>.
+          <p>
+          Matthew Finlayson, John Hewitt, Alexander Koller, Swabha&nbsp;Swa&shy;yam&shy;dip&shy;ta, and Ashish&nbsp;Sabharwal
+          </p>
+          <h3>Closing the Curious Case of Neural Text Degeneration</h3>
+          <cite>ICLR</cite> <time>2024</time>
           <small>
-            <a href="http://arxiv.org/abs/2310.01693">PDF</a>
+            <a href="http://arxiv.org/abs/2310.01693">Paper</a>
             <a href="https://github.com/mattf1n/basis-aware-threshold">Code</a>
           </small>
-          <details>
-            <summary>Abstract</summary>
-            <p>Despite their ubiquity in language generation, it remains unknown why
-            truncation sampling heuristics like nucleus sampling are so effective.
-            We provide a theoretical explanation for the effectiveness of the
-            truncation sampling by proving that truncation methods that discard
-            tokens below some probability threshold (the most common type of
-            truncation) can guarantee that all sampled tokens have nonzero true
-            probability. However, thresholds are a coarse heuristic, and necessarily
-            discard some tokens with nonzero true probability as well. In pursuit of
-            a more precise sampling strategy, we show that we can leverage a known
-            source of model errors, the softmax bottleneck, to prove that certain
-            tokens have nonzero true probability, without relying on a threshold.
-            Based on our findings, we develop an experimental truncation strategy
-            and the present pilot studies demonstrating the promise of this type of
-            algorithm. Our evaluations show that our method outperforms its
-            threshold-based counterparts under automatic and human evaluation
-            metrics for low-entropy (i.e., close to greedy) open-ended text
-            generation. Our theoretical findings and pilot experiments provide both
-            insight into why truncation sampling works, and make progress toward
-            more expressive sampling algorithms that better surface the generative
-            capabilities of large language models.</p>
-          </details>
+          <!-- <details> -->
+          <!--   <summary>Abstract</summary> -->
+          <!--   <p>Despite their ubiquity in language generation, it remains unknown why -->
+          <!--   truncation sampling heuristics like nucleus sampling are so effective. -->
+          <!--   We provide a theoretical explanation for the effectiveness of the -->
+          <!--   truncation sampling by proving that truncation methods that discard -->
+          <!--   tokens below some probability threshold (the most common type of -->
+          <!--   truncation) can guarantee that all sampled tokens have nonzero true -->
+          <!--   probability. However, thresholds are a coarse heuristic, and necessarily -->
+          <!--   discard some tokens with nonzero true probability as well. In pursuit of -->
+          <!--   a more precise sampling strategy, we show that we can leverage a known -->
+          <!--   source of model errors, the softmax bottleneck, to prove that certain -->
+          <!--   tokens have nonzero true probability, without relying on a threshold. -->
+          <!--   Based on our findings, we develop an experimental truncation strategy -->
+          <!--   and the present pilot studies demonstrating the promise of this type of -->
+          <!--   algorithm. Our evaluations show that our method outperforms its -->
+          <!--   threshold-based counterparts under automatic and human evaluation -->
+          <!--   metrics for low-entropy (i.e., close to greedy) open-ended text -->
+          <!--   generation. Our theoretical findings and pilot experiments provide both -->
+          <!--   insight into why truncation sampling works, and make progress toward -->
+          <!--   more expressive sampling algorithms that better surface the generative -->
+          <!--   capabilities of large language models.</p> -->
+          <!-- </details> -->
         </li>
         <li>
-          <q>Attentiveness to Answer Choices Doesn't Always Entail High QA Accuracy</q>.<br>
-          Sarah Wiegreffe, <strong>Matthew Finlayson</strong>, Oyvind Tafjord, 
-          Peter Clark, and Ashish Sabharwal.<br>
-          <cite>EMNLP</cite>, <time>2023</time>.
+          <p>
+          Sarah Wiegreffe, Matthew Finlayson, Oyvind Tafjord, 
+          Peter Clark, and Ashish Sabharwal
+          </p>
+          <h3>Attentiveness to Answer Choices Doesn't Always Entail High QA Accuracy</h3>
+          <cite>EMNLP</cite> <time>2023</time>
           <small>
-            <a href="https://arxiv.org/abs/2305.14596">PDF</a>
+            <a href="https://arxiv.org/abs/2305.14596">Paper</a>
             <a href="https://github.com/allenai/revisiting_surface_form_competition">Code</a>
           </small>
         </li>
         <li>
-          <q>Decomposed Prompting: A Modular Approach for Solving Complex Tasks</q>.<br>
-          Tushar Khot, Harsh Trivedi, <strong>Matthew Finlayson</strong>, Yao Fu,
-          Kyle Richardson, Peter Clark and Ashish Sabharwal.<br>
-          <cite>ICLR</cite>, <time>2023</time>.
+          <p>
+          Tushar Khot, Harsh Trivedi, Matthew Finlayson, Yao Fu,
+          Kyle Richardson, Peter Clark and Ashish Sabharwal
+          </p>
+          <h3>Decomposed Prompting: A Modular Approach for Solving Complex Tasks</h3>
+          <cite>ICLR</cite> <time>2023</time>
           <small>
-            <a href="https://arxiv.org/abs/2210.02406">PDF</a>
+            <a href="https://arxiv.org/abs/2210.02406">Paper</a>
             <a href="https://github.com/allenai/DecomP">Code</a>
           </small>
         </li>
         <li>
-          <q>L&imacr;la: A Unified Benchmark for Mathematical Reasoning</q>.<br>
-          {<strong>Matthew Finlayson</strong>, Swaroop Mishra,} 
+          <p>
+          {Matthew Finlayson, Swaroop Mishra,} 
           Pan Lu, Leonard Tang, Sean Welleck,
           Chitta Baral, Tanmay Rajpurohit, Oyvind Tafjord, 
-          Ashish Sabharwal, Peter Clark, and Ashwin Kalyan.<br>
-          <cite>EMNLP</cite>, <time>2022</time>.
+          Ashish Sabharwal, Peter Clark, and Ashwin Kalyan
+          </p>
+          <h3>L&imacr;la: A Unified Benchmark for Mathematical Reasoning</h3>
+          <cite>EMNLP</cite> <time>2022</time>
           <small>
-            <a href="https://arxiv.org/abs/2210.17517">PDF</a> 
+            <a href="https://arxiv.org/abs/2210.17517">Paper</a> 
             <a href="https://github.com/allenai/Lila">Data</a>
             <a href="https://huggingface.co/allenai/bhaskara">Model</a>
             <a href="https://lila.apps.allenai.org">Website</a>
@@ -220,22 +229,26 @@
           </small>
         </li>
         <li>
-          <q>What Makes Instruction Learning Hard? 
-            An Investigation and a New Challenge in a Synthetic Environment</q>.<br> 
-          <strong>Matthew Finlayson</strong>, Kyle Richardon, Ashish Sabharwal, and Peter Clark.<br>
-          <cite>EMNLP</cite>, <time>2022</time>.
+          <p>
+          Matthew Finlayson, Kyle Richardon, Ashish Sabharwal, and Peter Clark
+          </p>
+          <h3>What Makes Instruction Learning Hard? 
+            An Investigation and a New Challenge in a Synthetic Environment</h3> 
+          <cite>EMNLP</cite> <time>2022</time>
           <small>
-            <a href="https://arxiv.org/abs/2204.09148">PDF</a> 
+            <a href="https://arxiv.org/abs/2204.09148">Paper</a> 
             <a href="https://github.com/allenai/RegSet">Code</a>
           </small>
         </li>
         <li>
-          <q>Causal Analysis of Syntactic Agreement Mechanisms in Neural Language Models</q>.<br>
-          {<strong>Matthew Finlayson</strong>, Aaron Mueller,}
-          Sebastian Gehrmann, Stuart Shieber, Tal Linzen, and Yonatan Belinkov.<br>
-          <cite>ACL</cite>, <time>2021</time>.
+          <p>
+          {Matthew Finlayson, Aaron Mueller,}
+          Sebastian Gehrmann, Stuart Shieber, Tal Linzen, and Yonatan Belinkov
+          </p>
+          <h3>Causal Analysis of Syntactic Agreement Mechanisms in Neural Language Models</h3>
+          <cite>ACL</cite> <time>2021</time>
           <small>
-            <a href="https://aclanthology.org/2021.acl-long.144/">PDF</a> 
+            <a href="https://aclanthology.org/2021.acl-long.144/">Paper</a> 
             <a href="https://github.com/mattf1n/lm-intervention">Code</a>
           </small>
         </li>

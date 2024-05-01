@@ -17,6 +17,7 @@
 }
 
 body {
+  counter-reset: bib;
   background-color: var(--bg1); 
   color: var(--fg1);
   padding: 1rem;
@@ -24,12 +25,22 @@ body {
   font-feature-settings: "kern" on;
   hyphens: auto;
   line-height: 1.35;
-  max-width: 65ch;
-	margin: auto;
   margin-top: 5%;
-  text-align: justify;
+  /* text-align: justify; */
   /* font-family: sans-serif; */
 } 
+
+cite, time, nav li, small a {
+  font-family: sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  font-size: 0.7rem;
+}
+
+main {
+  max-width: 65ch;
+	margin: auto;
+}
 
 header, nav, footer, figure {
   text-align: center;
@@ -37,8 +48,6 @@ header, nav, footer, figure {
 
 nav {
   margin-top: 1rem;
-  border-top: solid 1pt;
-  border-bottom: solid 1pt;
 }
 
 header img {
@@ -65,18 +74,16 @@ aside {
 
 td {
   vertical-align: top;
-  padding-bottom: 0.5em;
-}
-
-body {
-  counter-reset: bib;
+  padding: 0.5em 1em;
 }
 
 ol > li {
   list-style: none;
   position: relative;
-  margin-bottom: 1.5rem;
-  line-height: 1.45;
+  margin-bottom: 3em;
+  line-height: 1.35;
+  padding-bottom: 0.25em;
+  /* border-bottom: 1pt solid; */
 }
 
 ol > li:before {
@@ -86,26 +93,47 @@ ol > li:before {
   left: -2rem;
 }
 
+td:first-child {
+  border-right: 1pt solid;
+  text-align: right;
+}
+
 main table {
-  border-spacing: 0.5rem 0;
-  border-left: 1pt solid;
+  border-spacing: 0;
+  /* border-left: 1pt solid; */
 }
 
 h1, h2 {
   font-weight: normal;
 }
 
+
 h1 {
   font-size: 1.5rem;
 }
 
 h2 {
+  font-family: sans-serif;
+  /* font-weight: bold; */
+  /* font-size: 1.1rem; */
   text-transform: uppercase;
-  font-size: 0.9rem;
+  font-size: 0.8rem;
   letter-spacing: 0.1em;
-  margin-top: 6em;
+  margin-top: 5em;
   margin-bottom: 2em;
   /* border-bottom: 1pt solid black; */
+}
+
+h3 {
+  font-size: 1.1rem;
+  margin: 0.25em 0;
+  /* margin-bottom: 0.5em; */ 
+  hyphens: none;
+}
+
+small a {
+  float: right;
+  margin: 0 0.25em;
 }
 
 pre, kbd, code {
@@ -119,9 +147,22 @@ pre, kbd, code {
 small a {
   /* background-color: var(--fg1); */
   color: var(--fg1);
-  border-radius: 0.25rem;
+  border-radius: 0.25em;
   border: 1pt solid;
   padding: 1pt 2pt;
+}
+
+small a:hover {
+  background-color: var(--fg1);
+  color: var(--bg1);
+}
+
+td p, li p {
+  margin: 0;
+}
+
+li p {
+  hyphens: none;
 }
 
 details p {
@@ -180,7 +221,7 @@ footer img {
 }
 
 
-figcaption, time {
+figcaption {
   font-style: italic;
 }
 
