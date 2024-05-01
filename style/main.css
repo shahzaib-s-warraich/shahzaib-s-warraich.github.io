@@ -30,7 +30,7 @@ body {
   /* font-family: sans-serif; */
 } 
 
-cite, time, nav li, small a {
+cite, time, nav li, td li, ol ul, ol > li:before {
   font-family: sans-serif;
   text-transform: uppercase;
   letter-spacing: 0.1em;
@@ -83,7 +83,7 @@ ol > li {
   margin-bottom: 3em;
   line-height: 1.35;
   padding-bottom: 0.25em;
-  /* border-bottom: 1pt solid; */
+  border-bottom: 1pt solid;
 }
 
 ol > li:before {
@@ -126,14 +126,14 @@ h2 {
 
 h3 {
   font-size: 1.1rem;
-  margin: 0.25em 0;
+  margin-top: 0.25em;
+  /* margin: 0.25em 0; */
   /* margin-bottom: 0.5em; */ 
   hyphens: none;
 }
 
-small a {
+td ul, ol ul {
   float: right;
-  margin: 0 0.25em;
 }
 
 pre, kbd, code {
@@ -144,7 +144,14 @@ pre, kbd, code {
   padding: 1pt 2pt;
 }
 
-small a {
+a {
+  color: var(--link-color);
+  /* color: var(--fg1); */
+  text-decoration: none;
+  background-color: transparent; 
+}
+
+td li a, ol ul a {
   /* background-color: var(--fg1); */
   color: var(--fg1);
   border-radius: 0.25em;
@@ -152,7 +159,7 @@ small a {
   padding: 1pt 2pt;
 }
 
-small a:hover {
+td li a:hover, ol ul li a:hover {
   background-color: var(--fg1);
   color: var(--bg1);
 }
@@ -188,23 +195,19 @@ nav ul, footer ul {
   hyphens: none;
 }
 
-nav li {
+td li, ol ul li, nav li {
   display: inline;
   line-height: 2em;
-  padding: 0.5em;
   white-space: nowrap;
+}
+
+nav li {
+  padding: 0.5em;
 }
 
 hr {
     border: 0.5px solid;
     margin: 2em;
-}
-
-a {
-  color: var(--link-color);
-  /* color: var(--fg1); */
-  text-decoration: none;
-  background-color: transparent; 
 }
 
 a:hover, a:focus {
