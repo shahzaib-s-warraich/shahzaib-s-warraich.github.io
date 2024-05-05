@@ -13,7 +13,8 @@
   --bg2: var(--bg2-l);
   --fg1: var(--fg1-l);
   --fg2: var(--fg2-l);
-  --link-color: var(--link-color-l)
+  --link-color: var(--link-color-l);
+  --textwidth: 65ch;
 }
 
 body {
@@ -38,7 +39,7 @@ cite, time, nav li, td li, ol ul, ol > li:before {
 }
 
 main {
-  max-width: 65ch;
+  max-width: var(--textwidth);
 	margin: auto;
 }
 
@@ -72,6 +73,12 @@ aside {
   }
 }
 
+@media (min-width: 80ch) {
+  ol, ul {
+    padding-left: 0;
+  }
+}
+
 td {
   vertical-align: top;
   padding: 0.5em 1em;
@@ -86,6 +93,10 @@ ol > li {
   border-bottom: 1pt solid;
 }
 
+cite {
+  font-style: normal;
+}
+
 ol > li:before {
   counter-increment: bib;
   content: "[" counter(bib) "] ";
@@ -94,12 +105,19 @@ ol > li:before {
 }
 
 td:first-child {
+  padding-left: 0;
   border-right: 1pt solid;
   text-align: right;
 }
 
+td:last-child {
+  padding-right: 0;
+}
+
 main table {
-  border-spacing: 0;
+  /* border-spacing: 0; */
+  border-collapse: collapse;
+  max-width: none;
   /* border-left: 1pt solid; */
 }
 
@@ -124,16 +142,33 @@ h2 {
   /* border-bottom: 1pt solid black; */
 }
 
-h3 {
+ol li h3, ul li h3 {
   font-size: 1.1rem;
-  margin-top: 0.25em;
-  /* margin: 0.25em 0; */
+  /* margin-top: 0.25em; */
+  margin: 0.25em 0;
   /* margin-bottom: 0.5em; */ 
   hyphens: none;
 }
 
+ol li a {
+  color: inherit;
+}
+
 td ul, ol ul {
   float: right;
+}
+
+td ul {
+  display: inline;
+  padding-left: 0;
+}
+
+ol li p {
+  font-size: 0.9em;
+}
+
+a h3 {
+  color: var(--fg1);
 }
 
 pre, kbd, code {
@@ -157,6 +192,10 @@ td li a, ol ul a {
   border-radius: 0.25em;
   border: 1pt solid;
   padding: 1pt 2pt;
+}
+
+td ul {
+  margin: 0;
 }
 
 td li a:hover, ol ul li a:hover {
