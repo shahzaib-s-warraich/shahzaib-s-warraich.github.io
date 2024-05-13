@@ -87,9 +87,9 @@ td {
 ol > li {
   list-style: none;
   position: relative;
-  margin-bottom: 3em;
-  line-height: 1.35;
-  padding-bottom: 0.25em;
+  /* margin-bottom: 3em; */
+  /* line-height: 1.35; */
+  margin-bottom: 3rem;
   border-bottom: 1pt solid;
 }
 
@@ -130,22 +130,26 @@ h1 {
   font-size: 1.5rem;
 }
 
+section {
+  margin: 5rem 0;
+}
+
 h2 {
   font-family: sans-serif;
   /* font-weight: bold; */
-  /* font-size: 1.1rem; */
+  font-size: 1.1rem;
   text-transform: uppercase;
   font-size: 0.8rem;
   letter-spacing: 0.1em;
-  margin-top: 5em;
-  margin-bottom: 2em;
+  /* margin-top: 5em; */
+  /* margin-bottom: 2em; */
   /* border-bottom: 1pt solid black; */
 }
 
 ol li h3, ul li h3 {
   font-size: 1.1rem;
   /* margin-top: 0.25em; */
-  margin: 0.25em 0;
+  /* margin: 0.25em 0; */
   /* margin-bottom: 0.5em; */ 
   hyphens: none;
 }
@@ -163,9 +167,9 @@ td ul {
   padding-left: 0;
 }
 
-ol li p {
-  font-size: 0.9em;
-}
+/* ol li p { */
+/*   font-size: 0.9em; */
+/* } */
 
 a h3 {
   color: var(--fg1);
