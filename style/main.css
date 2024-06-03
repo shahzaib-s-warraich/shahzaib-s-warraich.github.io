@@ -29,6 +29,8 @@ body {
   margin-top: 5%;
   /* text-align: justify; */
   /* font-family: sans-serif; */
+  max-width: var(--textwidth);
+	margin: auto;
 } 
 
 cite, time, nav li, td li, ol ul, ol > li:before {
@@ -39,8 +41,6 @@ cite, time, nav li, td li, ol ul, ol > li:before {
 }
 
 main {
-  max-width: var(--textwidth);
-	margin: auto;
 }
 
 header, nav, footer, figure {

@@ -3,6 +3,13 @@ title: Research Interest Demo
 author: "[Matthew Finlayson](index.html)"
 ---
 
+# Update: just join our discord!
+
+I have created a discord server for people interested in collaborating with the lab. 
+Email me for an invite!
+
+# Original post
+
 Hello! It is great to hear that you are interested in doing research :).
 I love doing research and mentoring people when I have the time. 
 Time and effort are precious limited resources both for mentors and mentees,
