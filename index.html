@@ -129,6 +129,19 @@
           <h2 id=Publications>Preprints & publications</h2>
           <ol>
             <li>
+              <h3>From Decoding to Meta-Generation: Inference-time Algorithms for Large Language Models</h3>
+              <p>
+	      Sean Welleck, Amanda Bertsch, Matthew Finlayson, Hailey Schoelkopf, Alex Xie, Graham Neubig, Ilia Kulikov, and Zaid Harchaoui
+              </p>
+              <cite>ArXiv</cite> 
+              <time>2024</time>
+              <ul>
+                <li>
+                  <a href="https://arxiv.org/abs/2406.16838">Paper</a>
+                </li>
+              </ul>
+            </li>
+            <li>
               <h3>Logits of API-Protected LLMs Leak Proprietary Information</h3>
               <p>
               Matthew Finlayson, Xiang Ren, and Swabha Swa&shy;yam&shy;dip&shy;ta
@@ -140,31 +153,6 @@
                   <a href="https://arxiv.org/abs/2403.09539">Paper</a>
                 </li>
               </ul>
-              <!-- <details> -->
-              <!--   <summary>Abstract</summary> -->
-              <!--   <p> -->
-              <!--   The commercialization of large language models (LLMs) has led to the -->
-              <!--   common practice of restricting access to proprietary models via a -->
-              <!--   limited API. In this work we show that, with only a conservative -->
-              <!--   assumption about the model architecture, it is possible to learn a -->
-              <!--   surprisingly large amount of non-public information about an -->
-              <!--   API-protected LLM from a relatively small number of API queries (e.g., -->
-              <!--   costing under $1000 USD for OpenAI’s <code>gpt-3.5-turbo</code>). Our -->
-              <!--   findings are centered on one key observation: most modern LLMs suffer -->
-              <!--   from a softmax bottleneck, which restricts the model outputs to a linear -->
-              <!--   subspace of the full output space. We exploit this fact to unlock -->
-              <!--   several capabilities, including (but not limited to) obtaining cheap -->
-              <!--   full-vocabulary outputs, auditing for specific types of model updates, -->
-              <!--   identifying the source LLM given a single full LLM output, and even -->
-              <!--   efficiently discovering the LLM’s hidden size. Our empirical -->
-              <!--   investigations show the effectiveness of our methods, which allow us to -->
-              <!--   estimate the embedding size of OpenAI’s <code>gpt-3.5-turbo</code> to be -->
-              <!--   about 4096. Lastly, we discuss ways that LLM providers can guard against -->
-              <!--   these attacks, as well as how these capabilities can be viewed as a -->
-              <!--   feature (rather than a bug) by allowing for greater transparency and -->
-              <!--   accountability. -->
-              <!--   </p> -->
-              <!-- </details> -->
             </li>
             <li>
               <h3>Closing the Curious Case of Neural Text Degeneration</h3>
@@ -176,29 +164,6 @@
                 <li><a href="http://arxiv.org/abs/2310.01693">Paper</a></li>
                 <li><a href="https://github.com/mattf1n/basis-aware-threshold">Code</a></li>
               </ul>
-              <!-- <details> -->
-              <!--   <summary>Abstract</summary> -->
-              <!--   <p>Despite their ubiquity in language generation, it remains unknown why -->
-              <!--   truncation sampling heuristics like nucleus sampling are so effective. -->
-              <!--   We provide a theoretical explanation for the effectiveness of the -->
-              <!--   truncation sampling by proving that truncation methods that discard -->
-              <!--   tokens below some probability threshold (the most common type of -->
-              <!--   truncation) can guarantee that all sampled tokens have nonzero true -->
-              <!--   probability. However, thresholds are a coarse heuristic, and necessarily -->
-              <!--   discard some tokens with nonzero true probability as well. In pursuit of -->
-              <!--   a more precise sampling strategy, we show that we can leverage a known -->
-              <!--   source of model errors, the softmax bottleneck, to prove that certain -->
-              <!--   tokens have nonzero true probability, without relying on a threshold. -->
-              <!--   Based on our findings, we develop an experimental truncation strategy -->
-              <!--   and the present pilot studies demonstrating the promise of this type of -->
-              <!--   algorithm. Our evaluations show that our method outperforms its -->
-              <!--   threshold-based counterparts under automatic and human evaluation -->
-              <!--   metrics for low-entropy (i.e., close to greedy) open-ended text -->
-              <!--   generation. Our theoretical findings and pilot experiments provide both -->
-              <!--   insight into why truncation sampling works, and make progress toward -->
-              <!--   more expressive sampling algorithms that better surface the generative -->
-              <!--   capabilities of large language models.</p> -->
-              <!-- </details> -->
             </li>
             <li>
               <h3>Attentiveness to Answer Choices Doesn't Always Entail High QA Accuracy</h3>
