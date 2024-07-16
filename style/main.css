@@ -164,9 +164,9 @@ td ul {
   padding-left: 0;
 }
 
-/* ol li p { */
-/*   font-size: 0.9em; */
-/* } */
+ol li p { 
+  margin-bottom: 0.5rem; 
+} 
 
 a h3 {
   color: var(--fg1);
@@ -213,6 +213,7 @@ li p {
 }
 
 details p {
+  margin-top: 0.5rem;
   padding: 0.5rem;
   background-color: #f2f2f2;
   border-radius: 0.25rem;
