@@ -33,7 +33,7 @@ body {
 	margin: auto;
 } 
 
-cite, time, nav li, td li, ol ul, ol > li:before {
+summary, cite, time, nav li, td li, ol ul, ol > li:before {
   font-family: sans-serif;
   text-transform: uppercase;
   letter-spacing: 0.1em;
@@ -178,6 +178,10 @@ pre, kbd, code {
   border-radius: 0.25rem;
   overflow: auto;
   padding: 1pt 2pt;
+}
+
+summary {
+  padding-top: 3.33pt;
 }
 
 a {
