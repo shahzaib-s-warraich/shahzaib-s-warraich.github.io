@@ -70,12 +70,6 @@ aside {
   }
 }
 
-@media (min-width: 80ch) {
-  ol, ul {
-    padding-left: 0;
-  }
-}
-
 td {
   vertical-align: top;
   padding: 0.5em 1em;
