@@ -75,7 +75,7 @@ td {
   padding: 0.5em 1em;
 }
 
-ol > li {
+section ol > li {
   list-style: none;
   position: relative;
   /* margin-bottom: 3em; */
