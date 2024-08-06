@@ -3,16 +3,16 @@ title: Avoid Unnecessary Apologies
 author: '[Matthew Finlayson](index.html)'
 ---
 
-I often encounter junior peers who apologize unnecessarily.
-An unnecessary apology when there was no wrongdoing 
-is an insecure bid for affirmation and encouragement,
-which can feel awkward for the receiver.
+Here is something I wish someone told me earlier in my career:
+only apologize when an apology is truly necessary.
+An apology when there was no wrongdoing 
+can look like an insecure bid for affirmation and encouragement,
+which is awkward for the receiver.
 It's a bit like fishing for compliments.
 
 I see this a lot in emails, especially in cold emails.
 If you are cold-emailing someone, don't apologize.
-If they didn't like your email you don't owe them an apology.
-They chose to read it.
+You don't owe them an apology.
 Instead, thank them for their time.
 If they don't read it, they won't be thanked for their time.
 
