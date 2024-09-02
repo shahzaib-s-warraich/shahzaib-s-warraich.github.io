@@ -5,10 +5,8 @@ nocite: '@*'
 
 # About me
 
-I am a Graduate Research Assistant at the Data, Interpretability, Language, and Learning Lab. 
-I am studying my Masters in Data Science at University of Southern California. 
-I am interested in using lingusitics and formal languages 
-to study language models as general-purpose NLP systems.
+Hello! I am a MS student at USC, advised by Swabha Swa­yam­dip­ta. Previously, I was a Research Engineer at Retrocausal, and before that I studied EECS at NUST. 
+My current research focuses on improving language modeling, sampling, and interpretability methods by building and exploiting our theoretical understanding of neural language models. 
 
 # Publications
 
