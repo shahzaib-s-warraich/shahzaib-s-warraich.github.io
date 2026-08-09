@@ -30,6 +30,7 @@ function ExperienceContent() {
     tech: string[];
     logo: string;
     url: string;
+    type?: 'work' | 'academia';
   }>;
 
   return (
@@ -47,7 +48,7 @@ function ExperienceContent() {
             highlights={job.highlights}
             tech={job.tech}
             logo={job.logo}
-            type="work"
+            type={job.type ?? 'work'}
             index={index}
             url={job.url || undefined}
           />

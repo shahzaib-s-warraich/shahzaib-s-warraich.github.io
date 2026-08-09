@@ -1,9 +1,8 @@
 'use client';
 import { useState, useEffect } from 'react';
 import { useTranslations, useLocale } from 'next-intl';
-import { usePathname, useRouter } from 'next/navigation';
+import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
-import { routing } from '@/i18n/routing';
 
 // Primary links stay directly on the desktop bar; secondary/newer sections
 // nest under a "More" dropdown so the bar doesn't overflow at 12 sections.
@@ -45,7 +44,6 @@ export default function Navbar({ cvHref }: { cvHref: string }) {
   const t = useTranslations('nav');
   const locale = useLocale();
   const pathname = usePathname();
-  const router = useRouter();
 
   const [scrolled, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
@@ -61,13 +59,6 @@ export default function Navbar({ cvHref }: { cvHref: string }) {
   useEffect(() => { setMenuOpen(false); setMoreOpen(false); }, [pathname]);
 
 
-  const switchLocale = (newLocale: string) => {
-    // Strip current locale prefix and replace
-    const segments = pathname.split('/');
-    segments[1] = newLocale;
-    router.push(segments.join('/') || `/${newLocale}`);
-  };
-
   const isActive = (href: string) => {
     const localePrefix = `/${locale}`;
     // Home is only active on the exact locale root (e.g. /en), not every sub-page
@@ -78,38 +69,11 @@ export default function Navbar({ cvHref }: { cvHref: string }) {
 
   const isMoreActive = MORE_LINKS.some(({ href }) => isActive(href));
 
-  const languageToggle = (
-    <div className="flex items-center gap-0.5 bg-bg-card rounded-lg p-0.5 border border-border shrink-0">
-      {routing.locales.map((loc) => (
-        <button
-          key={loc}
-          onClick={() => switchLocale(loc)}
-          className={`flex items-center gap-1 px-2 py-1 rounded-md text-xs font-semibold transition-all duration-200 ${
-            locale === loc
-              ? 'bg-accent text-bg-primary'
-              : 'text-text-secondary hover:text-text-primary'
-          }`}
-          aria-label={`Switch to ${loc === 'en' ? 'English' : 'Français'}`}
-          aria-current={locale === loc ? 'true' : undefined}
-        >
-          <img
-            src={loc === 'en' ? 'https://flagcdn.com/w20/gb.png' : 'https://flagcdn.com/w20/fr.png'}
-            alt=""
-            className="w-4 h-auto rounded-sm"
-            width={16}
-            height={11}
-          />
-          <span>{loc.toUpperCase()}</span>
-        </button>
-      ))}
-    </div>
-  );
-
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? 'bg-bg-primary/90 backdrop-blur-md border-b border-border shadow-[0_1px_0_rgba(212,162,78,0.08)]'
+          ? 'bg-bg-primary/90 backdrop-blur-md border-b border-border shadow-[0_1px_0_rgba(47,102,144,0.08)]'
           : 'bg-transparent'
       }`}
     >
@@ -201,10 +165,8 @@ export default function Navbar({ cvHref }: { cvHref: string }) {
           </div>
         </nav>
 
-        {/* Right side: Lang toggle + CV download (desktop) */}
+        {/* Right side: CV download (desktop) */}
         <div className="hidden md:flex items-center gap-3">
-          {languageToggle}
-
           <a
             href={cvHref}
             download
@@ -214,9 +176,8 @@ export default function Navbar({ cvHref }: { cvHref: string }) {
           </a>
         </div>
 
-        {/* Mobile: language always visible + menu */}
+        {/* Mobile: menu toggle */}
         <div className="flex md:hidden items-center gap-2">
-          {languageToggle}
           <button
             className="flex flex-col gap-1.5 p-2"
             onClick={() => setMenuOpen((v) => !v)}

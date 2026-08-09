@@ -2,8 +2,17 @@
 import { useState, useRef } from 'react';
 import { useTranslations } from 'next-intl';
 import { motion } from 'framer-motion';
+import emailjs from '@emailjs/browser';
 
 type FormState = 'idle' | 'sending' | 'success' | 'error';
+
+// EmailJS relays the send server-side on their end, so this static
+// (GitHub Pages) site can deliver real email to an inbox without running
+// its own backend or exposing SMTP credentials. Configure these three
+// values as build-time env vars — see .env.local.example.
+const SERVICE_ID = process.env.NEXT_PUBLIC_EMAILJS_SERVICE_ID;
+const TEMPLATE_ID = process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_ID;
+const PUBLIC_KEY = process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY;
 
 export default function ContactForm() {
   const t = useTranslations('contact.form');
@@ -12,18 +21,20 @@ export default function ContactForm() {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setState('sending');
 
+    if (!SERVICE_ID || !TEMPLATE_ID || !PUBLIC_KEY) {
+      // Not configured yet — see .env.local.example for setup.
+      console.error('EmailJS is not configured: missing NEXT_PUBLIC_EMAILJS_* env vars.');
+      setState('error');
+      return;
+    }
+
+    setState('sending');
     const form = e.currentTarget;
-    const data = new FormData(form);
 
     try {
-      const res = await fetch('https://formspree.io/f/xldjayvz', {
-        method: 'POST',
-        body: data,
-        headers: { Accept: 'application/json' },
-      });
-      if (res.ok) {
+      const res = await emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, form, { publicKey: PUBLIC_KEY });
+      if (res.status === 200) {
         setState('success');
         formRef.current?.reset();
       } else {

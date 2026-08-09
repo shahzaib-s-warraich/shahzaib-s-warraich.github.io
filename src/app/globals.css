@@ -19,7 +19,7 @@ html {
 }
 
 body {
-  background-color: #0a0c12;
+  background-color: #0a0d12;
   color: #eef1f5;
   font-family: var(--font-inter);
   overflow-x: hidden;
@@ -32,20 +32,20 @@ body {
   width: 4px;
 }
 ::-webkit-scrollbar-track {
-  background: #0a0c12;
+  background: #0a0d12;
 }
 ::-webkit-scrollbar-thumb {
-  background: #d4a24e;
+  background: #2f6690;
   border-radius: 2px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #b8863a;
+  background: #1f4a6e;
 }
 
 /* ── Selection ── */
 ::selection {
-  background: rgba(212,162,78, 0.2);
-  color: #d4a24e;
+  background: rgba(47,102,144, 0.2);
+  color: #2f6690;
 }
 
 /* ── Scroll Progress Bar ── */
@@ -54,15 +54,15 @@ body {
   top: 0;
   left: 0;
   height: 2px;
-  background: linear-gradient(90deg, #d4a24e, #b8863a);
+  background: linear-gradient(90deg, #2f6690, #1f4a6e);
   z-index: 999;
   transition: width 0.1s linear;
-  box-shadow: 0 0 8px rgba(212,162,78, 0.6);
+  box-shadow: 0 0 8px rgba(47,102,144, 0.6);
 }
 
 /* ── Neon Glow Text ── */
 .text-glow {
-  text-shadow: 0 0 20px rgba(212,162,78, 0.5);
+  text-shadow: 0 0 20px rgba(47,102,144, 0.5);
 }
 
 /* ── Glassmorphism Card ── */
@@ -75,7 +75,7 @@ body {
 
 /* ── Accent Border ── */
 .border-accent-left {
-  border-left: 3px solid #d4a24e;
+  border-left: 3px solid #2f6690;
 }
 
 /* ── Tag / Badge ── */
@@ -117,20 +117,20 @@ body {
 
 /* ── Focus ring ── */
 *:focus-visible {
-  outline: 2px solid #d4a24e;
+  outline: 2px solid #2f6690;
   outline-offset: 2px;
 }
 
 /* ── Photo glow pulse ── */
 @keyframes glowPulse {
   0%, 100% {
-    box-shadow: 0 0 0 1.5px rgba(212,162,78,0.50),
-                0 0 28px  6px rgba(212,162,78,0.25),
-                0 0 70px 20px rgba(212,162,78,0.10);
+    box-shadow: 0 0 0 1.5px rgba(47,102,144,0.50),
+                0 0 28px  6px rgba(47,102,144,0.25),
+                0 0 70px 20px rgba(47,102,144,0.10);
   }
   50% {
-    box-shadow: 0 0 0 1.5px rgba(212,162,78,0.80),
-                0 0 40px 14px rgba(212,162,78,0.45),
-                0 0 90px 32px rgba(212,162,78,0.20);
+    box-shadow: 0 0 0 1.5px rgba(47,102,144,0.80),
+                0 0 40px 14px rgba(47,102,144,0.45),
+                0 0 90px 32px rgba(47,102,144,0.20);
   }
 }

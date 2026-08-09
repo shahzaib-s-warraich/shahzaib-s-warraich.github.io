@@ -26,8 +26,8 @@ function scrollToSection(id: string) {
 function dotClasses(isActive: boolean, isPast: boolean, compact: boolean) {
   if (isActive) {
     return compact
-      ? 'w-2.5 h-2.5 bg-accent border-accent shadow-[0_0_8px_rgba(212,162,78,0.65)]'
-      : 'w-3 h-3 bg-accent border-accent shadow-[0_0_10px_rgba(212,162,78,0.65)]';
+      ? 'w-2.5 h-2.5 bg-accent border-accent shadow-[0_0_8px_rgba(47,102,144,0.65)]'
+      : 'w-3 h-3 bg-accent border-accent shadow-[0_0_10px_rgba(47,102,144,0.65)]';
   }
   if (isPast) {
     return compact

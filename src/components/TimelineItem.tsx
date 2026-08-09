@@ -44,7 +44,7 @@ interface TimelineItemProps {
   highlights?: string[];
   courses?: string[];
   tech?: string[];
-  type?: 'master' | 'bachelor' | 'exchange' | 'work' | 'paper';
+  type?: 'master' | 'bachelor' | 'exchange' | 'work' | 'paper' | 'academia';
   index: number;
   url?: string;
 }
@@ -73,6 +73,7 @@ export default function TimelineItem({
     bachelor: 'bg-accent-glow text-accent border-accent/20',
     work: 'bg-green-500/10 text-green-400 border-green-500/20',
     paper: 'bg-accent-glow text-accent border-accent/20',
+    academia: 'bg-sky-500/10 text-sky-400 border-sky-500/20',
   };
 
   const badgeLabel: Record<string, string> = {
@@ -81,6 +82,7 @@ export default function TimelineItem({
     bachelor: "Bachelor's",
     work: 'Industry',
     paper: 'Paper',
+    academia: 'Academia',
   };
 
   const linkProps = url
@@ -114,7 +116,7 @@ export default function TimelineItem({
         className="glass rounded-xl p-6 border border-border hover:border-accent/35
                    transition-colors duration-300 group
                    hover:bg-white/[0.03]
-                   hover:shadow-[0_12px_40px_rgba(212,162,78,0.20)]"
+                   hover:shadow-[0_12px_40px_rgba(47,102,144,0.20)]"
       >
         {/* Header */}
         <div className="flex items-start gap-4 mb-4">
@@ -221,7 +223,7 @@ export default function TimelineItem({
 
         {tech && tech.length > 0 && (
           <div>
-            <p className="text-xs font-semibold text-text-primary uppercase tracking-wider mb-2">Technologies</p>
+            <p className="text-xs font-semibold text-text-primary uppercase tracking-wider mb-2">Keywords</p>
             <div className="flex flex-wrap gap-1.5">
               {tech.map((t) => (
                 <span key={t} className="tech-tag">{t}</span>

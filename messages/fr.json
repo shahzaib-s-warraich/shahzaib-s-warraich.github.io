@@ -685,7 +685,7 @@
     },
     "info": {
       "location": "Los Angeles, CA, USA 🇺🇸",
-      "email": "shahzaibsaqibwarraich@gmail.com",
+      "email": "shahzaib.warraich@turon.ai",
       "emailWork": "shahzaib@turon.ai",
       "phone": "+1 213 681-6140",
       "phoneHref": "tel:+12136816140",
@@ -697,6 +697,8 @@
       "twitter": "X / Twitter",
       "scholar": "Google Scholar",
       "scholarUrl": "https://scholar.google.com/citations?hl=en&view_op=list_works&user=98QphrAAAAAJ",
+      "calendar": "Prendre rendez-vous",
+      "calendarUrl": "https://calendar.app.google/tG9k9vnL8W6EzGYN6",
       "cv": "Download CV"
     }
   },

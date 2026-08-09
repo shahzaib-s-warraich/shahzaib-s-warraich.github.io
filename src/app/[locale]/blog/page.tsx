@@ -102,7 +102,7 @@ export default function BlogPage() {
               viewport={{ once: true, margin: '-40px' }}
               transition={{ duration: 0.45, delay: (index % 2) * 0.08, ease: 'easeOut' }}
               whileHover={{ y: -5, scale: 1.015, transition: { type: 'spring', stiffness: 300, damping: 25 } }}
-              className={`${baseClass} border-border hover:border-accent/35 hover:bg-white/[0.03] hover:shadow-[0_12px_40px_rgba(212,162,78,0.20)]`}
+              className={`${baseClass} border-border hover:border-accent/35 hover:bg-white/[0.03] hover:shadow-[0_12px_40px_rgba(47,102,144,0.20)]`}
             >
               {content}
             </motion.a>

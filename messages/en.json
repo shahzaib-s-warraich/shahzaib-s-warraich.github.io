@@ -21,25 +21,25 @@
     "name": "Shahzaib Saqib Warraich",
     "tagline": "I work at the intersection of",
     "roles": [
-      "AI Interpretability Research",
       "Agentic AI",
       "Multimodal LLMs",
-      "Computer Vision"
+      "Computer Vision",
+      "World Models"
     ],
-    "description": "AI Research Scientist working on **AI Safety and Alignment** through **interpretability** and **evaluation**: understanding what language models truly know and building rigorous methods to measure it. M.S. in Applied Data Science at **USC**, researching under **Prof. Swabha Swayamdipta**, with papers at **COLM 2026** and **ICLR 2026 (Oral)**. Co-Founder & COO of **Turon AI**, building research-depth, production-grade B2B AI solutions for the Fortune 500.",
+    "description": "AI Research Scientist working on **AI Safety and Alignment** through **interpretability** and **evaluation**: understanding what language models truly know and building rigorous methods to measure it. M.S. in Applied Data Science at **USC**, researched with **Dr. Swabha Swayamdipta**, with papers at **COLM 2026** and **ICLR 2026 (Oral)**. Co-Founder & COO of **Turon AI**, building research-depth, production-grade B2B AI solutions for the Fortune 500.",
     "expertise": [
       "AI Interpretability Research",
       "Agentic AI",
       "Multimodal LLMs",
-      "Computer Vision"
+      "Computer Vision",
+      "World Models"
     ],
     "expertiseLabel": "Areas of Expertise",
     "ctaContact": "Contact",
     "ctaProjects": "Projects",
     "ctaCV": "Download CV",
-    "locationBadge": "Based in Los Angeles, CA 🇺🇸",
     "openTo": "Open to: AI Research, Interpretability, Evaluation, and Applied ML roles",
-    "available": "Available for Work",
+    "available": "Available for Collaboration",
     "highlights": {
       "industry": {
         "value": "Co-Founder",
@@ -48,8 +48,7 @@
       },
       "masters": {
         "value": "M.S.",
-        "label": "Applied Data Science, USC",
-        "sublabel": "Viterbi Scholar"
+        "label": "Applied Data Science, USC"
       }
     }
   },
@@ -116,19 +115,18 @@
         "supervisor": "Prof. Swabha Swayamdipta",
         "authors": "S. Ghosh, S.S. Warraich, D. Tarsadiya, G. Yauney, S. Swayamdipta",
         "period": "2025 – 2026",
-        "description": "Developed and validated a consensus decoding framework applied to factuality-critical tasks (long-form biography generation and PopQA), establishing robust baselines and characterizing the factuality-information tradeoff.",
+        "description": "Introduced Consensus Graphs (ConGrs), a flexible DAG-based data structure that captures shared information and semantic variation across multiple sampled LM responses to the same prompt, enabling task-dependent decoding into a single, more reliable response.",
         "highlights": [
-          "Conducted systematic evaluations across long-form biography generation and PopQA benchmarks with **5 independent replications per model**, establishing robust baseline performance metrics",
-          "Designed and implemented **high-throughput batch processing infrastructure** for FActScore evaluation, engineering response caching that resolved critical processing bottlenecks",
-          "Architected comprehensive **ablation studies** on sample-size scaling during alignment and response synthesis, plus temperature-based sensitivity analysis",
-          "Extended the framework to **refusal-aware settings** across Numerical False Presuppositions, Scientific Attributions, and Historical Events, integrating LLM-as-a-judge abstention detection"
+          "Designed **Consensus Graphs (ConGrs)**, built using a lightweight lexical sequence alignment algorithm from bioinformatics, supplemented by targeted use of a secondary LM judge",
+          "Designed task-dependent decoding methods to synthesize a single, final response from the ConGr data structure",
+          "Improved factual precision on two long-form biography generation tasks by up to **31%** over an average sampled response, while reducing reliance on LM judges by **more than 80%**",
+          "Increased appropriate abstention rate by up to **56%** across three refusal-based tasks requiring abstention on unanswerable queries",
+          "Improved accuracy on the MATH and AIME reasoning tasks by up to **6 points** over self-verification and majority-vote baselines"
         ],
         "tech": [
-          "LLM Evaluation",
-          "FActScore",
-          "Consensus Decoding",
-          "LLM-as-Judge",
-          "Python"
+          "LLM Reasoning",
+          "Test-Time Scaling",
+          "Factuality"
         ],
         "paper": "https://arxiv.org/abs/2510.03527",
         "type": "paper"
@@ -141,20 +139,40 @@
         "supervisor": "Prof. Swabha Swayamdipta",
         "authors": "G. Yauney, S.S. Warraich, S. Swayamdipta",
         "period": "2025 – 2026",
-        "description": "Proposed a confidence-based stratified sampling methodology for micro-benchmark selection in LLM meta-evaluation, adapting principled statistical techniques from computer vision literature.",
+        "description": "Introduced a meta-evaluation measure for LLM micro-benchmarking that quantifies how reliably a micro-benchmark can rank two models as a function of their performance gap on the full benchmark, revealing when small evaluation subsets fail to preserve model rankings.",
         "highlights": [
-          "Designed **confidence-based stratified sampling** for micro-benchmark selection, adapting techniques from computer vision literature to language model evaluation",
-          "Built comprehensive evaluation infrastructure integrating **stratified sampling, TinyBenchmarks (P-IRT, GP-IRT), and task-reduction baselines** for systematic comparison",
-          "Maintained and extended a modular, reproducible research codebase for meta-evaluation experiments across benchmark selection methodologies"
+          "Proposed a **meta-evaluation measure** for micro-benchmarking that analyzes ranking reliability as a function of the performance difference between model pairs on the full benchmark",
+          "Found that no micro-benchmarking method can consistently rank model pairs **3.5 points apart on MMLU-Pro** or **4 points apart on BIG-Bench Hard**, contrary to prior work suggesting as few as 10 examples suffice",
+          "Showed that reliably ranking model pairs with similar performance often requires as many as **250 examples**, at which point random sampling becomes competitive with existing micro-benchmarking methods",
+          "Found that on 25-example MMLU-Pro micro-benchmarks comparing 8B instruction-tuned models, **more than half** of pairwise comparisons are not likely to be preserved"
         ],
         "tech": [
+          "Efficient Evaluation",
           "LLM Evaluation",
-          "Statistical Sampling",
-          "TinyBenchmarks",
-          "P-IRT / GP-IRT",
-          "Python"
+          "Meta-Evaluation"
         ],
         "paper": "https://arxiv.org/abs/2510.08730",
+        "type": "paper"
+      },
+      {
+        "id": "rbanet",
+        "title": "Residual Balanced Attention Network for Real-Time Traffic Scene Semantic Segmentation",
+        "venue": "IJECE 2023",
+        "supervisor": "Prof. Rajae El Ouazzani",
+        "authors": "A. Kherraki, S.S. Warraich, M. Maqbool, R. El Ouazzani",
+        "period": "2023",
+        "description": "Proposed RBANet, a robust and lightweight CNN for real-time traffic scene semantic segmentation, introducing a novel balanced attention module and a novel residual module to jointly optimize precision and computational efficiency for intelligent transportation systems.",
+        "highlights": [
+          "Designed **RBANet**, a lightweight CNN combining a novel **balanced attention module** and a novel **residual module** for real-time traffic scene semantic segmentation",
+          "Achieved strong precision using only **0.74M parameters**, benchmarking three loss functions to identify the best-performing combination",
+          "Evaluated on **CamVid**, the most widely used semantic segmentation dataset, outperforming related work on the precision-efficiency tradeoff"
+        ],
+        "tech": [
+          "Semantic Segmentation",
+          "Attention Mechanisms",
+          "Autonomous Driving"
+        ],
+        "paper": "https://ijece.iaescore.com/index.php/IJECE/article/view/29369",
         "type": "paper"
       }
     ]
@@ -167,7 +185,7 @@
         "id": "turon",
         "company": "Turon AI",
         "role": "Co-Founder & COO",
-        "location": "Remote 🌐",
+        "location": "Miami, FL 🇺🇸",
         "period": "Jan 2026 – Present",
         "description": "Applied AI R&D and Production Engineering. We build research-depth, production-grade B2B AI solutions for the Fortune 500.",
         "highlights": [
@@ -186,9 +204,30 @@
         "url": "https://www.turon.ai"
       },
       {
+        "id": "dill-lab",
+        "company": "USC-NLP Group · The Data, Interpretability, Language and Learning (DILL) Lab",
+        "role": "Researcher",
+        "location": "Los Angeles, CA 🇺🇸",
+        "period": "2025 – Present",
+        "type": "academia",
+        "description": "AI interpretability, alignment, reasoning, and evaluation research advised by [Dr. Swabha Swayamdipta](https://swabhs.com), mentored by [Gregory Yauney](https://gyauney.github.io).",
+        "highlights": [
+          "**Sample, Align, Synthesize: Graph-Based Response Synthesis with ConGrs** (COLM 2026) · test-time scaling, reasoning, factuality, hallucinations",
+          "**How Reliable is Language Model Micro-Benchmarking?** (ICLR 2026 Oral) · efficient evaluation, meta-evaluation, language models"
+        ],
+        "tech": [
+          "AI Interpretability",
+          "Alignment",
+          "Reasoning",
+          "Evaluation"
+        ],
+        "logo": "/images/usc_logo.png",
+        "url": "https://dill-lab.github.io"
+      },
+      {
         "id": "paramount",
         "company": "Paramount",
-        "role": "Data Scientist Intern",
+        "role": "Data Scientist",
         "location": "Los Angeles, CA 🇺🇸",
         "period": "May 2025 – Oct 2025",
         "description": "Entertainment Analytics & AI: content performance forecasting and GenAI explainability for a major media organization.",
@@ -211,7 +250,7 @@
         "id": "retrocausal",
         "company": "Retrocausal",
         "role": "Research Engineer II (AI)",
-        "location": "Remote 🌐",
+        "location": "Redmond, WA 🇺🇸",
         "period": "Dec 2022 – Dec 2023",
         "description": "Computer Vision & Manufacturing Intelligence: precision assembly verification and ergonomics assessment for Fortune 500 manufacturing clients.",
         "highlights": [
@@ -233,7 +272,7 @@
         "id": "adlytic",
         "company": "Adlytic AI",
         "role": "AI Engineer",
-        "location": "Remote 🌐",
+        "location": "San Jose, CA 🇺🇸",
         "period": "Jun 2021 – Dec 2022",
         "description": "Edge AI & Recommender Systems: model optimization for edge inference and a cloud-based recommendation engine.",
         "highlights": [
@@ -267,29 +306,27 @@
         "id": "congrs",
         "title": "ConGrs: Graph-Based Response Synthesis for Factual LLM Generation",
         "category": "research",
-        "description": "A consensus decoding framework validated on factuality-critical tasks (long-form biography generation and PopQA), establishing baseline factuality-information tradeoff curves. Accepted to COLM 2026.",
-        "problem": "LLMs trade off factual accuracy for informativeness in long-form generation. Consensus and sampling-based decoding methods hadn't been rigorously validated for factuality-critical tasks like biography generation and open-domain QA.",
+        "description": "Consensus Graphs (ConGrs): a DAG-based data structure that synthesizes epistemic signals across multiple sampled LM responses into a single, more reliable response. Accepted to COLM 2026.",
+        "problem": "Sampling a language model multiple times exposes rich information about its response distribution, but existing methods can't efficiently synthesize that variation across long-form responses into a single, more reliable answer.",
         "approach": [
-          "Applied a consensus decoding framework across long-form biography generation and PopQA, running 5 independent replications per model",
-          "Built high-throughput batch FActScore evaluation infrastructure with response caching to resolve processing bottlenecks",
-          "Ran ablations on sample-size scaling and temperature sensitivity during alignment and response synthesis",
-          "Extended the framework to refusal-aware settings (Numerical False Presuppositions, Scientific Attributions, Historical Events) with LLM-as-a-judge abstention detection"
+          "Built Consensus Graphs (ConGrs), a flexible DAG-based structure representing shared information and semantic variation across sampled LM responses to the same prompt",
+          "Constructed ConGrs with a lightweight lexical sequence alignment algorithm from bioinformatics, supplemented by targeted use of a secondary LM judge",
+          "Designed task-dependent decoding methods to synthesize a single, final response from the ConGr structure"
         ],
         "impact": [
-          "Established baseline factuality-information tradeoff curves for consensus decoding",
-          "Resolved evaluation-pipeline bottlenecks in large-scale FActScore batch processing",
+          "Up to 31% improvement in factual precision on two biography generation tasks over an average response",
+          "Reduced reliance on LM judges by more than 80% compared to other methods",
+          "Increased abstention rate by up to 56% on refusal-based tasks, and improved MATH/AIME reasoning accuracy by up to 6 points",
           "Accepted to COLM 2026"
         ],
-        "role": "Researcher, under Prof. Swabha Swayamdipta, USC",
+        "role": "Researcher, under Dr. Swabha Swayamdipta, USC",
         "tech": [
-          "Python",
-          "LLM Evaluation",
-          "FActScore",
-          "Consensus Decoding",
-          "LLM-as-Judge"
+          "LLM Reasoning",
+          "Test-Time Scaling",
+          "Factuality"
         ],
         "image": "/projects/congrs-graph-figure.png",
-        "github": "",
+        "github": "https://github.com/dill-lab/sample-fusion-with-congrs",
         "demo": "",
         "paper": "https://arxiv.org/abs/2510.03527",
         "video": "",
@@ -299,27 +336,27 @@
         "id": "microbenchmarking",
         "title": "Reliable Micro-Benchmarking for LLM Evaluation",
         "category": "evaluation",
-        "description": "A confidence-based stratified sampling framework for cheaper, more reliable LLM micro-benchmark selection, compared systematically against TinyBenchmarks and task-reduction baselines. ICLR 2026 Oral.",
-        "problem": "Full LLM benchmark suites are expensive to run repeatedly, and existing micro-benchmark subsampling methods for meta-evaluation lacked principled reliability guarantees adapted from other fields.",
+        "description": "A meta-evaluation measure for LLM micro-benchmarking that reveals when small evaluation subsets fail to reliably preserve model rankings from full benchmarks. ICLR 2026 Oral.",
+        "problem": "Micro-benchmarking promises cheaper LLM evaluation by testing on small subsets of full benchmarks, but it wasn't clear whether these subsets can rank models as consistently as the full benchmarks they replace, or more consistently than a random sample.",
         "approach": [
-          "Adapted confidence-based stratified sampling from computer vision literature to language model evaluation",
-          "Built evaluation infrastructure comparing stratified sampling against TinyBenchmarks (P-IRT, GP-IRT) and task-reduction baselines",
-          "Maintained a modular, reproducible codebase supporting systematic comparison across benchmark selection methodologies"
+          "Introduced a meta-evaluation measure investigating how reliably a micro-benchmark ranks two models as a function of their performance difference on the full benchmark",
+          "Evaluated existing micro-benchmarking methods, including TinyBenchmarks' P-IRT and GP-IRT, against random sampling on MMLU-Pro and BIG-Bench Hard",
+          "Quantified the trade-off between micro-benchmark size and ranking reliability across model-pair performance gaps"
         ],
         "impact": [
-          "A principled framework for cheaper, more reliable LLM micro-benchmark selection",
+          "No micro-benchmarking method reliably ranks model pairs 3.5 points apart on MMLU-Pro or 4 points apart on BIG-Bench Hard",
+          "Reliable ranking of closely-performing models often requires up to 250 examples, at which point random sampling becomes competitive",
+          "More than half of pairwise comparisons are not preserved on 25-example MMLU-Pro micro-benchmarks of 8B instruction-tuned models",
           "Accepted to ICLR 2026 as an Oral presentation"
         ],
-        "role": "Researcher, under Prof. Swabha Swayamdipta, USC",
+        "role": "Researcher, under Dr. Swabha Swayamdipta, USC",
         "tech": [
-          "Python",
-          "Statistical Sampling",
-          "TinyBenchmarks",
-          "P-IRT / GP-IRT",
-          "LLM Evaluation"
+          "Efficient Evaluation",
+          "LLM Evaluation",
+          "Meta-Evaluation"
         ],
         "image": "/projects/microbenchmarking-figure.png",
-        "github": "",
+        "github": "https://github.com/dill-lab/micro-benchmarking-reliability",
         "demo": "",
         "paper": "https://arxiv.org/abs/2510.08730",
         "video": "",
@@ -425,7 +462,7 @@
           "Up to 20% improvement in content performance forecasting accuracy across critical KPIs",
           "Democratized ML insights for non-technical stakeholders org-wide"
         ],
-        "role": "Data Scientist Intern, Paramount",
+        "role": "Data Scientist, Paramount",
         "tech": [
           "LLM-as-Judge",
           "Forecasting",
@@ -548,7 +585,7 @@
         "title": "Vice President",
         "org": "Viterbi Graduate Student Association (VGSA)",
         "location": "Los Angeles, CA 🇺🇸",
-        "period": "May 2025 – Present",
+        "period": "May 2025 – Dec 2025",
         "highlights": [
           "Led student advocacy initiatives representing **6,000 graduate students** as primary liaison between the student body and university administration",
           "Managed strategic partnerships with internal stakeholders and external organizations to enhance graduate student resources and professional opportunities",
@@ -569,7 +606,8 @@
         "location": "Los Angeles, CA 🇺🇸",
         "period": "Aug 2024 – Dec 2024",
         "highlights": [
-          "Produced course content and supported instruction for graduate-level Applied NLP"
+          "Produced course content and supported instruction for graduate-level Applied NLP",
+          "Worked with **Dr. Swabha Swayamdipta**"
         ]
       },
       {
@@ -580,7 +618,8 @@
         "location": "Los Angeles, CA 🇺🇸",
         "period": "Jan 2025 – May 2025",
         "highlights": [
-          "Produced course content and supported instruction for graduate-level Applied NLP"
+          "Produced course content and supported instruction for graduate-level Applied NLP",
+          "Worked with **Dr. Xueze (Max) Ma**"
         ]
       }
     ]
@@ -594,8 +633,8 @@
         "type": "linkedin",
         "title": "LinkedIn Newsletter",
         "description": "Long-form writing on AI research, evaluation, and building in applied AI, published on LinkedIn.",
-        "cta": "Read on LinkedIn",
-        "url": "https://www.linkedin.com/in/shahzaib-saqib-warraich/",
+        "cta": "Subscribe on LinkedIn",
+        "url": "https://www.linkedin.com/build-relation/newsletter-follow?entityUrn=7470386566998188032",
         "status": "live"
       },
       {
@@ -684,9 +723,7 @@
       "error": "Something went wrong. Please try again."
     },
     "info": {
-      "location": "Los Angeles, CA, USA 🇺🇸",
-      "email": "shahzaibsaqibwarraich@gmail.com",
-      "emailWork": "shahzaib@turon.ai",
+      "email": "shahzaib.warraich@turon.ai",
       "phone": "+1 213 681-6140",
       "phoneHref": "tel:+12136816140",
       "availability": "Available for collaborations"
@@ -697,6 +734,8 @@
       "twitter": "X / Twitter",
       "scholar": "Google Scholar",
       "scholarUrl": "https://scholar.google.com/citations?hl=en&view_op=list_works&user=98QphrAAAAAJ",
+      "calendar": "Book a Call",
+      "calendarUrl": "https://calendar.app.google/tG9k9vnL8W6EzGYN6",
       "cv": "Download CV"
     }
   },

@@ -34,7 +34,7 @@ export default function BooksPage() {
             whileHover={{ y: -6, scale: 1.02, transition: { type: 'spring', stiffness: 300, damping: 25 } }}
             className="group glass rounded-xl overflow-hidden border border-border hover:border-accent/45
                        transition-colors duration-300 flex flex-col
-                       hover:shadow-[0_12px_40px_rgba(212,162,78,0.25)] hover:bg-white/[0.02]"
+                       hover:shadow-[0_12px_40px_rgba(47,102,144,0.25)] hover:bg-white/[0.02]"
           >
             <div className="relative aspect-[2/3] overflow-hidden bg-bg-secondary">
               <img

@@ -36,7 +36,7 @@ type EducationItem = {
 type JobItem = {
   id: string; company: string; role: string; location: string;
   period: string; description: string; highlights: string[];
-  tech: string[]; logo: string; url: string;
+  tech: string[]; logo: string; url: string; type?: 'work' | 'academia';
 };
 type ResearchPaper = {
   id: string; title: string; venue: string; venueLogo?: string; supervisor: string; authors: string;
@@ -165,7 +165,6 @@ export default function HomeClient({ cvHref }: { cvHref: string }) {
 
   const [selectedProject, setSelectedProject] = useState<ProjectData | null>(null);
   const [projectFilter, setProjectFilter]     = useState<Category>('all');
-  const [photoReplayKey, setPhotoReplayKey]   = useState(0);
   const [photoSize, setPhotoSize]             = useState(372);
   const [compactPhotoSize, setCompactPhotoSize] = useState(140);
   const [mobileNameFontRem, setMobileNameFontRem] = useState<number>(MOBILE_NAME_FONT_STEPS[0]);
@@ -217,7 +216,7 @@ export default function HomeClient({ cvHref }: { cvHref: string }) {
       observer.disconnect();
       window.removeEventListener('resize', fitMobileHeroName);
     };
-  }, [fitMobileHeroName, compactPhotoSize, photoReplayKey]);
+  }, [fitMobileHeroName, compactPhotoSize]);
 
   useEffect(() => {
     const updatePhotoSize = () => {
@@ -245,7 +244,7 @@ export default function HomeClient({ cvHref }: { cvHref: string }) {
   const blogItems         = tBlog.raw('items')        as BlogItem[];
   const bookItems         = tBooks.raw('items')       as BookItem[];
   const awards            = tAwards.raw('items')      as AwardItem[];
-  const contactInfo       = tContact.raw('info')      as { location: string; email: string; emailWork: string; phone: string; phoneHref: string };
+  const contactInfo       = tContact.raw('info')      as { email: string; phone: string; phoneHref: string };
 
   const filteredProjects = projectFilter === 'all'
     ? allProjects
@@ -263,16 +262,6 @@ export default function HomeClient({ cvHref }: { cvHref: string }) {
 
           {/* Left: Text */}
           <div className="relative z-10 min-w-0">
-            <motion.div
-              initial={{ opacity: 0, y: -8 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.4 }}
-              className="inline-flex items-center gap-2.5 px-4 py-2 mb-6 rounded-full border border-accent/25 bg-accent-glow text-sm text-accent font-medium"
-            >
-              <span className="w-2 h-2 rounded-full bg-accent animate-pulse" />
-              {t('locationBadge')}
-            </motion.div>
-
             <motion.p
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
@@ -328,16 +317,11 @@ export default function HomeClient({ cvHref }: { cvHref: string }) {
                 className="flex-shrink-0 flex items-center justify-center"
               >
                 <PhotoReveal
-                  key={`compact-${photoReplayKey}-${compactPhotoSize}`}
+                  key={`compact-${compactPhotoSize}`}
                   src="/images/headshot.jpg"
                   alt="Shahzaib Saqib Warraich"
                   photoSize={compactPhotoSize}
                   compact
-                  imgStyle={{
-                    filter: 'brightness(1.05) contrast(1.06) saturate(0.92)',
-                    transform: 'scale(1.06) translateY(7%)',
-                    transformOrigin: 'center',
-                  }}
                 />
               </motion.div>
             </div>
@@ -492,11 +476,11 @@ export default function HomeClient({ cvHref }: { cvHref: string }) {
                          w-fit"
             >
               <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse flex-shrink-0" />
-              {t('available')} and Collaborations
+              {t('available')}
             </motion.div>
           </div>
 
-          {/* Right: Photo — desktop only (full stereo reconstruction) */}
+          {/* Right: Photo — desktop only */}
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -504,44 +488,11 @@ export default function HomeClient({ cvHref }: { cvHref: string }) {
             className="relative hidden md:flex w-full max-w-full overflow-hidden flex-col items-center justify-center gap-3 md:h-[580px] lg:h-[640px]"
           >
             <PhotoReveal
-              key={`${photoReplayKey}-${photoSize}`}
+              key={photoSize}
               src="/images/headshot.jpg"
               alt="Shahzaib Saqib Warraich"
               photoSize={photoSize}
-              imgStyle={{
-                filter: 'brightness(1.05) contrast(1.06) saturate(0.92)',
-                transform: 'scale(1.06) translateY(7%)',
-                transformOrigin: 'center',
-              }}
             />
-
-            {/* Replay control — blends into the theme */}
-            <button
-              type="button"
-              onClick={() => setPhotoReplayKey((k) => k + 1)}
-              className="group inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full
-                         border border-accent/25 bg-accent/[0.05] backdrop-blur-sm
-                         font-mono text-[10px] tracking-[0.22em] uppercase text-accent/75
-                         hover:text-accent hover:border-accent/55 hover:bg-accent/[0.1]
-                         transition-colors duration-300"
-              aria-label="Replay portrait reconstruction animation"
-            >
-              <svg
-                className="w-3.5 h-3.5 transition-transform duration-700 group-hover:rotate-[360deg]"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth={2}
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <path d="M3 12a9 9 0 0 1 15.3-6.4L21 8" />
-                <path d="M21 3v5h-5" />
-                <path d="M21 12a9 9 0 0 1-15.3 6.4L3 16" />
-                <path d="M3 21v-5h5" />
-              </svg>
-              Replay Scan
-            </button>
           </motion.div>
         </div>
 
@@ -616,7 +567,7 @@ export default function HomeClient({ cvHref }: { cvHref: string }) {
               highlights={job.highlights}
               tech={job.tech}
               logo={job.logo}
-              type="work"
+              type={job.type ?? 'work'}
               index={index}
               url={job.url || undefined}
             />
@@ -688,9 +639,6 @@ export default function HomeClient({ cvHref }: { cvHref: string }) {
               <span className="text-text-primary font-medium">Portfolio in progress</span>. I&apos;m actively open-sourcing projects to GitHub and adding new case studies here over time.
             </p>
           </div>
-          <p className="text-xs text-text-muted mt-1">
-            Private projects are available as <span className="text-accent font-medium">live demos on request</span>. Feel free to reach out.
-          </p>
         </div>
 
         <ViewAll href={`/${locale}/projects`} label="Open full projects page" />
@@ -732,7 +680,7 @@ export default function HomeClient({ cvHref }: { cvHref: string }) {
               className="glass rounded-xl p-6 border border-border hover:border-accent/35
                          transition-colors duration-300
                          hover:bg-white/[0.03]
-                         hover:shadow-[0_12px_40px_rgba(212,162,78,0.20)] group flex gap-5"
+                         hover:shadow-[0_12px_40px_rgba(47,102,144,0.20)] group flex gap-5"
             >
               <div className={`flex-shrink-0 w-12 h-12 rounded-xl border flex items-center justify-center group-hover:scale-110 transition-transform duration-300 ${
                 item.type === 'leadership'
@@ -791,7 +739,7 @@ export default function HomeClient({ cvHref }: { cvHref: string }) {
               className="glass rounded-xl p-6 border border-border hover:border-accent/35
                          transition-colors duration-300
                          hover:bg-white/[0.03]
-                         hover:shadow-[0_12px_40px_rgba(212,162,78,0.20)] group flex gap-5"
+                         hover:shadow-[0_12px_40px_rgba(47,102,144,0.20)] group flex gap-5"
             >
               <div className="flex-shrink-0 w-12 h-12 rounded-xl border flex items-center justify-center group-hover:scale-110 transition-transform duration-300 bg-purple-500/10 border-purple-500/20 text-purple-400">
                 <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
@@ -895,7 +843,7 @@ export default function HomeClient({ cvHref }: { cvHref: string }) {
                 viewport={{ once: true, margin: '-40px' }}
                 transition={{ duration: 0.45, delay: (index % 2) * 0.08, ease: 'easeOut' }}
                 whileHover={{ y: -5, scale: 1.015, transition: { type: 'spring', stiffness: 300, damping: 25 } }}
-                className={`${base} border-border hover:border-accent/35 hover:bg-white/[0.03] hover:shadow-[0_12px_40px_rgba(212,162,78,0.20)]`}
+                className={`${base} border-border hover:border-accent/35 hover:bg-white/[0.03] hover:shadow-[0_12px_40px_rgba(47,102,144,0.20)]`}
               >
                 {content}
               </motion.a>
@@ -924,7 +872,7 @@ export default function HomeClient({ cvHref }: { cvHref: string }) {
               whileHover={{ y: -6, scale: 1.02, transition: { type: 'spring', stiffness: 300, damping: 25 } }}
               className="group glass rounded-xl overflow-hidden border border-border hover:border-accent/45
                          transition-colors duration-300 flex flex-col
-                         hover:shadow-[0_12px_40px_rgba(212,162,78,0.25)] hover:bg-white/[0.02]"
+                         hover:shadow-[0_12px_40px_rgba(47,102,144,0.25)] hover:bg-white/[0.02]"
             >
               <div className="relative aspect-[2/3] overflow-hidden bg-bg-secondary">
                 <img
@@ -967,7 +915,7 @@ export default function HomeClient({ cvHref }: { cvHref: string }) {
                 className="glass rounded-xl p-6 border border-border hover:border-accent/35
                            transition-colors duration-300
                            hover:bg-white/[0.03]
-                           hover:shadow-[0_12px_40px_rgba(212,162,78,0.20)] group flex gap-5"
+                           hover:shadow-[0_12px_40px_rgba(47,102,144,0.20)] group flex gap-5"
               >
                 <div className={`flex-shrink-0 w-12 h-12 rounded-xl border flex items-center justify-center group-hover:scale-110 transition-transform duration-300 ${cfg.bg} ${cfg.color}`}>
                   {cfg.icon}
@@ -1000,9 +948,9 @@ export default function HomeClient({ cvHref }: { cvHref: string }) {
         {/* Decorative background lines — same as ContactPageContent */}
         <div className="absolute inset-0 opacity-10 pointer-events-none">
           <svg viewBox="0 0 1000 500" className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
-            <path d="M50 320 C150 200 300 180 420 250 C520 300 620 260 760 220 C820 200 900 240 950 280" fill="none" stroke="rgba(212,162,78,0.18)" strokeWidth="1.5" />
-            <path d="M120 260 C160 240 190 230 230 240 C260 245 300 260 340 255 C380 250 415 265 455 270" fill="none" stroke="rgba(212,162,78,0.16)" strokeWidth="1" />
-            <path d="M520 210 C560 200 600 205 635 215 C665 225 700 230 740 225 C780 220 820 230 860 245" fill="none" stroke="rgba(212,162,78,0.16)" strokeWidth="1" />
+            <path d="M50 320 C150 200 300 180 420 250 C520 300 620 260 760 220 C820 200 900 240 950 280" fill="none" stroke="rgba(47,102,144,0.18)" strokeWidth="1.5" />
+            <path d="M120 260 C160 240 190 230 230 240 C260 245 300 260 340 255 C380 250 415 265 455 270" fill="none" stroke="rgba(47,102,144,0.16)" strokeWidth="1" />
+            <path d="M520 210 C560 200 600 205 635 215 C665 225 700 230 740 225 C780 220 820 230 860 245" fill="none" stroke="rgba(47,102,144,0.16)" strokeWidth="1" />
           </svg>
         </div>
 
@@ -1013,35 +961,12 @@ export default function HomeClient({ cvHref }: { cvHref: string }) {
             {/* Left: contact info tiles — mirrors ContactPageContent exactly */}
             <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 content-start">
 
-              {/* Location */}
+              {/* Email — spans full width so the address stays on one line */}
               <motion.div
                 whileHover={{ y: -5, scale: 1.018, transition: { type: 'spring', stiffness: 300, damping: 25 } }}
-                className="group glass rounded-2xl border border-accent/10 p-5
-                           shadow-[0_12px_40px_rgba(212,162,78,0.06)]
-                           hover:border-accent/35 hover:shadow-[0_16px_50px_rgba(212,162,78,0.22)]
-                           hover:bg-accent/[0.08] transition-colors"
-              >
-                <div className="flex items-center gap-4">
-                  <div className="p-3 rounded-xl bg-accent/10 text-accent flex-shrink-0
-                                  group-hover:scale-110 group-hover:bg-accent/20 transition-all duration-300">
-                    <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M12 2C8.14 2 5 5.14 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.86-3.14-7-7-7z" />
-                      <circle cx="12" cy="9" r="2.5" />
-                    </svg>
-                  </div>
-                  <div>
-                    <p className="text-xs uppercase tracking-[0.3em] text-text-secondary mb-1">Location</p>
-                    <p className="text-sm font-semibold text-text-primary">{contactInfo.location}</p>
-                  </div>
-                </div>
-              </motion.div>
-
-              {/* Email */}
-              <motion.div
-                whileHover={{ y: -5, scale: 1.018, transition: { type: 'spring', stiffness: 300, damping: 25 } }}
-                className="group glass rounded-2xl border border-accent/10 p-5
-                           shadow-[0_12px_40px_rgba(212,162,78,0.06)]
-                           hover:border-accent/35 hover:shadow-[0_16px_50px_rgba(212,162,78,0.22)]
+                className="group glass rounded-2xl border border-accent/10 p-5 sm:col-span-2
+                           shadow-[0_12px_40px_rgba(47,102,144,0.06)]
+                           hover:border-accent/35 hover:shadow-[0_16px_50px_rgba(47,102,144,0.22)]
                            hover:bg-accent/[0.08] transition-colors"
               >
                 <div className="flex items-center gap-4">
@@ -1051,31 +976,9 @@ export default function HomeClient({ cvHref }: { cvHref: string }) {
                       <path d="M4 4h16v16H4z" /><path d="M22 6l-10 7L2 6" />
                     </svg>
                   </div>
-                  <div>
+                  <div className="min-w-0 flex-1">
                     <p className="text-xs uppercase tracking-[0.3em] text-text-secondary mb-1">Email</p>
-                    <a href={`mailto:${contactInfo.email}`} className="text-sm font-semibold text-text-primary hover:text-accent transition-colors break-all">{contactInfo.email}</a>
-                  </div>
-                </div>
-              </motion.div>
-
-              {/* Email — Turon AI */}
-              <motion.div
-                whileHover={{ y: -5, scale: 1.018, transition: { type: 'spring', stiffness: 300, damping: 25 } }}
-                className="group glass rounded-2xl border border-accent/10 p-5
-                           shadow-[0_12px_40px_rgba(212,162,78,0.06)]
-                           hover:border-accent/35 hover:shadow-[0_16px_50px_rgba(212,162,78,0.22)]
-                           hover:bg-accent/[0.08] transition-colors"
-              >
-                <div className="flex items-center gap-4">
-                  <div className="p-3 rounded-xl bg-accent/10 text-accent flex-shrink-0
-                                  group-hover:scale-110 group-hover:bg-accent/20 transition-all duration-300">
-                    <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M4 4h16v16H4z" /><path d="M22 6l-10 7L2 6" />
-                    </svg>
-                  </div>
-                  <div>
-                    <p className="text-xs uppercase tracking-[0.3em] text-text-secondary mb-1">Email · Turon AI</p>
-                    <a href={`mailto:${contactInfo.emailWork}`} className="text-sm font-semibold text-text-primary hover:text-accent transition-colors break-all">{contactInfo.emailWork}</a>
+                    <a href={`mailto:${contactInfo.email}`} className="block text-[13px] sm:text-sm font-semibold text-text-primary hover:text-accent transition-colors whitespace-nowrap overflow-x-auto">{contactInfo.email}</a>
                   </div>
                 </div>
               </motion.div>
@@ -1085,8 +988,8 @@ export default function HomeClient({ cvHref }: { cvHref: string }) {
                 href={contactInfo.phoneHref}
                 whileHover={{ y: -5, scale: 1.018, transition: { type: 'spring', stiffness: 300, damping: 25 } }}
                 className="group glass rounded-2xl border border-accent/10 p-5 block
-                           shadow-[0_12px_40px_rgba(212,162,78,0.06)]
-                           hover:border-accent/35 hover:shadow-[0_16px_50px_rgba(212,162,78,0.22)]
+                           shadow-[0_12px_40px_rgba(47,102,144,0.06)]
+                           hover:border-accent/35 hover:shadow-[0_16px_50px_rgba(47,102,144,0.22)]
                            hover:bg-accent/[0.08] transition-colors"
               >
                 <div className="flex items-center gap-4">
@@ -1103,6 +1006,31 @@ export default function HomeClient({ cvHref }: { cvHref: string }) {
                 </div>
               </motion.a>
 
+              {/* Book a Call — Google Calendar appointment scheduling */}
+              <motion.a
+                href={tContact('social.calendarUrl')}
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ y: -5, scale: 1.018, transition: { type: 'spring', stiffness: 300, damping: 25 } }}
+                className="group glass rounded-2xl border border-accent/25 bg-accent/[0.06] p-5
+                           shadow-[0_12px_40px_rgba(47,102,144,0.06)]
+                           hover:border-accent/35 hover:shadow-[0_16px_50px_rgba(47,102,144,0.22)]
+                           hover:bg-accent/[0.08] transition-colors block"
+              >
+                <div className="flex items-center gap-4">
+                  <div className="p-3 rounded-xl bg-accent/10 text-accent flex-shrink-0
+                                  group-hover:scale-110 group-hover:bg-accent/20 transition-all duration-300">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={1.5} strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M6.75 3v2.25M17.25 3v2.25M3 18.75V7.5a2.25 2.25 0 012.25-2.25h13.5A2.25 2.25 0 0121 7.5v11.25m-18 0A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75m-18 0v-7.5A2.25 2.25 0 015.25 9h13.5A2.25 2.25 0 0121 11.25v7.5m-13.5-6h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008zm3-3h.008v.008h-.008v-.008zm0 3h.008v.008h-.008v-.008z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="text-xs uppercase tracking-[0.3em] text-text-secondary mb-1">Schedule</p>
+                    <p className="text-sm font-semibold text-text-primary">{tContact('social.calendar')}</p>
+                  </div>
+                </div>
+              </motion.a>
+
               {/* Twitter / X */}
               <motion.a
                 href="https://x.com/Shahzaibs98"
@@ -1110,8 +1038,8 @@ export default function HomeClient({ cvHref }: { cvHref: string }) {
                 rel="noopener noreferrer"
                 whileHover={{ y: -5, scale: 1.018, transition: { type: 'spring', stiffness: 300, damping: 25 } }}
                 className="group glass rounded-2xl border border-accent/10 p-5 block
-                           shadow-[0_12px_40px_rgba(212,162,78,0.06)]
-                           hover:border-accent/35 hover:shadow-[0_16px_50px_rgba(212,162,78,0.22)]
+                           shadow-[0_12px_40px_rgba(47,102,144,0.06)]
+                           hover:border-accent/35 hover:shadow-[0_16px_50px_rgba(47,102,144,0.22)]
                            hover:bg-accent/[0.08] transition-colors"
               >
                 <div className="flex items-center gap-4">
@@ -1135,8 +1063,8 @@ export default function HomeClient({ cvHref }: { cvHref: string }) {
                 rel="noopener noreferrer"
                 whileHover={{ y: -5, scale: 1.018, transition: { type: 'spring', stiffness: 300, damping: 25 } }}
                 className="group glass rounded-2xl border border-accent/10 p-5 block
-                           shadow-[0_12px_40px_rgba(212,162,78,0.06)]
-                           hover:border-accent/35 hover:shadow-[0_16px_50px_rgba(212,162,78,0.22)]
+                           shadow-[0_12px_40px_rgba(47,102,144,0.06)]
+                           hover:border-accent/35 hover:shadow-[0_16px_50px_rgba(47,102,144,0.22)]
                            hover:bg-accent/[0.08] transition-colors"
               >
                 <div className="flex items-center gap-4">
@@ -1160,8 +1088,8 @@ export default function HomeClient({ cvHref }: { cvHref: string }) {
                 rel="noopener noreferrer"
                 whileHover={{ y: -5, scale: 1.018, transition: { type: 'spring', stiffness: 300, damping: 25 } }}
                 className="group glass rounded-2xl border border-accent/10 p-5 block
-                           shadow-[0_12px_40px_rgba(212,162,78,0.06)]
-                           hover:border-accent/35 hover:shadow-[0_16px_50px_rgba(212,162,78,0.22)]
+                           shadow-[0_12px_40px_rgba(47,102,144,0.06)]
+                           hover:border-accent/35 hover:shadow-[0_16px_50px_rgba(47,102,144,0.22)]
                            hover:bg-accent/[0.08] transition-colors"
               >
                 <div className="flex items-center gap-4">
@@ -1185,8 +1113,8 @@ export default function HomeClient({ cvHref }: { cvHref: string }) {
                 rel="noopener noreferrer"
                 whileHover={{ y: -5, scale: 1.018, transition: { type: 'spring', stiffness: 300, damping: 25 } }}
                 className="group glass rounded-2xl border border-accent/10 p-5 block
-                           shadow-[0_12px_40px_rgba(212,162,78,0.06)]
-                           hover:border-accent/35 hover:shadow-[0_16px_50px_rgba(212,162,78,0.22)]
+                           shadow-[0_12px_40px_rgba(47,102,144,0.06)]
+                           hover:border-accent/35 hover:shadow-[0_16px_50px_rgba(47,102,144,0.22)]
                            hover:bg-accent/[0.08] transition-colors"
               >
                 <div className="flex items-center gap-4">
@@ -1209,8 +1137,8 @@ export default function HomeClient({ cvHref }: { cvHref: string }) {
                 download
                 whileHover={{ y: -5, scale: 1.018, transition: { type: 'spring', stiffness: 300, damping: 25 } }}
                 className="group glass rounded-2xl border border-accent/10 p-5 block
-                           shadow-[0_12px_40px_rgba(212,162,78,0.06)]
-                           hover:border-accent/35 hover:shadow-[0_16px_50px_rgba(212,162,78,0.22)]
+                           shadow-[0_12px_40px_rgba(47,102,144,0.06)]
+                           hover:border-accent/35 hover:shadow-[0_16px_50px_rgba(47,102,144,0.22)]
                            hover:bg-accent/[0.08] transition-colors"
               >
                 <div className="flex items-center gap-4">
@@ -1234,7 +1162,7 @@ export default function HomeClient({ cvHref }: { cvHref: string }) {
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="glass rounded-[2rem] p-7 border border-accent/15 shadow-[0_30px_90px_rgba(212,162,78,0.12)]"
+              className="glass rounded-[2rem] p-7 border border-accent/15 shadow-[0_30px_90px_rgba(47,102,144,0.12)]"
             >
               <div className="mb-5">
                 <p className="text-sm uppercase tracking-[0.35em] text-accent font-medium mb-2">Send a message</p>

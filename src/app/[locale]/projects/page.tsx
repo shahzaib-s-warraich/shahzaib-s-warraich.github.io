@@ -87,9 +87,6 @@ export default function ProjectsPage() {
             <span className="text-text-primary font-medium">Portfolio in progress</span>. I&apos;m actively open-sourcing projects to GitHub and adding new case studies here over time.
           </p>
         </div>
-        <p className="text-xs text-text-muted mt-1">
-          Private projects are available as <span className="text-accent font-medium">live demos on request</span>. Feel free to reach out.
-        </p>
       </div>
 
       <ProjectModal

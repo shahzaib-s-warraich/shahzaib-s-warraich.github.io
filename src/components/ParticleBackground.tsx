@@ -48,7 +48,7 @@ export default function ParticleBackground() {
         aria-hidden
         style={{
           background:
-            'radial-gradient(ellipse 90% 55% at 50% -5%, rgba(212,162,78,0.14) 0%, transparent 58%), radial-gradient(ellipse 70% 45% at 85% 95%, rgba(212,162,78,0.08) 0%, transparent 52%)',
+            'radial-gradient(ellipse 90% 55% at 50% -5%, rgba(47,102,144,0.14) 0%, transparent 58%), radial-gradient(ellipse 70% 45% at 85% 95%, rgba(47,102,144,0.08) 0%, transparent 52%)',
         }}
       />
 
