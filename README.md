@@ -1,4 +1,4 @@
-# shahzaib-s-warraich.github.io
+# ssw.github.io
 
 Personal portfolio site for **Shahzaib Saqib Warraich**, AI Research Scientist (AI Safety & Alignment through Interpretability and Evaluation) and Co-Founder & COO of [Turon AI](https://www.turon.ai). Built with Next.js 16, React 19, TypeScript, Tailwind CSS, next-intl, and Framer Motion.
 
