@@ -58,7 +58,7 @@ export default function SkillCategory({ title, icon, skills, index }: SkillCateg
       className="glass rounded-xl p-5 border border-border hover:border-accent/35
                  transition-colors duration-300
                  hover:bg-white/[0.03]
-                 hover:shadow-[0_12px_40px_rgba(0,255,153,0.20)] group"
+                 hover:shadow-[0_12px_40px_rgba(212,162,78,0.20)] group"
     >
       {/* Header */}
       <div className="flex items-center gap-3 mb-4">

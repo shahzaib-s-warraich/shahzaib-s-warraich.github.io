@@ -7,7 +7,7 @@ import ProjectCard from '@/components/ProjectCard';
 import ProjectModal from '@/components/ProjectModal';
 import type { ProjectData } from '@/components/ProjectModal';
 
-type Category = 'all' | 'cv3d' | 'robotics' | 'ai' | 'generative';
+type Category = 'all' | 'research' | 'evaluation' | 'production' | 'computerVision';
 
 export default function ProjectsPage() {
   const t = useTranslations('projects');
@@ -84,11 +84,11 @@ export default function ProjectsPage() {
         <div className="inline-flex flex-col sm:flex-row items-center gap-2 px-4 py-3 sm:py-2 rounded-2xl sm:rounded-full bg-accent/8 border border-accent/20 max-w-full">
           <span className="text-accent text-sm">⚡</span>
           <p className="text-sm text-text-secondary text-center sm:text-left">
-            <span className="text-text-primary font-medium">Portfolio in progress</span> — I&apos;m actively open-sourcing projects to GitHub and adding new case studies here over time.
+            <span className="text-text-primary font-medium">Portfolio in progress</span>. I&apos;m actively open-sourcing projects to GitHub and adding new case studies here over time.
           </p>
         </div>
         <p className="text-xs text-text-muted mt-1">
-          Private projects are available as <span className="text-accent font-medium">live demos on request</span> — feel free to reach out.
+          Private projects are available as <span className="text-accent font-medium">live demos on request</span>. Feel free to reach out.
         </p>
       </div>
 

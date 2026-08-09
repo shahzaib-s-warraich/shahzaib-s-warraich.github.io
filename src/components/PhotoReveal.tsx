@@ -336,9 +336,9 @@ export default function PhotoReveal({
 
       setReady(true);
 
-      const GREEN_R = 0;
-      const GREEN_G = 255;
-      const GREEN_B = 153;
+      const GREEN_R = 212;
+      const GREEN_G = 162;
+      const GREEN_B = 78;
 
       const loop = (now: number) => {
         const t = now - t0;
@@ -463,9 +463,9 @@ export default function PhotoReveal({
         if (waveP >= 0) {
           const a = waveEnv * 0.25;
           const grad = ctx.createLinearGradient(0, waveY - 24 * DPR, 0, waveY + 24 * DPR);
-          grad.addColorStop(0, 'rgba(0,255,153,0)');
-          grad.addColorStop(0.5, `rgba(0,255,153,${a})`);
-          grad.addColorStop(1, 'rgba(0,255,153,0)');
+          grad.addColorStop(0, 'rgba(212,162,78,0)');
+          grad.addColorStop(0.5, `rgba(212,162,78,${a})`);
+          grad.addColorStop(1, 'rgba(212,162,78,0)');
           ctx.fillStyle = grad;
           ctx.fillRect(0, waveY - 24 * DPR, INTERNAL, 48 * DPR);
         }
@@ -595,8 +595,8 @@ export default function PhotoReveal({
             left: '50%',
             top: 4,
             transform: 'translateX(-50%)',
-            color: 'rgba(0,255,153,0.82)',
-            textShadow: '0 0 8px rgba(0,255,153,0.35)',
+            color: 'rgba(212,162,78,0.82)',
+            textShadow: '0 0 8px rgba(212,162,78,0.35)',
             whiteSpace: 'nowrap',
           }}
         >
@@ -614,7 +614,7 @@ export default function PhotoReveal({
         height={OUTER_H}
         style={{
           zIndex: 4,
-          filter: 'drop-shadow(0 0 4px rgba(0,255,153,0.35))',
+          filter: 'drop-shadow(0 0 4px rgba(212,162,78,0.35))',
           opacity: ready ? 1 : 0,
           transition: 'opacity 0.7s ease',
         }}
@@ -622,7 +622,7 @@ export default function PhotoReveal({
         {(() => {
           const L = 16;
           const pad = 1;
-          const s = 'rgba(0,255,153,0.6)';
+          const s = 'rgba(212,162,78,0.6)';
           const sw = 1.2;
           return (
             <g fill="none" stroke={s} strokeWidth={sw} strokeLinecap="round">
@@ -665,7 +665,7 @@ export default function PhotoReveal({
       >
         <span
           className="font-mono text-[9px] tracking-[0.14em] uppercase select-none"
-          style={{ color: 'rgba(0,255,153,0.6)', textShadow: '0 0 6px rgba(0,255,153,0.25)' }}
+          style={{ color: 'rgba(212,162,78,0.6)', textShadow: '0 0 6px rgba(212,162,78,0.25)' }}
         >
           {scanComplete ? (
             <>POINT_CLOUD · N={pointCount.toLocaleString()}</>
@@ -680,7 +680,7 @@ export default function PhotoReveal({
         </span>
         <span
           className="font-mono text-[9px] tracking-[0.14em] uppercase select-none"
-          style={{ color: 'rgba(0,255,153,0.6)', textShadow: '0 0 6px rgba(0,255,153,0.25)' }}
+          style={{ color: 'rgba(212,162,78,0.6)', textShadow: '0 0 6px rgba(212,162,78,0.25)' }}
         >
           {scanComplete ? 'DEPTH · RGB-D' : 'STRUCTURED_LIGHT'}
         </span>
@@ -713,7 +713,7 @@ function ScannerRingInline({ size, faceDiameter }: { size: number; faceDiameter:
           height: faceDiameter,
           borderRadius: '50%',
           boxShadow:
-            '0 0 0 1px rgba(0,255,153,0.35), 0 0 18px 3px rgba(0,255,153,0.18), 0 0 48px 16px rgba(0,255,153,0.08)',
+            '0 0 0 1px rgba(212,162,78,0.35), 0 0 18px 3px rgba(212,162,78,0.18), 0 0 48px 16px rgba(212,162,78,0.08)',
           animation: 'glowPulse 4s ease-in-out infinite',
           pointerEvents: 'none',
         }}
@@ -738,7 +738,7 @@ function ScannerRingInline({ size, faceDiameter }: { size: number; faceDiameter:
             cy={cy}
             r={rDash}
             fill="none"
-            stroke="rgba(0,255,153,0.25)"
+            stroke="rgba(212,162,78,0.25)"
             strokeWidth={0.9}
             strokeDasharray="2.5 8"
           />
@@ -757,7 +757,7 @@ function ScannerRingInline({ size, faceDiameter }: { size: number; faceDiameter:
               y1={y1}
               x2={x2}
               y2={y2}
-              stroke="rgba(0,255,153,0.42)"
+              stroke="rgba(212,162,78,0.42)"
               strokeWidth={1}
               strokeLinecap="round"
             />
@@ -787,7 +787,7 @@ function CameraBadge({
         width={28}
         height={20}
         viewBox="0 0 28 20"
-        style={{ filter: 'drop-shadow(0 0 6px rgba(0,255,153,0.35))' }}
+        style={{ filter: 'drop-shadow(0 0 6px rgba(212,162,78,0.35))' }}
       >
         <rect
           x={9}
@@ -796,7 +796,7 @@ function CameraBadge({
           height={3}
           rx={0.6}
           fill="rgba(10,20,16,0.95)"
-          stroke="rgba(0,255,153,0.85)"
+          stroke="rgba(212,162,78,0.85)"
           strokeWidth={0.9}
         />
         <rect
@@ -806,11 +806,11 @@ function CameraBadge({
           height={14}
           rx={1.8}
           fill="rgba(10,20,16,0.92)"
-          stroke="rgba(0,255,153,0.85)"
+          stroke="rgba(212,162,78,0.85)"
           strokeWidth={0.9}
         />
-        <circle cx={14} cy={11.5} r={4.4} fill="none" stroke="rgba(0,255,153,0.75)" strokeWidth={0.9} />
-        <circle cx={14} cy={11.5} r={2.6} fill="none" stroke="rgba(0,255,153,0.5)" strokeWidth={0.7} />
+        <circle cx={14} cy={11.5} r={4.4} fill="none" stroke="rgba(212,162,78,0.75)" strokeWidth={0.9} />
+        <circle cx={14} cy={11.5} r={2.6} fill="none" stroke="rgba(212,162,78,0.5)" strokeWidth={0.7} />
         <circle cx={14} cy={11.5} r={1.1} fill="rgba(180,255,220,1)" />
         <circle cx={23.5} cy={7.5} r={0.9} fill="rgba(255,90,90,1)">
           <animate attributeName="opacity" values="1;0.3;1" dur="1.1s" repeatCount="indefinite" />
@@ -821,8 +821,8 @@ function CameraBadge({
         style={{
           top: 22,
           [align]: 0,
-          color: 'rgba(0,255,153,0.8)',
-          textShadow: '0 0 4px rgba(0,255,153,0.35)',
+          color: 'rgba(212,162,78,0.8)',
+          textShadow: '0 0 4px rgba(212,162,78,0.35)',
           whiteSpace: 'nowrap',
         }}
       >
@@ -881,9 +881,9 @@ function drawRay(
 
   ctx.save();
   const wide = ctx.createLinearGradient(x, y, ex, ey);
-  wide.addColorStop(0, 'rgba(0,255,153,0)');
-  wide.addColorStop(0.25, `rgba(0,255,153,${0.12 * fade})`);
-  wide.addColorStop(1, 'rgba(0,255,153,0)');
+  wide.addColorStop(0, 'rgba(212,162,78,0)');
+  wide.addColorStop(0.25, `rgba(212,162,78,${0.12 * fade})`);
+  wide.addColorStop(1, 'rgba(212,162,78,0)');
   ctx.strokeStyle = wide;
   ctx.lineWidth = 10 * DPR;
   ctx.lineCap = 'round';
@@ -893,9 +893,9 @@ function drawRay(
   ctx.stroke();
 
   const core = ctx.createLinearGradient(x, y, ex, ey);
-  core.addColorStop(0, `rgba(0,255,153,${0.9 * fade})`);
+  core.addColorStop(0, `rgba(212,162,78,${0.9 * fade})`);
   core.addColorStop(0.6, `rgba(180,255,220,${0.95 * fade})`);
-  core.addColorStop(1, 'rgba(0,255,153,0)');
+  core.addColorStop(1, 'rgba(212,162,78,0)');
   ctx.strokeStyle = core;
   ctx.lineWidth = 1.2 * DPR;
   ctx.beginPath();

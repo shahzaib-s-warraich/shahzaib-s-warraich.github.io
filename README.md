@@ -1,55 +1,52 @@
-# osama-fawad.github.io
+# shahzaib-s-warraich.github.io
 
-This is my personal portfolio website, built with Next.js 16, React 19, TypeScript, and Tailwind CSS.
+Personal portfolio site for **Shahzaib Saqib Warraich** — AI Research Scientist (AI Safety & Alignment through Interpretability and Evaluation) and Co-Founder & COO of [Turon AI](https://www.turon.ai). Built with Next.js 16, React 19, TypeScript, Tailwind CSS, next-intl, and Framer Motion.
+
+## Structure
+
+- `messages/en.json` / `messages/fr.json` — all site copy (bio, education, research, industry experience, projects, skills, leadership, teaching, blog, books, awards, contact). `fr.json` currently mirrors the English text 1:1 (pending real French translation).
+- `src/app/[locale]/` — one route per section (`about`, `research`, `experience`, `projects`, `skills`, `leadership`, `teaching`, `blog`, `books`, `awards`, `contact`), plus `HomeClient.tsx` which renders the single-page scroll version of all of them.
+- `src/components/` — shared UI (Navbar, SectionNav, TimelineItem, ProjectCard/ProjectModal, SkillCategory, ContactForm, etc.).
+- `public/images/` — headshots, org/institution logos, publication-venue logos, book covers.
+- `public/projects/` — project card/case-study images.
+- `public/cv/` — CV PDF(s).
 
 ## CV download behavior
 
-- I put my CV PDF files inside `public/cv/`.
-- The **Download CV** buttons automatically download the most recently modified `.pdf` file from that folder.
+- CV PDF files live in `public/cv/`.
+- The **Download CV** buttons automatically download the most recently modified `.pdf` file in that folder (see `src/lib/cv.ts`).
 - If no PDF is found, the app falls back to `/cv/CV.pdf`.
 
 ## Prerequisites
 
-- Activate the Conda environment named `portfolio`
+- Node.js (see `package.json` for dependency versions; no Conda/virtualenv required — this is a plain Node/npm project).
 
 ## Setup (first time)
 
 ```bash
-export PATH="/home/osama/miniconda3/envs/portfolio/bin:$PATH"
-cd /home/osama/Desktop/PROJECTS/osama-fawad.github.io
 npm install --legacy-peer-deps
 ```
 
-## Run locally (recommended for development)
+`--legacy-peer-deps` is currently required due to a peer-dependency conflict between `next-intl` and Next.js 16.
+
+## Run locally
 
 ```bash
-export PATH="/home/osama/miniconda3/envs/portfolio/bin:$PATH"
-cd /home/osama/Desktop/PROJECTS/osama-fawad.github.io
-npm run dev -- --port 3000
+npm run dev
 ```
 
-Then I open:
+Then open `http://localhost:3000`. The dev server hot-reloads on code changes.
 
-- `http://localhost:3000`
-
-This mode automatically updates the page when I change code.
-
-## Static build (optional)
-
-If I want to generate static HTML files, I run:
+## Production build
 
 ```bash
-export PATH="/home/osama/miniconda3/envs/portfolio/bin:$PATH"
-cd /home/osama/Desktop/PROJECTS/osama-fawad.github.io
 npm run build
 ```
 
-The generated static files are placed in `out/`.
+This statically prerenders every route for both locales (`/en/...`, `/fr/...`).
 
-I can open the built site directly from `out/en/index.html` using a browser or a file server.
+## Lint
 
-## Summary
-
-- To develop and preview changes instantly: use `npm run dev -- --port 3000`
-- To view the final static output: run `npm run build` and open `out/en/index.html`
-- The dev server reloads automatically when code changes; static HTML does not update until you rebuild
+```bash
+npm run lint
+```

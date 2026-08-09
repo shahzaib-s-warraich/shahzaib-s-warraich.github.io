@@ -77,7 +77,7 @@ export default function AwardsPage() {
               className="glass rounded-xl p-6 border border-border hover:border-accent/35
                          transition-colors duration-300
                          hover:bg-white/[0.03]
-                         hover:shadow-[0_12px_40px_rgba(0,255,153,0.20)] group flex gap-5"
+                         hover:shadow-[0_12px_40px_rgba(212,162,78,0.20)] group flex gap-5"
             >
               {/* Icon */}
               <div className={`flex-shrink-0 w-12 h-12 rounded-xl border flex items-center justify-center group-hover:scale-110 transition-transform duration-300 ${cfg.bg} ${cfg.color}`}>

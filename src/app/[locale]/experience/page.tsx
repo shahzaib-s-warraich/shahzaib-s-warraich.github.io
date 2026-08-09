@@ -8,7 +8,7 @@ type Props = { params: Promise<{ locale: string }> };
 export async function generateMetadata({ params }: Props) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'experience' });
-  return { title: `${t('title')} — Osama Fawad` };
+  return { title: `${t("title")}, Shahzaib Warraich` };
 }
 
 export default async function ExperiencePage({ params }: Props) {

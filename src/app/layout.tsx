@@ -19,33 +19,31 @@ export const viewport = {
   initialScale: 1,
 };
 
-const BASE_URL = 'https://osama-fawad.github.io';
+const BASE_URL = 'https://shahzaib-s-warraich.github.io';
 
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
   title: {
-    default: 'Muhammad Osama Fawad — ML/CV Engineer & Robotics Researcher',
-    template: '%s | Osama Fawad',
+    default: 'Shahzaib Saqib Warraich: AI Research Scientist',
+    template: '%s | Shahzaib Warraich',
   },
   description:
-    'ML/CV Engineer & Robotics Researcher with 5+ years of R&D experience. Expert in Computer Vision, SLAM, 3D Reconstruction, Deep Learning, and LLM/Agentic AI. Erasmus Mundus Scholar (VIBOT). Open to roles in CV, Robotics & AI.',
+    'AI Research Scientist working on AI Safety and Alignment through interpretability and evaluation. M.S. Applied Data Science, USC. Co-Founder & COO of Turon AI. Papers at COLM 2026 and ICLR 2026 (Oral).',
   keywords: [
-    'Muhammad Osama Fawad',
-    'Computer Vision Engineer',
-    'Robotics Engineer',
-    'Machine Learning Engineer',
-    'Deep Learning',
-    'SLAM',
-    '3D Reconstruction',
-    'LLMs',
+    'Shahzaib Saqib Warraich',
+    'AI Research Scientist',
+    'AI Safety',
+    'AI Alignment',
+    'Interpretability',
+    'LLM Evaluation',
+    'Applied ML',
+    'Turon AI',
+    'USC',
     'Agentic AI',
-    'Autonomous Systems',
     'PyTorch',
-    'Erasmus Mundus',
-    'VIBOT',
   ],
-  authors: [{ name: 'Muhammad Osama Fawad', url: BASE_URL }],
-  creator: 'Muhammad Osama Fawad',
+  authors: [{ name: 'Shahzaib Saqib Warraich', url: BASE_URL }],
+  creator: 'Shahzaib Saqib Warraich',
   robots: { index: true, follow: true },
   icons: {
     icon: [{ url: '/favicon.svg', type: 'image/svg+xml' }],
@@ -54,25 +52,25 @@ export const metadata: Metadata = {
   openGraph: {
     type: 'website',
     url: BASE_URL,
-    siteName: 'Osama Fawad',
-    title: 'Muhammad Osama Fawad — ML/CV Engineer & Robotics Researcher',
+    siteName: 'Shahzaib Warraich',
+    title: 'Shahzaib Saqib Warraich: AI Research Scientist',
     description:
-      'ML/CV Engineer & Robotics Researcher. Expert in Computer Vision, SLAM, 3D Reconstruction, Deep Learning & LLM systems. Erasmus Mundus Scholar. 5+ years industry R&D.',
+      'AI Research Scientist working on AI Safety and Alignment through interpretability and evaluation. M.S. Applied Data Science, USC. Co-Founder & COO of Turon AI.',
     images: [
       {
-        url: '/images/osama_headshot.png',
+        url: '/images/headshot.jpg',
         width: 800,
         height: 800,
-        alt: 'Muhammad Osama Fawad',
+        alt: 'Shahzaib Saqib Warraich',
       },
     ],
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Muhammad Osama Fawad — ML/CV Engineer & Robotics Researcher',
+    title: 'Shahzaib Saqib Warraich: AI Research Scientist',
     description:
-      'ML/CV Engineer & Robotics Researcher with 5+ years R&D experience. Expert in CV, SLAM, 3D Vision, Deep Learning & LLMs.',
-    images: ['/images/osama_headshot.png'],
+      'AI Research Scientist working on AI Safety and Alignment through interpretability and evaluation. Co-Founder & COO of Turon AI.',
+    images: ['/images/headshot.jpg'],
   },
 };
 

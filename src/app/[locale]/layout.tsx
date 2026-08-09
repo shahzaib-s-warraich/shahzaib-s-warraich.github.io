@@ -42,7 +42,7 @@ export default async function LocaleLayout({
           {children}
         </main>
       </PageTransition>
-      <Footer />
+      <Footer cvHref={cvHref} />
     </NextIntlClientProvider>
   );
 }

@@ -1,262 +1,410 @@
 {
   "nav": {
-    "home": "Accueil",
-    "about": "Éducation",
-    "experience": "Expérience",
-    "projects": "Projets",
-    "skills": "Compétences",
-    "awards": "Distinctions",
+    "home": "Home",
+    "about": "Education",
+    "research": "Research",
+    "experience": "Experience",
+    "projects": "Projects",
+    "skills": "Skills",
+    "leadership": "Leadership",
+    "teaching": "Teaching",
+    "blog": "Blog",
+    "books": "Books",
+    "awards": "Awards",
     "contact": "Contact",
-    "downloadCV": "Télécharger CV",
-    "available": "Ouvert aux opportunités"
+    "more": "More",
+    "downloadCV": "Download CV",
+    "available": "Open to opportunities"
   },
   "home": {
-    "greeting": "Bonjour, je suis",
-    "name": "Muhammad Osama Fawad",
-    "tagline": "Je construis à l'intersection de",
-    "roles": ["Vision par Ordinateur", "Robotique", "Apprentissage Profond", "LLMs & Agents", "Systèmes Autonomes"],
-    "description": "Ingénieur en Vision par Ordinateur et IA avec **plus de 5 ans d'expérience R&D industrielle** — de la mise en production de modèles ML pour **300 000+ flottes clients** chez **Motive** (Forbes Cloud 100, dashcam IA #1 VTTI) au prototypage de guidage chirurgical AR chez **Cochlear**. MSc en Vision par Ordinateur & Robotique (UBE / UdG, Érudit Erasmus). Spécialisé en **Deep Learning**, **Vision 3D**, **SLAM**, **ROS**, **LLMs** et **IA agentique** — du développement de modèles au déploiement cloud et edge.",
+    "greeting": "Hello, I'm",
+    "name": "Shahzaib Saqib Warraich",
+    "tagline": "I work at the intersection of",
+    "roles": [
+      "AI Interpretability Research",
+      "Agentic AI",
+      "Multimodal LLMs",
+      "Computer Vision"
+    ],
+    "description": "AI Research Scientist working on **AI Safety and Alignment** through **interpretability** and **evaluation**: understanding what language models truly know and building rigorous methods to measure it. M.S. in Applied Data Science at **USC**, researching under **Prof. Swabha Swayamdipta**, with papers at **COLM 2026** and **ICLR 2026 (Oral)**. Co-Founder & COO of **Turon AI**, building research-depth, production-grade B2B AI solutions for the Fortune 500.",
+    "expertise": [
+      "AI Interpretability Research",
+      "Agentic AI",
+      "Multimodal LLMs",
+      "Computer Vision"
+    ],
+    "expertiseLabel": "Areas of Expertise",
     "ctaContact": "Contact",
-    "ctaProjects": "Projets",
-    "ctaCV": "Télécharger CV",
-    "locationBadge": "Basé en France 🇫🇷",
-    "openTo": "Ouvert à : ML/CV, Robotique, Ingénierie Logicielle & Déploiement",
-    "available": "Disponible pour le Travail",
+    "ctaProjects": "Projects",
+    "ctaCV": "Download CV",
+    "locationBadge": "Based in Los Angeles, CA 🇺🇸",
+    "openTo": "Open to: AI Research, Interpretability, Evaluation, and Applied ML roles",
+    "available": "Available for Work",
     "highlights": {
-      "industry": { "value": "5+ Ans", "label": "Expérience Industrielle", "sublabel": "IA · CV · Robotique" },
-      "masters":  { "value": "M.Sc.",  "label": "Vision par Ordinateur & Robotique", "sublabel": "Érudit Erasmus" }
+      "industry": {
+        "value": "Co-Founder",
+        "label": "& COO, Turon AI",
+        "sublabel": "Applied AI R&D"
+      },
+      "masters": {
+        "value": "M.S.",
+        "label": "Applied Data Science, USC",
+        "sublabel": "Viterbi Scholar"
+      }
     }
   },
   "about": {
-    "title": "Formation",
-    "subtitle": "Parcours académique & formation",
+    "title": "Education",
+    "subtitle": "Academic background & training",
     "timeline": [
       {
-        "id": "girona",
-        "institution": "University of Girona (UdG)",
-        "degree": "Échange Erasmus+ — M.Sc. Systèmes Robotiques Intelligents",
-        "location": "Gérone, Espagne 🇪🇸",
-        "period": "Sep 2025 – Déc 2025",
-        "description": "Semestre d'échange Erasmus+ en tant que 3e semestre du Master Européen conjoint en Vision par Ordinateur & Robotique.",
+        "id": "usc",
+        "institution": "University of Southern California",
+        "degree": "M.S. in Applied Data Science",
+        "location": "Los Angeles, CA, USA 🇺🇸",
+        "period": "Jan 2024 – Dec 2025",
+        "description": "Graduate coursework and research in applied machine learning, natural language processing, and statistical methods at the USC Viterbi School of Engineering, including research on LLM interpretability and evaluation under Prof. Swabha Swayamdipta.",
         "courses": [
-          "Apprentissage par Renforcement",
-          "Machine Learning Avancé",
-          "Perception 3D & Fusion de Capteurs"
+          "Applied Natural Language Processing",
+          "Applied Machine Learning",
+          "Deep Learning",
+          "Analysis of Algorithms",
+          "Data Management"
         ],
         "highlights": [
-          "**Échange Erasmus+**, cofinancé par l'**Union Européenne** 🇪🇺",
-          "3e Semestre (2e année) du Masters Européen conjoint en Vision par Ordinateur & Robotique"
+          "**USC Andrew J. Viterbi Scholarship** recipient, 2024–2025",
+          "**William J. Fulbright Scholarship** recipient, 2024–2025",
+          "Course Producer for **CSCI 544: Applied Natural Language Processing**",
+          "Vice President, **Viterbi Graduate Student Association (VGSA)**"
         ],
-        "logo": "/images/udg_logo.png",
-        "url": "https://www.udg.edu/en/masters-en-tecnologia/mirs",
-        "type": "exchange"
-      },
-      {
-        "id": "ube",
-        "institution": "Université Bourgogne Europe (UBE)",
-        "degree": "M.Sc. Vision par Ordinateur & Robotique (VIBOT)",
-        "location": "Le Creusot, Bourgogne, France 🇫🇷",
-        "period": "Sep 2024 – Juin 2026",
-        "description": "Master Européen conjoint en Vision par Ordinateur, Robotique et Systèmes Intelligents dans plusieurs universités européennes.",
-        "courses": [
-          "Vision par Ordinateur",
-          "Machine Learning Avancé",
-          "Robotique Autonome",
-          "Perception 3D & Fusion de Capteurs",
-          "Apprentissage par Renforcement",
-          "Analyse d'Images Médicales",
-          "Traitement du Signal"
-        ],
-        "highlights": [
-          "**Érudit Erasmus** — échange Erasmus+ à l'Université de Gérone, Espagne",
-          "Thèse : **Chirurgie Assistée par Réalité Augmentée** pour Implants Cochléaires chez [Cochlear Ltd](https://www.cochlear.com/au/en/home)"
-        ],
-        "logo": "/images/ube_logo_3.png",
-        "url": "https://www.ube.fr/",
+        "logo": "/images/usc_logo.png",
+        "url": "https://viterbischool.usc.edu",
         "type": "master"
       },
       {
-        "id": "giki",
-        "institution": "GIK Institute of Engineering Sciences (GIKI)",
-        "degree": "B.Sc. Sciences de l'Ingénieur — Photonique et Ingénierie Optique",
-        "location": "Topi, Pakistan 🇵🇰",
-        "period": "2016 – 2020",
-        "description": "Programme d'ingénierie accrédité en Photonique et Ingénierie Optique avec spécialisation en IA, robotique et systèmes embarqués.",
+        "id": "nust",
+        "institution": "National University of Sciences and Technology (NUST)",
+        "degree": "B.E. in Electrical Engineering and Computer Science",
+        "location": "Islamabad, Pakistan 🇵🇰",
+        "period": "Sep 2017 – Jun 2021",
+        "description": "Undergraduate engineering degree combining electrical engineering fundamentals with computer science, spanning embedded systems, software engineering, and machine learning.",
         "courses": [
-          "Introduction à l'Intelligence Artificielle",
-          "IA Appliquée",
-          "Vision Robotique",
-          "Structures de Données & Algorithmes",
-          "Programmation Orientée Objet (POO)",
-          "Interfaçage Microprocesseur"
+          "Data Structures & Algorithms",
+          "Machine Learning",
+          "Digital Signal Processing",
+          "Embedded Systems",
+          "Object-Oriented Programming"
         ],
         "highlights": [
-          "Accréditation : [Washington Accord](https://www.internationalengineeringalliance.org/accords/washington-accord) & Pakistan Engineering Council (PEC)",
-          "**Président** du Chapitre [SPIE](https://spie.org/) GIKI & **Capitaine d'Équipe**, Équipe Robotique Technobolt (GIKI)",
-          "Projet de Fin d'Études : **Robot Sous-Marin Bio-Inspiré** à Locomotion par Nageoire Ondulante — **1ère Position à l'Université**",
-          "Obtenu la **Subvention IGNITE** (Fonds ICT Nationaux du Gouvernement du Pakistan) pour le Projet de Fin d'Études"
+          "Foundation for a career spanning edge AI, computer vision, and applied machine learning"
         ],
-        "logo": "/images/giki_logo.png",
-        "url": "https://www.giki.edu.pk",
+        "logo": "/images/nust_logo.jpg",
+        "url": "https://nust.edu.pk",
         "type": "bachelor"
       }
     ]
   },
+  "research": {
+    "title": "Research Experience",
+    "subtitle": "Publications & research positions",
+    "papers": [
+      {
+        "id": "congrs",
+        "title": "Sample, Align, Synthesize: Graph-Based Response Synthesis with ConGrs",
+        "venue": "COLM 2026",
+        "venueLogo": "/images/colm_logo.png",
+        "supervisor": "Prof. Swabha Swayamdipta",
+        "authors": "S. Ghosh, S.S. Warraich, D. Tarsadiya, G. Yauney, S. Swayamdipta",
+        "period": "2025 – 2026",
+        "description": "Developed and validated a consensus decoding framework applied to factuality-critical tasks (long-form biography generation and PopQA), establishing robust baselines and characterizing the factuality-information tradeoff.",
+        "highlights": [
+          "Conducted systematic evaluations across long-form biography generation and PopQA benchmarks with **5 independent replications per model**, establishing robust baseline performance metrics",
+          "Designed and implemented **high-throughput batch processing infrastructure** for FActScore evaluation, engineering response caching that resolved critical processing bottlenecks",
+          "Architected comprehensive **ablation studies** on sample-size scaling during alignment and response synthesis, plus temperature-based sensitivity analysis",
+          "Extended the framework to **refusal-aware settings** across Numerical False Presuppositions, Scientific Attributions, and Historical Events, integrating LLM-as-a-judge abstention detection"
+        ],
+        "tech": [
+          "LLM Evaluation",
+          "FActScore",
+          "Consensus Decoding",
+          "LLM-as-Judge",
+          "Python"
+        ],
+        "paper": "https://arxiv.org/abs/2510.03527",
+        "type": "paper"
+      },
+      {
+        "id": "microbench",
+        "title": "How Reliable is Language Model Micro-Benchmarking?",
+        "venue": "ICLR 2026 (Oral)",
+        "venueLogo": "/images/iclr_logo.png",
+        "supervisor": "Prof. Swabha Swayamdipta",
+        "authors": "G. Yauney, S.S. Warraich, S. Swayamdipta",
+        "period": "2025 – 2026",
+        "description": "Proposed a confidence-based stratified sampling methodology for micro-benchmark selection in LLM meta-evaluation, adapting principled statistical techniques from computer vision literature.",
+        "highlights": [
+          "Designed **confidence-based stratified sampling** for micro-benchmark selection, adapting techniques from computer vision literature to language model evaluation",
+          "Built comprehensive evaluation infrastructure integrating **stratified sampling, TinyBenchmarks (P-IRT, GP-IRT), and task-reduction baselines** for systematic comparison",
+          "Maintained and extended a modular, reproducible research codebase for meta-evaluation experiments across benchmark selection methodologies"
+        ],
+        "tech": [
+          "LLM Evaluation",
+          "Statistical Sampling",
+          "TinyBenchmarks",
+          "P-IRT / GP-IRT",
+          "Python"
+        ],
+        "paper": "https://arxiv.org/abs/2510.08730",
+        "type": "paper"
+      }
+    ]
+  },
   "experience": {
-    "title": "Expérience",
-    "subtitle": "Postes industriels & recherche",
+    "title": "Industry Experience",
+    "subtitle": "Applied AI roles across research and production",
     "jobs": [
       {
-        "id": "cochlear",
-        "company": "Cochlear Ltd",
-        "role": "Ingénieur Vision par Ordinateur — R&D",
-        "location": "France 🇫🇷",
-        "period": "Fév 2026 – Présent",
-        "description": "Développement d'un système de guidage chirurgical AR inédit dans l'une des plus grandes entreprises de medtech — la chirurgie CI, surnommée **'chirurgie à l'aveugle'**, est réalisée par très peu de spécialistes, avec **3× plus de procédures nécessaires que de chirurgiens disponibles d'ici 2030** ; ce système permet aux non-spécialistes d'opérer, répondant directement à la pénurie mondiale.",
-        "highlights": [
-          "Construction du **SLAM Visuel-Inertiel** (deep learning + approches géométriques, RGB-D + IMU) pour la **Reconstruction 3D** dense en temps réel ; recalage automatique **CT 3D-vers-scène** ; segmentation neurale pour la superposition AR en direct",
-          "Implémentation et évaluation de **ORB-SLAM3 + TSDF Fusion**, **MASt3R-SLAM** et **FoundationPose** (estimation & suivi de pose 6DoF)",
-          "Remplacement de tous les prototypes infaisables — **réduction de coût 20×** grâce à la conception algorithm-first",
-          "Soumission interne de **2 demandes de brevet** pour le guidage chirurgical AR et l'enregistrement 3D"
-        ],
-        "tech": ["Python", "PyTorch", "C++", "ORB-SLAM3", "MASt3R-SLAM", "FoundationPose", "TSDF Fusion", "Intel RealSense", "RGB-D Camera", "IMU", "ICP Registration", "Optical Tracking", "Meta Quest 3", "ROS2", "AR", "Signal Processing"],
-        "logo": "/images/cochlear_logo.png",
-        "url": "https://www.cochlear.com/fr/fr/home"
-      },
-      {
-        "id": "bittech",
-        "company": "BitTech Solutions",
-        "role": "Ingénieur IA Senior",
+        "id": "turon",
+        "company": "Turon AI",
+        "role": "Co-Founder & COO",
         "location": "Remote 🌐",
-        "period": "Sep 2025 – Fév 2026",
-        "description": "Direction de la livraison IA end-to-end pour **10+ clients enterprise** en tant qu'architecte de solutions — de la conception au **déploiement cloud**, avec **200% d'augmentation du taux de closing**.",
+        "period": "Jan 2026 – Present",
+        "description": "Applied AI R&D and Production Engineering. We build research-depth, production-grade B2B AI solutions for the Fortune 500.",
         "highlights": [
-          "Construction de **pipelines RAG** de production (LangChain, LlamaIndex, Ollama) avec **retrieval à citation précise**",
-          "Développement de systèmes d'**IA Agentique** et d'automatisation de workflows avec **LangGraph**, MCP et n8n",
-          "Définition de l'architecture technique, du périmètre et de la **stratégie de déploiement cloud** pour des cas d'usage IA enterprise variés"
+          "Own **solution architecture and technical pre-sales**: leading discovery, scoping system designs, and converting them into signed engagements and delivery plans",
+          "Architect and ship **production agentic systems and AI infrastructure** for enterprise clients",
+          "Built and run the firm's commercial and operating layer: entity structure, GTM, engineering infrastructure, and technical hiring"
         ],
-        "tech": ["LangChain", "LangGraph", "LlamaIndex", "RAG", "OpenAI", "n8n", "Python", "Docker", "Ollama", "Azure"],
-        "logo": "/images/bittech_logo.jpeg",
-        "url": "https://bittechsol.com/"
+        "tech": [
+          "Agentic AI",
+          "Solution Architecture",
+          "LLMs",
+          "Python",
+          "Cloud Infrastructure"
+        ],
+        "logo": "/images/turon_logo.png",
+        "url": "https://www.turon.ai"
       },
       {
-        "id": "motive",
-        "company": "Motive",
-        "role": "Software Engineer, Machine Learning — R&D",
-        "location": "Remote / USA 🇺🇸",
-        "period": "Juin 2021 – Sep 2024",
-        "description": "**3+ ans** à construire une dashcam IA de production pour la sécurité des conducteurs — entreprise **Forbes Cloud 100**, **dashcam IA #1 VTTI**, déployée sur **300 000+ flottes commerciales** en Amérique du Nord.",
+        "id": "paramount",
+        "company": "Paramount",
+        "role": "Data Scientist Intern",
+        "location": "Los Angeles, CA 🇺🇸",
+        "period": "May 2025 – Oct 2025",
+        "description": "Entertainment Analytics & AI: content performance forecasting and GenAI explainability for a major media organization.",
         "highlights": [
-          "**Modèles Computer Vision** : Entraînement et déploiement de **EfficientDet & YoloX** avec **Knowledge Distillation** ; implémentation de **LSTM/ConvLSTM stateless** sur embeddings détecteur pour la **Reconnaissance d'Activité** en temps réel",
-          "Filtres heuristiques de post-traitement — **10% d'amélioration de la précision** ; FFT sur données télémétriques pour la détection de somnolence",
-          "**Data Engineering & MLOps** : Pipelines AWS automatisés (EC2, S3, Lambda) ; requêtes SQL et dashboards — **35% de gain cumulatif en précision** et **22% de réduction des accidents clients**"
+          "Enhanced content performance forecasting accuracy by **up to 20%** across critical business KPIs through strategic integration of multi-platform social media engagement signals",
+          "Architected a production-grade **GenAI explainability system** using ensemble LLM-as-a-judge methodology with majority-voting consensus for title-level performance attribution",
+          "Democratized advanced ML insights for non-technical stakeholders across the organization"
         ],
-        "tech": ["PyTorch", "TensorFlow", "CUDA", "Python", "EfficientDet", "YOLOX", "LSTM/ConvLSTM", "SQL", "Redash", "AWS (EC2/S3/Lambda)"],
-        "logo": "/images/motive.jpg",
-        "url": "https://gomotive.com"
+        "tech": [
+          "LLM-as-Judge",
+          "Forecasting",
+          "Python",
+          "Data Visualization",
+          "GenAI"
+        ],
+        "logo": "/images/paramount_logo.png",
+        "url": "https://www.paramount.com"
       },
       {
-        "id": "paf",
-        "company": "Facility of Advanced Robotics and Intelligent Systems (109-PAF)",
-        "role": "Ingénieur R&D — Robotique & Perception",
-        "location": "Pakistan 🇵🇰",
-        "period": "Août 2020 – Juin 2021",
-        "description": "",
+        "id": "retrocausal",
+        "company": "Retrocausal",
+        "role": "Research Engineer II (AI)",
+        "location": "Remote 🌐",
+        "period": "Dec 2022 – Dec 2023",
+        "description": "Computer Vision & Manufacturing Intelligence: precision assembly verification and ergonomics assessment for Fortune 500 manufacturing clients.",
         "highlights": [
-          "Recherche, prototypage et déploiement de **4+ systèmes robotiques & perception** incluant véhicules autonomes, drones et simulateurs",
-          "Implémentation du **Filtre de Kalman Étendu** pour la fusion de capteurs IMU, caméra et télémétrie",
-          "Déploiement d'inférence deep learning sur **Nvidia Jetson TX2** pour la perception embarquée temps réel",
-          "Intégration matérielle complète via I2C, SPI, UART, RS232"
+          "Designed and deployed precision assembly verification (**Assembly Copilot**) achieving **98% detection accuracy** for clients including Schneider Electric, Carrier, and Honda, using state-of-the-art object detection and activity recognition",
+          "Architected automated model training infrastructure with **cut-paste-mix augmentation** to generate photorealistic synthetic data, reducing manual annotation overhead by **80%**",
+          "Conceptualized and led development of a computer-vision **ergonomics risk assessment module** for Ergo Copilot, addressing workplace safety and regulatory compliance"
         ],
-        "tech": ["Python", "C++", "ROS", "OpenCV", "EKF / Kalman Filter", "Nvidia Jetson TX2", "Raspberry Pi", "Embedded Systems", "IMU"],
-        "logo": "/images/Pakistan Air Force Logo.png",
-        "url": ""
+        "tech": [
+          "Object Detection",
+          "Activity Recognition",
+          "Synthetic Data",
+          "Computer Vision",
+          "Python"
+        ],
+        "logo": "/images/retrocausal_logo.jpeg",
+        "url": "https://www.retrocausal.ai"
+      },
+      {
+        "id": "adlytic",
+        "company": "Adlytic AI",
+        "role": "AI Engineer",
+        "location": "Remote 🌐",
+        "period": "Jun 2021 – Dec 2022",
+        "description": "Edge AI & Recommender Systems: model optimization for edge inference and a cloud-based recommendation engine.",
+        "highlights": [
+          "Implemented **knowledge distillation and NVIDIA TensorRT** optimization to achieve a **66% reduction in edge inference latency**, within 1.5% of baseline accuracy",
+          "Architected and operationalized a scalable **cloud-based recommender system** achieving **97% prediction accuracy**, driving a **3× increase** in product conversion rates"
+        ],
+        "tech": [
+          "Knowledge Distillation",
+          "TensorRT",
+          "Recommender Systems",
+          "Edge AI",
+          "Cloud"
+        ],
+        "logo": "/images/adlytic_logo.png",
+        "url": "https://www.adlyticai.com"
       }
     ]
   },
   "projects": {
-    "title": "Projets",
-    "subtitle": "Travaux de recherche & d'ingénierie",
+    "title": "Projects",
+    "subtitle": "Research & applied engineering case studies",
     "filters": {
-      "all": "Tous",
-      "cv3d": "Vision & 3D",
-      "robotics": "Robotique",
-      "ai": "IA & LLMs",
-      "generative": "IA Générative"
+      "all": "All",
+      "research": "Research",
+      "evaluation": "Evaluation",
+      "production": "Production",
+      "computerVision": "Computer Vision"
     },
     "items": [
       {
-        "id": "sfm",
-        "title": "Reconstruction 3D par SfM Incrémental",
-        "category": "cv3d",
-        "description": "Pipeline Structure-from-Motion complet — extraction de caractéristiques, matching, rejet d'aberrants par RANSAC, ajustement de faisceaux incrémental — pour reconstruire des nuages de points 3D denses depuis des images non ordonnées.",
-        "tech": ["Python", "OpenCV", "COLMAP", "NumPy", "Open3D"],
-        "image": "/projects/sfm-point-cloud.png",
-        "github": "https://github.com/osama-fawad/SfM-Structure-from-Motion-3D-Reconstruction-from-Multiple-2D-Images",
+        "id": "congrs",
+        "title": "ConGrs: Graph-Based Response Synthesis for Factual LLM Generation",
+        "category": "research",
+        "description": "A consensus decoding framework validated on factuality-critical tasks (long-form biography generation and PopQA), establishing baseline factuality-information tradeoff curves. Accepted to COLM 2026.",
+        "problem": "LLMs trade off factual accuracy for informativeness in long-form generation. Consensus and sampling-based decoding methods hadn't been rigorously validated for factuality-critical tasks like biography generation and open-domain QA.",
+        "approach": [
+          "Applied a consensus decoding framework across long-form biography generation and PopQA, running 5 independent replications per model",
+          "Built high-throughput batch FActScore evaluation infrastructure with response caching to resolve processing bottlenecks",
+          "Ran ablations on sample-size scaling and temperature sensitivity during alignment and response synthesis",
+          "Extended the framework to refusal-aware settings (Numerical False Presuppositions, Scientific Attributions, Historical Events) with LLM-as-a-judge abstention detection"
+        ],
+        "impact": [
+          "Established baseline factuality-information tradeoff curves for consensus decoding",
+          "Resolved evaluation-pipeline bottlenecks in large-scale FActScore batch processing",
+          "Accepted to COLM 2026"
+        ],
+        "role": "Researcher, under Prof. Swabha Swayamdipta, USC",
+        "tech": [
+          "Python",
+          "LLM Evaluation",
+          "FActScore",
+          "Consensus Decoding",
+          "LLM-as-Judge"
+        ],
+        "image": "/projects/congrs-graph-figure.png",
+        "github": "",
         "demo": "",
+        "paper": "https://arxiv.org/abs/2510.03527",
+        "video": "",
+        "featured": true
+      },
+      {
+        "id": "microbenchmarking",
+        "title": "Reliable Micro-Benchmarking for LLM Evaluation",
+        "category": "evaluation",
+        "description": "A confidence-based stratified sampling framework for cheaper, more reliable LLM micro-benchmark selection, compared systematically against TinyBenchmarks and task-reduction baselines. ICLR 2026 Oral.",
+        "problem": "Full LLM benchmark suites are expensive to run repeatedly, and existing micro-benchmark subsampling methods for meta-evaluation lacked principled reliability guarantees adapted from other fields.",
+        "approach": [
+          "Adapted confidence-based stratified sampling from computer vision literature to language model evaluation",
+          "Built evaluation infrastructure comparing stratified sampling against TinyBenchmarks (P-IRT, GP-IRT) and task-reduction baselines",
+          "Maintained a modular, reproducible codebase supporting systematic comparison across benchmark selection methodologies"
+        ],
+        "impact": [
+          "A principled framework for cheaper, more reliable LLM micro-benchmark selection",
+          "Accepted to ICLR 2026 as an Oral presentation"
+        ],
+        "role": "Researcher, under Prof. Swabha Swayamdipta, USC",
+        "tech": [
+          "Python",
+          "Statistical Sampling",
+          "TinyBenchmarks",
+          "P-IRT / GP-IRT",
+          "LLM Evaluation"
+        ],
+        "image": "/projects/microbenchmarking-figure.png",
+        "github": "",
+        "demo": "",
+        "paper": "https://arxiv.org/abs/2510.08730",
+        "video": "",
+        "featured": true
+      },
+      {
+        "id": "assembly-copilot",
+        "title": "Assembly Copilot: Computer-Vision Assembly Verification for Fortune 500 Manufacturing",
+        "category": "computerVision",
+        "description": "Real-time, camera-based assembly verification deployed to Fortune 500 manufacturing lines, achieving 98% detection accuracy while cutting manual annotation overhead by 80% through synthetic data generation.",
+        "problem": "Manual assembly-line QA at scale (for clients including Schneider Electric, Carrier, and Honda) is error-prone and slow, requiring real-time, camera-based verification that assembly steps were performed correctly.",
+        "approach": [
+          "Deployed state-of-the-art object detection and activity recognition for real-time, in-line verification",
+          "Architected automated model training infrastructure using cut-paste-mix augmentation to generate photorealistic synthetic datasets"
+        ],
+        "impact": [
+          "98% detection accuracy in production",
+          "80% reduction in manual annotation overhead",
+          "Shipped to multiple Fortune 500 manufacturing clients"
+        ],
+        "role": "Research Engineer II (AI), Retrocausal",
+        "tech": [
+          "Object Detection",
+          "Activity Recognition",
+          "Synthetic Data",
+          "Computer Vision",
+          "Python"
+        ],
+        "image": "/projects/assembly-copilot.webp",
+        "github": "",
+        "demo": "https://retrocausal.ai/assembly-copilot/",
         "paper": "",
         "video": "",
         "featured": true
       },
       {
-        "id": "vislam",
-        "title": "SLAM Visuel-Inertiel + Reconstruction 3D Dense",
-        "category": "cv3d",
-        "description": "Pipelines SLAM visuel-inertiel et reconstruction dense avec ORB-SLAM3 + fusion TSDF et MASt3R-SLAM pour la cartographie 3D de précision chirurgicale.",
-        "tech": ["C++", "Python", "ORB-SLAM3", "TSDF", "MASt3R-SLAM", "OpenCV"],
-        "image": "/projects/orbslam3-vislam.png",
+        "id": "ergo-copilot",
+        "title": "Ergo Copilot: Computer-Vision Ergonomics Risk Assessment",
+        "category": "computerVision",
+        "description": "A computer-vision ergonomics risk assessment module for continuous, objective monitoring of workplace safety and regulatory compliance on manufacturing floors.",
+        "problem": "Manufacturing floors need continuous, objective ergonomic-risk monitoring for regulatory compliance and worker safety, which is hard to do manually or consistently at scale.",
+        "approach": [
+          "Conceived and led development of a CV-based ergonomics risk assessment module built on top of the Ergo Copilot product"
+        ],
+        "impact": [
+          "Shipped as a differentiated product capability addressing workplace safety optimization and regulatory compliance"
+        ],
+        "role": "Research Engineer II (AI), Retrocausal",
+        "tech": [
+          "Computer Vision",
+          "Ergonomics Analysis",
+          "Pose Estimation",
+          "Python"
+        ],
+        "image": "/projects/ergo-copilot.webp",
         "github": "",
-        "demo": "",
-        "paper": "",
-        "video": "",
-        "featured": true
-      },
-      {
-        "id": "rag",
-        "title": "LLM Auto-Hébergé RAG pour Support Enterprise",
-        "category": "ai",
-        "description": "Systèmes RAG de production pour le support enterprise avec retrieval à citation précise et LLMs hébergés localement.",
-        "tech": ["LangChain", "LlamaIndex", "FAISS", "ChromaDB", "Ollama", "Python"],
-        "image": "/projects/rag-assistant-ui.png",
-        "github": "",
-        "demo": "",
-        "paper": "",
-        "video": "",
-        "featured": true
-      },
-      {
-        "id": "n8n",
-        "title": "Orchestrateur ETL IA Multi-App Autonome (n8n)",
-        "category": "ai",
-        "description": "Système d'orchestration de workflows ETL multi-app dans n8n — intégrant APIs REST, LLMs et agents IA pour les opérations enterprise et les pipelines de reporting IA assisté.",
-        "tech": ["n8n", "ETL", "REST APIs", "LangChain", "Automatisation", "PostgreSQL"],
-        "image": "/projects/n8n-etl-workflow.png",
-        "github": "",
-        "demo": "https://simple-zenobia-e5e.notion.site/Multi-App-ETL-Autonomous-AI-Workspace-Orchestrator-n8n-e0340e4c37f54984a822bb9494522314",
+        "demo": "https://retrocausal.ai/ergo-copilot/",
         "paper": "",
         "video": "",
         "featured": false
       },
       {
-        "id": "underwater-robot",
-        "title": "Robot Sous-Marin Bio-Inspiré",
-        "category": "robotics",
-        "description": "Robot sous-marin à propulsion par nageoire ondulante avec capteurs et contrôle embarqués pour la recherche en locomotion robotique bio-inspirée.",
-        "tech": ["Robotique", "Systèmes Embarqués", "Contrôle", "Traitement du Signal"],
-        "image": "/projects/underwater-robot-real.png",
-        "github": "",
-        "demo": "",
-        "paper": "",
-        "video": "",
-        "featured": false
-      },
-      {
-        "id": "gan",
-        "title": "BigGAN-lite pour Génération de Visages",
-        "category": "generative",
-        "description": "Variante légère de BigGAN pour la génération multi-attributs de visages sur CelebA avec complexité réduite.",
-        "tech": ["PyTorch", "Python", "BigGAN", "CelebA", "CUDA", "NumPy"],
-        "image": "/projects/biggan-architecture.png",
+        "id": "edge-recommender",
+        "title": "Edge-Optimized Recommender & Model Compression Pipeline",
+        "category": "production",
+        "description": "Two tightly-related production workstreams: knowledge distillation and TensorRT optimization for low-latency edge inference, and a scalable cloud recommender system driving conversion.",
+        "problem": "Production edge deployments needed low-latency inference under tight compute budgets, while the recommendation stack needed to scale accuracy and conversion in the cloud.",
+        "approach": [
+          "Applied knowledge distillation and NVIDIA TensorRT quantization/optimization for edge inference",
+          "Architected and operationalized a scalable cloud-based recommender system"
+        ],
+        "impact": [
+          "66% reduction in edge inference latency, within 1.5% of baseline accuracy",
+          "Recommender achieved 97% prediction accuracy",
+          "Drove a 3× increase in product conversion rate"
+        ],
+        "role": "AI Engineer, Adlytic AI",
+        "tech": [
+          "Knowledge Distillation",
+          "TensorRT",
+          "Recommender Systems",
+          "Edge AI",
+          "Cloud"
+        ],
+        "image": "/projects/edge-recommender-architecture.png",
         "github": "",
         "demo": "",
         "paper": "",
@@ -264,77 +412,28 @@
         "featured": false
       },
       {
-        "id": "sd-controlnet",
-        "title": "Stable Diffusion avec ControlNet",
-        "category": "generative",
-        "description": "Synthèse d'images contrôlable avec **Stable Diffusion** et **ControlNet** — génération conditionnée par profondeur, contours et pose.",
-        "tech": ["PyTorch", "Stable Diffusion", "ControlNet", "Diffusers", "Python", "CUDA"],
-        "image": "/projects/stable-diffusion-controlnet.png",
-        "github": "",
-        "demo": "",
-        "paper": "",
-        "video": "",
-        "featured": false
-      },
-      {
-        "id": "satellite-analysis",
-        "title": "Pipeline d'Analyse d'Images Satellitaires",
-        "category": "cv3d",
-        "description": "Analyse end-to-end d'images Sentinel-2 — détection végétation/eau par NDVI/NDWI, détection de bâtiments YOLOv8 avec découpage en tuiles, carte interactive Leaflet.js et backend FastAPI.",
-        "tech": ["Python", "YOLOv8", "Sentinel-2", "FastAPI", "Leaflet.js", "OpenCV", "NumPy"],
-        "image": "/projects/satellite-ndvi.png",
-        "github": "https://github.com/osama-fawad/Satellite-Imagery-Analysis-Pipeline-Python",
-        "demo": "",
-        "paper": "",
-        "video": "",
-        "featured": false
-      },
-      {
-        "id": "dubbing",
-        "title": "Doublage Vidéo Multilingue + Lip-Sync GAN",
-        "category": "generative",
-        "description": "Pipeline de doublage IA end-to-end : ASR Faster Whisper → traduction NLLB-200 (200+ langues) → Edge TTS avec alignement temporel élastique → lip-sync GAN Wav2Lip. Compatible YouTube et fichiers locaux.",
-        "tech": ["PyTorch", "Faster Whisper", "NLLB-200", "Wav2Lip", "Edge TTS", "Python", "CUDA", "FFmpeg"],
-        "image": "/projects/lipsync-pipeline.png",
-        "github": "https://github.com/osama-fawad/multi-language-dubbing-lipsync",
-        "demo": "https://simple-zenobia-e5e.notion.site/Multi-Language-Dubbing-Lip-Sync-AI-Pipeline-a1cf717fa4fe4097894e7274fb540182",
-        "paper": "",
-        "video": "",
-        "featured": true
-      },
-      {
-        "id": "turtlebot",
-        "title": "TurtleBot Évitement d'Obstacles LiDAR avec RL",
-        "category": "robotics",
-        "description": "Entraînement d'un TurtleBot par apprentissage par renforcement pour l'évitement d'obstacles LiDAR et la planification de trajectoire autonome.",
-        "tech": ["Python", "MuJoCo", "PPO", "SAC", "ROS2", "LiDAR"],
-        "image": "/projects/turtlebot-sim.png",
-        "github": "",
-        "demo": "",
-        "paper": "",
-        "video": "",
-        "featured": false
-      },
-      {
-        "id": "activity-recognition",
-        "title": "Reconnaissance d'Activité avec Embeddings YOLO + LSTM",
-        "category": "ai",
-        "description": "Reconnaissance d'activité par embeddings YOLO dans des LSTM pour la compréhension spatio-temporelle du comportement.",
-        "tech": ["YOLO", "LSTM", "Python", "Vision par Ordinateur"],
-        "image": "/projects/convlstm-activity-model.png",
-        "github": "",
-        "demo": "",
-        "paper": "",
-        "video": "",
-        "featured": false
-      },
-      {
-        "id": "job-agent",
-        "title": "Agent de Candidature Automatique",
-        "category": "ai",
-        "description": "Agent autonome recherchant des postes pertinents, adaptant le contenu du CV et automatisant des parties des candidatures sur diverses plateformes.",
-        "tech": ["LangChain", "LangGraph", "MCP", "Python", "Automatisation", "LLMs"],
-        "image": "/projects/job-application-bot-ui.png",
+        "id": "genai-explainability",
+        "title": "GenAI Title-Performance Explainability & Forecasting",
+        "category": "evaluation",
+        "description": "A production-grade GenAI explainability system for entertainment content performance, combining multi-platform social signal forecasting with ensemble LLM-as-a-judge attribution for non-technical stakeholders.",
+        "problem": "Entertainment content performance forecasts needed to integrate noisy multi-platform social signals, and ML-driven title-level insights needed to be interpretable for non-technical stakeholders.",
+        "approach": [
+          "Integrated multi-platform social media engagement signals into content performance forecasting models",
+          "Built a production-grade GenAI explainability system using ensemble LLM-as-a-judge with majority-voting consensus for title-level attribution"
+        ],
+        "impact": [
+          "Up to 20% improvement in content performance forecasting accuracy across critical KPIs",
+          "Democratized ML insights for non-technical stakeholders org-wide"
+        ],
+        "role": "Data Scientist Intern, Paramount",
+        "tech": [
+          "LLM-as-Judge",
+          "Forecasting",
+          "Python",
+          "Data Visualization",
+          "GenAI"
+        ],
+        "image": "/projects/genai-title-dashboard.png",
         "github": "",
         "demo": "",
         "paper": "",
@@ -344,126 +443,265 @@
     ]
   },
   "skills": {
-    "title": "Compétences",
-    "subtitle": "Stack technique en ML, Vision, Robotique & IA",
+    "title": "Skills",
+    "subtitle": "Technical stack across AI research, evaluation & applied ML",
     "categories": [
       {
         "id": "languages",
-        "title": "Programmation & Systèmes",
+        "title": "Programming & Systems",
         "icon": "code",
-        "skills": ["Python", "C++", "CUDA", "SQL", "Bash / Linux", "Git"]
+        "skills": [
+          "Python",
+          "C/C++",
+          "SQL",
+          "Git",
+          "LaTeX"
+        ]
+      },
+      {
+        "id": "deep_learning",
+        "title": "Deep Learning",
+        "icon": "brain",
+        "skills": [
+          "PyTorch",
+          "Hugging Face",
+          "vLLM",
+          "Fine-tuning",
+          "LLM Evaluation"
+        ]
       },
       {
         "id": "ml",
-        "title": "Machine Learning & Deep Learning",
-        "icon": "brain",
-        "skills": ["PyTorch", "TensorFlow", "OpenCV", "CNNs", "Vision Transformers (ViT, DINO)", "Object Detection (YOLOx, EfficientDet)", "Image Segmentation (SAM)", "LSTM / ConvLSTM", "Knowledge Distillation", "Model Quantization & Optimization", "ONNX", "HuggingFace"]
-      },
-      {
-        "id": "cv3d",
-        "title": "Vision 3D & SLAM",
-        "icon": "eye",
-        "skills": ["Visual-Inertial Odometry", "ORB-SLAM3", "MASt3R-SLAM", "Structure-from-Motion (SfM)", "Stereo Vision", "Depth Estimation", "ICP Registration", "TSDF Fusion", "Point Cloud Processing", "Open3D", "PCL", "Intel RealSense", "Gaussian Splatting", "Augmented Reality", "3D CT Registration"]
-      },
-      {
-        "id": "robotics",
-        "title": "Robotique & Systèmes Autonomes",
-        "icon": "robot",
-        "skills": ["ROS / ROS2", "SLAM", "Filtre de Kalman Étendu (EKF)", "Fusion de Capteurs (IMU, LiDAR, Caméra)", "Apprentissage par Renforcement (PPO, SAC)", "Path Planning (A*)", "URDF / XACRO", "Nvidia Jetson TX2", "Raspberry Pi", "Systèmes Embarqués", "MuJoCo", "Gazebo", "Transfert Sim-to-Real"]
-      },
-      {
-        "id": "ai_llm",
-        "title": "LLMs, RAG & IA Agentique",
+        "title": "Machine Learning",
         "icon": "sparkles",
-        "skills": ["LangChain", "LangGraph", "LlamaIndex", "Pipelines RAG", "IA Agentique", "Bases Vectorielles (ChromaDB, FAISS, Pinecone)", "BGE-M3", "Ollama", "VLMs", "Whisper", "IA Multimodale", "Fine-tuning (LoRA / PEFT)", "MCP", "Prompt Engineering"]
-      },
-      {
-        "id": "mlops",
-        "title": "MLOps & Cloud",
-        "icon": "cloud",
-        "skills": ["AWS (EC2, S3, Lambda, SageMaker)", "Azure", "Docker", "GitHub Actions", "CI/CD", "MLflow", "Kubernetes", "DVC", "n8n", "Déploiement Edge"]
+        "skills": [
+          "Scikit-Learn",
+          "OpenCV",
+          "Interpretability",
+          "Statistical Sampling",
+          "LLM-as-Judge"
+        ]
       },
       {
         "id": "data",
-        "title": "Data Engineering & Analysis",
+        "title": "Data Analysis",
         "icon": "chart",
-        "skills": ["Snowflake", "SQL", "Pipelines ETL", "Redash", "Dashboard Design", "Field Performance Analysis", "AWS Lambda Pipelines", "FastAPI"]
+        "skills": [
+          "Pandas",
+          "Dask",
+          "PySpark",
+          "Data Pipelines"
+        ]
+      },
+      {
+        "id": "dataviz",
+        "title": "Data Visualization",
+        "icon": "eye",
+        "skills": [
+          "Matplotlib",
+          "Seaborn",
+          "Plotly"
+        ]
+      },
+      {
+        "id": "cloud",
+        "title": "Cloud",
+        "icon": "cloud",
+        "skills": [
+          "AWS SageMaker",
+          "GCP Vertex AI"
+        ]
+      },
+      {
+        "id": "others",
+        "title": "Infrastructure & Tools",
+        "icon": "robot",
+        "skills": [
+          "Docker",
+          "Kubernetes",
+          "MongoDB",
+          "Git",
+          "Figma"
+        ]
+      },
+      {
+        "id": "languages_spoken",
+        "title": "Languages & Interests",
+        "icon": "code",
+        "skills": [
+          "English",
+          "French",
+          "AI Ethics & Responsibility",
+          "Hackathons",
+          "UX Design"
+        ]
+      }
+    ]
+  },
+  "leadership": {
+    "title": "Leadership",
+    "subtitle": "Student advocacy at USC",
+    "items": [
+      {
+        "id": "vgsa",
+        "type": "leadership",
+        "title": "Vice President",
+        "org": "Viterbi Graduate Student Association (VGSA)",
+        "location": "Los Angeles, CA 🇺🇸",
+        "period": "May 2025 – Present",
+        "highlights": [
+          "Led student advocacy initiatives representing **6,000 graduate students** as primary liaison between the student body and university administration",
+          "Managed strategic partnerships with internal stakeholders and external organizations to enhance graduate student resources and professional opportunities",
+          "Delivered monthly progress reports to the **Viterbi School Dean**, communicating student concerns and actionable recommendations"
+        ]
+      }
+    ]
+  },
+  "teaching": {
+    "title": "Teaching",
+    "subtitle": "Course instruction at USC Viterbi School of Engineering",
+    "items": [
+      {
+        "id": "csci544-fall24",
+        "type": "teaching",
+        "title": "Course Producer, CSCI 544: Applied Natural Language Processing",
+        "org": "University of Southern California, Viterbi School of Engineering",
+        "location": "Los Angeles, CA 🇺🇸",
+        "period": "Aug 2024 – Dec 2024",
+        "highlights": [
+          "Produced course content and supported instruction for graduate-level Applied NLP"
+        ]
+      },
+      {
+        "id": "csci544-spring25",
+        "type": "teaching",
+        "title": "Course Producer, CSCI 544: Applied Natural Language Processing",
+        "org": "University of Southern California, Viterbi School of Engineering",
+        "location": "Los Angeles, CA 🇺🇸",
+        "period": "Jan 2025 – May 2025",
+        "highlights": [
+          "Produced course content and supported instruction for graduate-level Applied NLP"
+        ]
+      }
+    ]
+  },
+  "blog": {
+    "title": "Blog",
+    "subtitle": "Writing on AI research, evaluation, and building in applied AI",
+    "items": [
+      {
+        "id": "linkedin-newsletter",
+        "type": "linkedin",
+        "title": "LinkedIn Newsletter",
+        "description": "Long-form writing on AI research, evaluation, and building in applied AI, published on LinkedIn.",
+        "cta": "Read on LinkedIn",
+        "url": "https://www.linkedin.com/in/shahzaib-saqib-warraich/",
+        "status": "live"
+      },
+      {
+        "id": "press",
+        "type": "press",
+        "title": "Press & Articles",
+        "description": "Articles and features in digital and print media, coming soon.",
+        "cta": "Coming Soon",
+        "url": "",
+        "status": "coming-soon"
+      }
+    ]
+  },
+  "books": {
+    "title": "Books",
+    "subtitle": "Recommended reading",
+    "items": [
+      {
+        "id": "thinking-fast-and-slow",
+        "title": "Thinking, Fast and Slow",
+        "author": "Daniel Kahneman",
+        "description": "A foundational read on how we think and decide: the interplay between fast, intuitive judgment and slow, deliberate reasoning.",
+        "cover": "/images/books/thinking-fast-and-slow.jpg",
+        "url": "https://www.amazon.com/s?k=Thinking%2C%20Fast%20and%20Slow%20Daniel%20Kahneman"
+      },
+      {
+        "id": "sapiens",
+        "title": "Sapiens: A Brief History of Humankind",
+        "author": "Yuval Noah Harari",
+        "description": "A sweeping account of how shared myths and cooperation shaped human civilization. Essential context for thinking about intelligence, natural or artificial.",
+        "cover": "/images/books/sapiens.jpg",
+        "url": "https://www.amazon.com/s?k=Sapiens%20A%20Brief%20History%20of%20Humankind%20Yuval%20Noah%20Harari"
+      },
+      {
+        "id": "beyond-order",
+        "title": "Beyond Order: 12 More Rules for Life",
+        "author": "Jordan B. Peterson",
+        "description": "A thoughtful companion on discipline, meaning, and navigating complexity. Useful principles for both research and life.",
+        "cover": "/images/books/beyond-order.jpg",
+        "url": "https://www.amazon.com/s?k=Beyond%20Order%2012%20More%20Rules%20for%20Life%20Jordan%20B.%20Peterson"
+      },
+      {
+        "id": "structures",
+        "title": "Structures: Or Why Things Don't Fall Down",
+        "author": "J.E. Gordon",
+        "description": "A classic, engaging introduction to engineering intuition: how structures actually hold together, and why that mindset generalizes well beyond civil engineering.",
+        "cover": "/images/books/structures.jpg",
+        "url": "https://www.amazon.com/s?k=Structures%20Or%20Why%20Things%20Don%27t%20Fall%20Down%20J.E.%20Gordon"
       }
     ]
   },
   "awards": {
-    "title": "Distinctions & Reconnaissances",
-    "subtitle": "Bourses, subventions & victoires en compétitions",
+    "title": "Awards & Recognition",
+    "subtitle": "Scholarships & honors",
     "items": [
       {
-        "id": "erasmus",
-        "title": "Érudit Erasmus+",
-        "org": "Union Européenne",
-        "year": "2025",
-        "description": "Bourse Erasmus+ attribuée par l'Union Européenne pour un échange semestriel à l'Université de Gérone, Espagne, en M.Sc. Systèmes Robotiques Intelligents — dans le cadre du Master Européen conjoint en Vision par Ordinateur & Robotique.",
+        "id": "viterbi",
+        "title": "USC Andrew J. Viterbi Scholarship",
+        "org": "USC Viterbi School of Engineering",
+        "year": "2024-2025",
+        "description": "Awarded the USC Andrew J. Viterbi Scholarship in support of graduate studies in the M.S. Applied Data Science program.",
         "type": "scholarship"
       },
       {
-        "id": "fyp_best",
-        "title": "Prix du Meilleur Projet de Fin d'Études",
-        "org": "GIK Institute of Engineering Sciences and Technology",
-        "year": "2020",
-        "description": "Prix institutionnel du Meilleur PFE pour le Robot Sous-Marin Bio-Inspiré à locomotion par nageoire ondulante.",
-        "type": "award"
-      },
-      {
-        "id": "ignite",
-        "title": "Subvention IGNITE",
-        "org": "Fonds National ICT R&D du Gouvernement du Pakistan",
-        "year": "2020",
-        "description": "Obtenu la subvention maximale IGNITE pour le Projet de Fin d'Études Robot Sous-Marin Bio-Inspiré à GIKI.",
-        "type": "grant"
-      },
-      {
-        "id": "neo18",
-        "title": "1ère Place — Module RoboMaze",
-        "org": "Compétition d'Ingénierie NEO'18",
-        "year": "2018",
-        "description": "1ère place au défi Robot Solveur de Labyrinthe à NEO'18, avec implémentation de l'algorithme A* en temps réel sur robot autonome.",
-        "type": "competition"
-      },
-      {
-        "id": "neo20",
-        "title": "2ème Place — Module IA",
-        "org": "Compétition d'Ingénierie NEO'20",
-        "year": "2020",
-        "description": "2ème place au défi IA avec une Mini Voiture Autonome à NEO'20.",
-        "type": "competition"
+        "id": "fulbright",
+        "title": "William J. Fulbright Scholarship",
+        "org": "U.S. Department of State",
+        "year": "2024-2025",
+        "description": "Awarded the William J. Fulbright Scholarship, a flagship international educational exchange program, to pursue graduate studies at USC.",
+        "type": "scholarship"
       }
     ]
   },
   "contact": {
     "title": "Contact",
-    "subtitle": "Travaillons ensemble",
-    "description": "Je recherche activement des opportunités en Ingénierie ML/CV, Robotique, et IA/LLM. N'hésitez pas à me contacter.",
+    "subtitle": "Let's work together",
+    "description": "I'm always open to conversations about AI research, interpretability, evaluation, and applied ML collaborations. Feel free to reach out.",
     "form": {
-      "name": "Votre Nom",
-      "email": "Votre Email",
-      "subject": "Sujet",
-      "message": "Votre Message",
-      "send": "Envoyer le Message",
-      "sending": "Envoi en cours...",
-      "success": "Message envoyé ! Je reviendrai vers vous bientôt.",
-      "error": "Une erreur s'est produite. Veuillez réessayer."
+      "name": "Your Name",
+      "email": "Your Email",
+      "subject": "Subject",
+      "message": "Your Message",
+      "send": "Send Message",
+      "sending": "Sending...",
+      "success": "Message sent! I'll get back to you soon.",
+      "error": "Something went wrong. Please try again."
     },
     "info": {
-      "location": "Antibes, Provence-Alpes-Côte d'Azur, France 🇫🇷",
-      "email": "osamafawad@gmail.com",
-      "whatsapp": "+33 6 66 10 12 47",
-      "availability": "Disponible pour des collaborations"
+      "location": "Los Angeles, CA, USA 🇺🇸",
+      "email": "shahzaibsaqibwarraich@gmail.com",
+      "emailWork": "shahzaib@turon.ai",
+      "phone": "+1 213 681-6140",
+      "phoneHref": "tel:+12136816140",
+      "availability": "Available for collaborations"
     },
     "social": {
       "github": "GitHub",
-      "linkedin": "LinkedIn"
+      "linkedin": "LinkedIn",
+      "twitter": "X / Twitter",
+      "scholar": "Google Scholar",
+      "scholarUrl": "https://scholar.google.com/citations?hl=en&view_op=list_works&user=98QphrAAAAAJ",
+      "cv": "Download CV"
     }
   },
   "footer": {
-    "built": "Construit avec Next.js & Framer Motion",
-    "rights": "Tous droits réservés"
+    "built": "Built with Next.js & Framer Motion",
+    "rights": "All rights reserved"
   }
 }

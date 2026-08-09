@@ -1,5 +1,13 @@
 'use client';
+import { useState } from 'react';
 import { motion } from 'framer-motion';
+
+function initialsFor(name: string): string {
+  const words = name.replace(/\(.*?\)/g, '').trim().split(/\s+/).filter(Boolean);
+  if (words.length === 0) return '?';
+  if (words.length === 1) return words[0].slice(0, 2).toUpperCase();
+  return (words[0][0] + words[1][0]).toUpperCase();
+}
 
 function renderRich(text: string): React.ReactNode[] {
   const parts = text.split(/(\*\*[^*]+\*\*|\[[^\]]+\]\([^)]+\))/g);
@@ -26,6 +34,8 @@ function renderRich(text: string): React.ReactNode[] {
 
 interface TimelineItemProps {
   logo?: string;
+  /** Small venue-credibility badge (e.g. a publication venue logo) rendered next to the institution line. */
+  venueLogo?: string;
   title: string;
   institution: string;
   period: string;
@@ -34,13 +44,14 @@ interface TimelineItemProps {
   highlights?: string[];
   courses?: string[];
   tech?: string[];
-  type?: 'master' | 'bachelor' | 'exchange' | 'work';
+  type?: 'master' | 'bachelor' | 'exchange' | 'work' | 'paper';
   index: number;
   url?: string;
 }
 
 export default function TimelineItem({
   logo,
+  venueLogo,
   title,
   institution,
   period,
@@ -53,11 +64,15 @@ export default function TimelineItem({
   index,
   url,
 }: TimelineItemProps) {
+  const [logoFailed, setLogoFailed] = useState(false);
+  const [venueLogoFailed, setVenueLogoFailed] = useState(false);
+
   const BadgeColor: Record<string, string> = {
     exchange: 'bg-blue-500/10 text-blue-400 border-blue-500/20',
     master: 'bg-purple-500/10 text-purple-400 border-purple-500/20',
     bachelor: 'bg-accent-glow text-accent border-accent/20',
     work: 'bg-green-500/10 text-green-400 border-green-500/20',
+    paper: 'bg-accent-glow text-accent border-accent/20',
   };
 
   const badgeLabel: Record<string, string> = {
@@ -65,11 +80,19 @@ export default function TimelineItem({
     master: "Master's",
     bachelor: "Bachelor's",
     work: 'Industry',
+    paper: 'Paper',
   };
 
   const linkProps = url
     ? { href: url, target: '_blank' as const, rel: 'noopener noreferrer' }
     : null;
+
+  const logoBadge = (
+    <div className="w-10 h-10 rounded-md bg-accent-glow border border-accent/25 flex items-center justify-center
+                     text-accent font-mono text-xs font-bold group-hover:scale-110 transition-transform duration-300">
+      {initialsFor(institution)}
+    </div>
+  );
 
   return (
     <motion.div
@@ -91,22 +114,36 @@ export default function TimelineItem({
         className="glass rounded-xl p-6 border border-border hover:border-accent/35
                    transition-colors duration-300 group
                    hover:bg-white/[0.03]
-                   hover:shadow-[0_12px_40px_rgba(0,255,153,0.20)]"
+                   hover:shadow-[0_12px_40px_rgba(212,162,78,0.20)]"
       >
         {/* Header */}
         <div className="flex items-start gap-4 mb-4">
 
-          {/* Logo — clickable if url exists */}
+          {/* Logo — clickable if url exists; falls back to an initials badge on 404 */}
           {logo && (
             linkProps ? (
               <a {...linkProps} className="flex-shrink-0 w-12 h-12 rounded-lg bg-bg-secondary border border-border
                                           flex items-center justify-center overflow-hidden
                                           hover:border-accent/40 transition-colors duration-200 cursor-pointer">
-                <img src={logo} alt={institution} className="w-10 h-10 object-contain group-hover:scale-110 transition-transform duration-300" />
+                {logoFailed ? logoBadge : (
+                  <img
+                    src={logo}
+                    alt={institution}
+                    onError={() => setLogoFailed(true)}
+                    className="w-10 h-10 object-contain group-hover:scale-110 transition-transform duration-300"
+                  />
+                )}
               </a>
             ) : (
               <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-bg-secondary border border-border flex items-center justify-center overflow-hidden">
-                <img src={logo} alt={institution} className="w-10 h-10 object-contain group-hover:scale-110 transition-transform duration-300" />
+                {logoFailed ? logoBadge : (
+                  <img
+                    src={logo}
+                    alt={institution}
+                    onError={() => setLogoFailed(true)}
+                    className="w-10 h-10 object-contain group-hover:scale-110 transition-transform duration-300"
+                  />
+                )}
               </div>
             )
           )}
@@ -141,6 +178,14 @@ export default function TimelineItem({
                 </a>
               ) : (
                 <span className="font-medium text-text-primary">{institution}</span>
+              )}
+              {venueLogo && !venueLogoFailed && (
+                <img
+                  src={venueLogo}
+                  alt=""
+                  onError={() => setVenueLogoFailed(true)}
+                  className="h-4 w-auto max-w-[3.25rem] object-contain opacity-90"
+                />
               )}
               <span>{location}</span>
               <span className="font-mono text-xs text-text-muted">{period}</span>

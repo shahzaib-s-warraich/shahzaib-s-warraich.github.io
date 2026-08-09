@@ -8,7 +8,7 @@ export async function generateMetadata({ params }: Props) {
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'home' });
   return {
-    title: { absolute: "Osama Fawad's Portfolio" },
+    title: { absolute: "Shahzaib Saqib Warraich: AI Research Scientist" },
     description: t('description'),
   };
 }

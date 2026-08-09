@@ -3,10 +3,10 @@ import { useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const CATEGORY_LABELS: Record<string, string> = {
-  cv3d: 'Computer Vision & 3D',
-  robotics: 'Robotics',
-  ai: 'AI & LLMs',
-  generative: 'Generative AI',
+  research: 'Research',
+  evaluation: 'Evaluation',
+  production: 'Production',
+  computerVision: 'Computer Vision',
 };
 
 export interface ProjectData {
@@ -21,6 +21,11 @@ export interface ProjectData {
   video?: string;
   featured: boolean;
   category: string;
+  /** Optional structured case-study breakdown. */
+  problem?: string;
+  approach?: string | string[];
+  impact?: string[];
+  role?: string;
 }
 
 interface ProjectModalProps {
@@ -96,8 +101,72 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
 
             {/* Body */}
             <div className="p-6">
-              <h2 className="text-xl font-bold text-text-primary mb-3 leading-snug">{project.title}</h2>
+              <h2 className="text-xl font-bold text-text-primary mb-2 leading-snug">{project.title}</h2>
+              {project.role && (
+                <p className="text-xs font-mono uppercase tracking-wider text-accent mb-3">{project.role}</p>
+              )}
               <p className="text-sm text-text-secondary leading-relaxed mb-5">{project.description}</p>
+
+              {/* Structured case-study breakdown */}
+              {(project.problem || project.approach || (project.impact && project.impact.length > 0)) && (
+                <div className="mb-6 space-y-5">
+                  {project.problem && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.3, delay: 0.05 }}
+                      className="glass rounded-xl p-4 border border-border"
+                    >
+                      <p className="text-xs font-semibold text-accent uppercase tracking-wider mb-2">Problem</p>
+                      <p className="text-sm text-text-secondary leading-relaxed">{project.problem}</p>
+                    </motion.div>
+                  )}
+
+                  {project.approach && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.3, delay: 0.1 }}
+                      className="glass rounded-xl p-4 border border-border"
+                    >
+                      <p className="text-xs font-semibold text-accent uppercase tracking-wider mb-2">Approach</p>
+                      {Array.isArray(project.approach) ? (
+                        <ul className="space-y-1.5">
+                          {project.approach.map((a, i) => (
+                            <li key={i} className="flex items-start gap-2 text-sm text-text-secondary leading-relaxed">
+                              <span className="mt-1.5 flex-shrink-0 w-1 h-1 rounded-full bg-accent" />
+                              <span>{a}</span>
+                            </li>
+                          ))}
+                        </ul>
+                      ) : (
+                        <p className="text-sm text-text-secondary leading-relaxed">{project.approach}</p>
+                      )}
+                    </motion.div>
+                  )}
+
+                  {project.impact && project.impact.length > 0 && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.3, delay: 0.15 }}
+                      className="glass rounded-xl p-4 border border-accent/25 bg-accent/[0.04]"
+                    >
+                      <p className="text-xs font-semibold text-accent uppercase tracking-wider mb-2">Impact</p>
+                      <ul className="space-y-1.5">
+                        {project.impact.map((imp, i) => (
+                          <li key={i} className="flex items-start gap-2 text-sm text-text-primary leading-relaxed font-medium">
+                            <svg className="w-4 h-4 mt-0.5 flex-shrink-0 text-accent" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                              <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
+                            </svg>
+                            <span>{imp}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </motion.div>
+                  )}
+                </div>
+              )}
 
               {/* Full tech stack */}
               <div className="mb-5">
@@ -136,7 +205,7 @@ export default function ProjectModal({ project, onClose }: ProjectModalProps) {
                     <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                       <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
                     </svg>
-                    Live Demo
+                    View Product
                   </a>
                 )}
                 {project.paper && (

@@ -2,13 +2,18 @@
 import { useState, useEffect } from 'react';
 
 const SECTIONS = [
-  { id: 'hero',       label: 'Home' },
-  { id: 'education',  label: 'Education' },
-  { id: 'experience', label: 'Experience' },
-  { id: 'projects',   label: 'Projects' },
-  { id: 'skills',     label: 'Skills' },
-  { id: 'awards',     label: 'Awards' },
-  { id: 'contact',    label: 'Contact' },
+  { id: 'hero',        label: 'Home' },
+  { id: 'education',   label: 'Education' },
+  { id: 'research',    label: 'Research' },
+  { id: 'experience',  label: 'Experience' },
+  { id: 'projects',    label: 'Projects' },
+  { id: 'skills',      label: 'Skills' },
+  { id: 'leadership',  label: 'Leadership' },
+  { id: 'teaching',    label: 'Teaching' },
+  { id: 'blog',        label: 'Blog' },
+  { id: 'books',       label: 'Books' },
+  { id: 'awards',      label: 'Awards' },
+  { id: 'contact',     label: 'Contact' },
 ];
 
 function scrollToSection(id: string) {
@@ -21,8 +26,8 @@ function scrollToSection(id: string) {
 function dotClasses(isActive: boolean, isPast: boolean, compact: boolean) {
   if (isActive) {
     return compact
-      ? 'w-2.5 h-2.5 bg-accent border-accent shadow-[0_0_8px_rgba(0,255,153,0.65)]'
-      : 'w-3 h-3 bg-accent border-accent shadow-[0_0_10px_rgba(0,255,153,0.65)]';
+      ? 'w-2.5 h-2.5 bg-accent border-accent shadow-[0_0_8px_rgba(212,162,78,0.65)]'
+      : 'w-3 h-3 bg-accent border-accent shadow-[0_0_10px_rgba(212,162,78,0.65)]';
   }
   if (isPast) {
     return compact
@@ -97,7 +102,7 @@ function SectionDots({
                         <div
                           className={`
                             w-px transition-colors duration-500
-                            ${showLabels ? 'h-7' : 'h-4'}
+                            ${showLabels ? 'h-5' : 'h-3'}
                             ${isPast ? 'bg-accent/50' : 'bg-accent/18'}
                           `}
                         />
