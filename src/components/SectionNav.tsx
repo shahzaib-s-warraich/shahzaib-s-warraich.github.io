@@ -59,7 +59,11 @@ function SectionDots({
       }>
         <div className={showLabels
           ? ''
-          : 'glass rounded-full border border-white/[0.09] shadow-[0_4px_20px_rgba(0,0,0,0.35)] px-2 py-3'
+          // Below xl this pill is decorative only (pointer-events-none) and sits fixed over
+          // page content, so it must stay properly translucent rather than reusing the
+          // ~70%-opaque .glass card treatment — otherwise it visually blocks whatever text
+          // scrolls underneath it (confirmed: the hero bio paragraph on mobile).
+          : 'bg-bg-card/20 backdrop-blur-md rounded-full border border-white/[0.06] px-1.5 py-2.5'
         }>
           <div className="flex flex-col">
             {SECTIONS.map(({ id, label }, i) => {
