@@ -5,6 +5,39 @@
 :root {
   --font-inter: 'Inter', system-ui, sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
+
+  /* ── Theme tokens (dark, default) ──
+     Space-separated RGB triples so Tailwind's rgb(var(--x) / <alpha-value>)
+     utilities can apply opacity modifiers (bg-accent/10, etc). Swapped
+     wholesale under [data-theme="light"] below — ThemeToggle/ThemeScript
+     set the attribute on <html>. */
+  --color-bg-primary: 10 13 18;
+  --color-bg-secondary: 16 19 28;
+  --color-bg-card: 21 26 36;
+  --color-bg-card-hover: 27 33 46;
+  --color-accent: 47 102 144;
+  --color-accent-dim: 31 74 110;
+  --color-accent-muted: 79 138 184;
+  --color-text-primary: 238 241 245;
+  --color-text-secondary: 163 173 186;
+  --color-text-muted: 111 122 137;
+  --color-border: 35 42 56;
+  --color-shadow: 0 0 0;
+}
+
+[data-theme='light'] {
+  --color-bg-primary: 250 251 253;
+  --color-bg-secondary: 241 244 248;
+  --color-bg-card: 255 255 255;
+  --color-bg-card-hover: 236 240 246;
+  --color-accent: 47 102 144;
+  --color-accent-dim: 31 74 110;
+  --color-accent-muted: 79 138 184;
+  --color-text-primary: 16 21 29;
+  --color-text-secondary: 71 84 102;
+  --color-text-muted: 108 118 133;
+  --color-border: 223 228 236;
+  --color-shadow: 30 41 59;
 }
 
 /* ── Base Resets ── */
@@ -19,12 +52,13 @@ html {
 }
 
 body {
-  background-color: #0a0d12;
-  color: #eef1f5;
+  background-color: rgb(var(--color-bg-primary));
+  color: rgb(var(--color-text-primary));
   font-family: var(--font-inter);
   overflow-x: hidden;
   width: 100%;
   max-width: 100vw;
+  transition: background-color 0.2s ease, color 0.2s ease;
 }
 
 /* ── Scrollbar ── */
@@ -32,7 +66,7 @@ body {
   width: 4px;
 }
 ::-webkit-scrollbar-track {
-  background: #0a0d12;
+  background: rgb(var(--color-bg-primary));
 }
 ::-webkit-scrollbar-thumb {
   background: #2f6690;
@@ -67,10 +101,10 @@ body {
 
 /* ── Glassmorphism Card ── */
 .glass {
-  background: rgba(20, 27, 40, 0.7);
+  background: rgb(var(--color-bg-card) / 0.7);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
-  border: 1px solid rgba(255, 255, 255, 0.04);
+  border: 1px solid rgb(var(--color-text-primary) / 0.04);
 }
 
 /* ── Accent Border ── */

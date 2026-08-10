@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import { useTranslations, useLocale } from 'next-intl';
 import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
+import ThemeToggle from './ThemeToggle';
 
 // Primary links stay directly on the desktop bar; secondary/newer sections
 // nest under a "More" dropdown so the bar doesn't overflow at 12 sections.
@@ -165,8 +166,9 @@ export default function Navbar({ cvHref }: { cvHref: string }) {
           </div>
         </nav>
 
-        {/* Right side: CV download (desktop) */}
+        {/* Right side: theme toggle + CV download (desktop) */}
         <div className="hidden md:flex items-center gap-3">
+          <ThemeToggle />
           <a
             href={cvHref}
             download
@@ -176,8 +178,9 @@ export default function Navbar({ cvHref }: { cvHref: string }) {
           </a>
         </div>
 
-        {/* Mobile: menu toggle */}
+        {/* Mobile: theme toggle + menu toggle */}
         <div className="flex md:hidden items-center gap-2">
+          <ThemeToggle />
           <button
             className="flex flex-col gap-1.5 p-2"
             onClick={() => setMenuOpen((v) => !v)}

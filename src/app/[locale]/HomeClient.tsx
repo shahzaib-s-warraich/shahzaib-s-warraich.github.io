@@ -342,7 +342,7 @@ export default function HomeClient({ cvHref }: { cvHref: string }) {
               transition={{ duration: 0.4, delay: 0.2 }}
               className="text-xl md:text-2xl font-medium text-text-secondary mb-6 min-h-[2rem] flex flex-wrap items-center gap-x-2"
             >
-              <span className="text-[#c0c0c0] text-base">{t('tagline')}</span>
+              <span className="text-text-secondary text-base">{t('tagline')}</span>
               <TypewriterText words={roles} className="text-accent font-semibold" />
             </motion.div>
 
@@ -350,7 +350,7 @@ export default function HomeClient({ cvHref }: { cvHref: string }) {
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: 0.3 }}
-              className="text-[#c8c8c8] text-base leading-relaxed mb-6 max-w-lg"
+              className="text-text-secondary text-base leading-relaxed mb-6 max-w-lg"
             >
               {renderRich(t('description'))}
             </motion.p>

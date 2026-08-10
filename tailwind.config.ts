@@ -6,30 +6,34 @@ const config: Config = {
     './src/components/**/*.{js,ts,jsx,tsx,mdx}',
     './src/app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
+  darkMode: ['selector', '[data-theme="dark"]'],
   theme: {
     extend: {
       colors: {
+        // Each token resolves through a CSS custom property (set in globals.css
+        // and swapped per [data-theme]), so `bg-bg-primary`, `bg-accent/10`, etc.
+        // keep working unchanged while automatically following the active theme.
         bg: {
-          primary: '#0a0d12',
-          secondary: '#10131c',
-          card: '#151a24',
-          cardHover: '#1b212e',
+          primary: 'rgb(var(--color-bg-primary) / <alpha-value>)',
+          secondary: 'rgb(var(--color-bg-secondary) / <alpha-value>)',
+          card: 'rgb(var(--color-bg-card) / <alpha-value>)',
+          cardHover: 'rgb(var(--color-bg-card-hover) / <alpha-value>)',
         },
         accent: {
-          DEFAULT: '#2f6690',
-          dim: '#1f4a6e',
-          muted: '#4f8ab8',
-          glow: 'rgba(47,102,144,0.15)',
-          glowStrong: 'rgba(47,102,144,0.35)',
+          DEFAULT: 'rgb(var(--color-accent) / <alpha-value>)',
+          dim: 'rgb(var(--color-accent-dim) / <alpha-value>)',
+          muted: 'rgb(var(--color-accent-muted) / <alpha-value>)',
+          glow: 'rgb(var(--color-accent) / 0.15)',
+          glowStrong: 'rgb(var(--color-accent) / 0.35)',
         },
         text: {
-          primary: '#eef1f5',
-          secondary: '#a3adba',
-          muted: '#6f7a89',
+          primary: 'rgb(var(--color-text-primary) / <alpha-value>)',
+          secondary: 'rgb(var(--color-text-secondary) / <alpha-value>)',
+          muted: 'rgb(var(--color-text-muted) / <alpha-value>)',
         },
         border: {
-          DEFAULT: '#232a38',
-          accent: 'rgba(47,102,144,0.25)',
+          DEFAULT: 'rgb(var(--color-border) / <alpha-value>)',
+          accent: 'rgb(var(--color-accent) / 0.25)',
         },
       },
       fontFamily: {
@@ -71,8 +75,10 @@ const config: Config = {
         'glow-radial': 'radial-gradient(ellipse at center, rgba(47,102,144,0.08) 0%, transparent 70%)',
       },
       boxShadow: {
-        'card': '0 1px 3px rgba(0,0,0,0.4), 0 1px 2px rgba(0,0,0,0.5)',
-        'card-hover': '0 8px 30px rgba(0,0,0,0.5), 0 0 20px rgba(47,102,144,0.08)',
+        // Shadow tint also swaps per theme (near-black in dark mode, soft slate
+        // in light mode) via --color-shadow, so cards don't look muddy on white.
+        'card': '0 1px 3px rgb(var(--color-shadow) / 0.4), 0 1px 2px rgb(var(--color-shadow) / 0.5)',
+        'card-hover': '0 8px 30px rgb(var(--color-shadow) / 0.5), 0 0 20px rgba(47,102,144,0.08)',
         'accent': '0 0 20px rgba(47,102,144,0.2)',
         'accent-strong': '0 0 40px rgba(47,102,144,0.4)',
       },

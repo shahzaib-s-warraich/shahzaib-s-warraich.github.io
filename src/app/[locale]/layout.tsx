@@ -7,6 +7,7 @@ import Footer from '@/components/Footer';
 import ParticleBackground from '@/components/ParticleBackground';
 import ScrollProgressBar from '@/components/ScrollProgressBar';
 import PageTransition from '@/components/PageTransition';
+import { ThemeProvider } from '@/context/ThemeContext';
 import { getLatestCvPath } from '@/lib/cv';
 
 export function generateStaticParams() {
@@ -34,15 +35,17 @@ export default async function LocaleLayout({
 
   return (
     <NextIntlClientProvider messages={messages} locale={locale}>
-      <ScrollProgressBar />
-      <ParticleBackground />
-      <Navbar cvHref={cvHref} />
-      <PageTransition>
-        <main className="relative z-10 min-h-screen pt-16 xl:pr-0">
-          {children}
-        </main>
-      </PageTransition>
-      <Footer cvHref={cvHref} />
+      <ThemeProvider>
+        <ScrollProgressBar />
+        <ParticleBackground />
+        <Navbar cvHref={cvHref} />
+        <PageTransition>
+          <main className="relative z-10 min-h-screen pt-16 xl:pr-0">
+            {children}
+          </main>
+        </PageTransition>
+        <Footer cvHref={cvHref} />
+      </ThemeProvider>
     </NextIntlClientProvider>
   );
 }
