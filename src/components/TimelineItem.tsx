@@ -125,25 +125,25 @@ export default function TimelineItem({
           {logo && (
             linkProps ? (
               <a {...linkProps} className="flex-shrink-0 w-12 h-12 rounded-lg bg-bg-secondary border border-border
-                                          flex items-center justify-center overflow-hidden
+                                          flex items-center justify-center overflow-hidden p-0.5
                                           hover:border-accent/40 transition-colors duration-200 cursor-pointer">
                 {logoFailed ? logoBadge : (
                   <img
                     src={logo}
                     alt={institution}
                     onError={() => setLogoFailed(true)}
-                    className="w-10 h-10 object-contain group-hover:scale-110 transition-transform duration-300"
+                    className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-300"
                   />
                 )}
               </a>
             ) : (
-              <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-bg-secondary border border-border flex items-center justify-center overflow-hidden">
+              <div className="flex-shrink-0 w-12 h-12 rounded-lg bg-bg-secondary border border-border flex items-center justify-center overflow-hidden p-0.5">
                 {logoFailed ? logoBadge : (
                   <img
                     src={logo}
                     alt={institution}
                     onError={() => setLogoFailed(true)}
-                    className="w-10 h-10 object-contain group-hover:scale-110 transition-transform duration-300"
+                    className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-300"
                   />
                 )}
               </div>
