@@ -76,6 +76,20 @@ body {
   background: #1f4a6e;
 }
 
+/* On narrow viewports, thin it further and make it translucent so a
+   scrolling thumb never fully occludes text sitting near the edge. */
+@media (max-width: 767px) {
+  ::-webkit-scrollbar {
+    width: 3px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(47, 102, 144, 0.35);
+  }
+}
+
 /* ── Selection ── */
 ::selection {
   background: rgba(47,102,144, 0.2);

@@ -340,10 +340,10 @@ export default function HomeClient({ cvHref }: { cvHref: string }) {
               initial={{ opacity: 0, y: 12 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: 0.2 }}
-              className="text-xl md:text-2xl font-medium text-text-secondary mb-6 min-h-[2rem] flex flex-wrap items-center gap-x-2"
+              className="text-[clamp(0.75rem,3.6vw,1.25rem)] sm:text-xl md:text-2xl font-medium text-text-secondary mb-6 min-h-[2rem] flex flex-nowrap items-center gap-x-1.5 sm:gap-x-2"
             >
-              <span className="text-text-secondary text-base">{t('tagline')}</span>
-              <TypewriterText words={roles} className="text-accent font-semibold" />
+              <span className="text-text-secondary whitespace-nowrap">{t('tagline')}</span>
+              <TypewriterText words={roles} className="text-accent font-semibold whitespace-nowrap" />
             </motion.div>
 
             <motion.p
