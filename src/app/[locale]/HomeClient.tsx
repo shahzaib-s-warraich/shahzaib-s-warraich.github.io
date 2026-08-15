@@ -121,10 +121,11 @@ const TAGLINE_MAX_REM = 1.25;
 const TAGLINE_MIN_REM = 0.6875;
 
 /* Home-page section preview caps — see ShowMoreButton. */
+const EDUCATION_PREVIEW_COUNT = 1;
 const RESEARCH_PREVIEW_COUNT = 2;
 const EXPERIENCE_PREVIEW_COUNT = 3;
 const PROJECTS_PREVIEW_COUNT = 4;
-const SKILLS_PREVIEW_COUNT = 4;
+const SKILLS_PREVIEW_COUNT = 3;
 
 function heroNameOverlapsPhoto(nameH1: HTMLElement, photoEl: HTMLElement, gap = 10) {
   const photo = photoEl.getBoundingClientRect();
@@ -202,6 +203,7 @@ export default function HomeClient({ cvHref }: { cvHref: string }) {
   // lists to a short preview by default so the page doesn't scroll forever;
   // "Show more" reveals the rest in place, and "View all" (further down)
   // still goes to that section's dedicated page.
+  const [showAllEducation, setShowAllEducation]   = useState(false);
   const [showAllResearch, setShowAllResearch]     = useState(false);
   const [showAllExperience, setShowAllExperience] = useState(false);
   const [showAllProjects, setShowAllProjects]     = useState(false);
@@ -596,7 +598,7 @@ export default function HomeClient({ cvHref }: { cvHref: string }) {
       <section id="education" className="max-w-7xl mx-auto px-4 sm:px-6 py-16 w-full">
         <SectionHeader title={tAbout('title')} subtitle={tAbout('subtitle')} />
         <div className="relative">
-          {educationTimeline.map((item, index) => (
+          {(showAllEducation ? educationTimeline : educationTimeline.slice(0, EDUCATION_PREVIEW_COUNT)).map((item, index) => (
             <TimelineItem
               key={item.id}
               title={item.degree}
@@ -613,6 +615,12 @@ export default function HomeClient({ cvHref }: { cvHref: string }) {
             />
           ))}
         </div>
+        {!showAllEducation && educationTimeline.length > EDUCATION_PREVIEW_COUNT && (
+          <ShowMoreButton
+            remaining={educationTimeline.length - EDUCATION_PREVIEW_COUNT}
+            onClick={() => setShowAllEducation(true)}
+          />
+        )}
         <ViewAll href={`/${locale}/about`} label="View full education" />
       </section>
 

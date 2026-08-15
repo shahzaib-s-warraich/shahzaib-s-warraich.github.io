@@ -484,6 +484,28 @@
     "subtitle": "Technical stack across AI research, evaluation & applied ML",
     "categories": [
       {
+        "id": "deep_learning",
+        "title": "Deep Learning",
+        "icon": "brain",
+        "skills": [
+          "PyTorch",
+          "Hugging Face",
+          "vLLM",
+          "Fine-tuning",
+          "LLM Evaluation",
+          "Model Architecture Development"
+        ]
+      },
+      {
+        "id": "cloud",
+        "title": "Cloud",
+        "icon": "cloud",
+        "skills": [
+          "AWS SageMaker",
+          "GCP Vertex AI"
+        ]
+      },
+      {
         "id": "languages",
         "title": "Programming & Systems",
         "icon": "code",
@@ -496,27 +518,13 @@
         ]
       },
       {
-        "id": "deep_learning",
-        "title": "Deep Learning",
-        "icon": "brain",
-        "skills": [
-          "PyTorch",
-          "Hugging Face",
-          "vLLM",
-          "Fine-tuning",
-          "LLM Evaluation"
-        ]
-      },
-      {
         "id": "ml",
         "title": "Machine Learning",
         "icon": "sparkles",
         "skills": [
           "Scikit-Learn",
           "OpenCV",
-          "Interpretability",
-          "Statistical Sampling",
-          "LLM-as-Judge"
+          "Statistical Modeling"
         ]
       },
       {
@@ -541,23 +549,12 @@
         ]
       },
       {
-        "id": "cloud",
-        "title": "Cloud",
-        "icon": "cloud",
-        "skills": [
-          "AWS SageMaker",
-          "GCP Vertex AI"
-        ]
-      },
-      {
         "id": "others",
         "title": "Infrastructure & Tools",
         "icon": "robot",
         "skills": [
           "Docker",
-          "Kubernetes",
           "MongoDB",
-          "Git",
           "Figma"
         ]
       },
