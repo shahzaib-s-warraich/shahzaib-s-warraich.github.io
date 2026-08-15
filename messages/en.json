@@ -185,20 +185,17 @@
     "positions": [
       {
         "id": "independent-researcher",
-        "company": "Independent Research",
+        "company": "",
         "role": "Independent Researcher",
-        "location": "Los Angeles, CA 🇺🇸",
+        "location": "Remote",
         "period": "Jan 2026 – Present",
-        "description": "Continuing independent research in AI interpretability and evaluation.",
-        "highlights": [
-          "Ongoing work on AI interpretability and evaluation methods, building on research started at the USC-NLP DILL Lab"
-        ],
+        "description": "Independent research in AI interpretability, evaluation, reasoning, and alignment.",
         "tech": [
           "AI Interpretability",
-          "Evaluation"
-        ],
-        "logo": "/images/usc_logo.png",
-        "url": "https://dill-lab.github.io"
+          "Evaluation",
+          "Reasoning",
+          "Alignment"
+        ]
       },
       {
         "id": "dill-lab",

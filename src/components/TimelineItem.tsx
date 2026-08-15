@@ -172,13 +172,15 @@ export default function TimelineItem({
             </div>
 
             <div className="flex flex-wrap gap-x-4 gap-y-0.5 text-sm text-text-secondary">
-              {/* Institution — always a link when url exists */}
-              {linkProps ? (
-                <a {...linkProps} className="font-medium text-text-primary hover:text-accent transition-colors">
-                  {institution}
-                </a>
-              ) : (
-                <span className="font-medium text-text-primary">{institution}</span>
+              {/* Institution — always a link when url exists; omitted entirely when blank */}
+              {institution && (
+                linkProps ? (
+                  <a {...linkProps} className="font-medium text-text-primary hover:text-accent transition-colors">
+                    {institution}
+                  </a>
+                ) : (
+                  <span className="font-medium text-text-primary">{institution}</span>
+                )
               )}
               {venueLogo && !venueLogoFailed && (
                 <img

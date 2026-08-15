@@ -121,12 +121,14 @@ const MOBILE_NAME_ACCENT_RATIO = 1.067;
 const TAGLINE_MAX_REM = 1.25;
 const TAGLINE_MIN_REM = 0.6875;
 
-/* Home-page section preview caps. Education, Research Experience, Research
- * Publications, Industry Experience, and Projects show every item in full
- * (each item instead truncates its own highlight bullets — see
- * TimelineItem's per-item "Read more"). Skills still expands in place via
- * ShowMoreButton; Books just shows a fixed preview with a "View full
- * reading list" link (no expand-in-place). */
+/* Home-page section preview caps. Research Experience, Research
+ * Publications, and Industry Experience show every item in full (each item
+ * instead truncates its own highlight bullets — see TimelineItem's
+ * per-item "Read more"). Education, Projects, Skills, and Books show a
+ * fixed preview with a "View full X" link for the rest (no expand-in-place
+ * for Education/Projects/Books; Skills still expands in place). */
+const EDUCATION_PREVIEW_COUNT = 1;
+const PROJECTS_PREVIEW_COUNT = 4;
 const SKILLS_PREVIEW_COUNT = 3;
 const BOOKS_PREVIEW_COUNT = 3;
 
@@ -668,7 +670,7 @@ export default function HomeClient({ cvHref }: { cvHref: string }) {
         </div>
 
         <motion.div layout className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          {filteredProjects.map((item, index) => (
+          {filteredProjects.slice(0, PROJECTS_PREVIEW_COUNT).map((item, index) => (
             <motion.div
               key={item.id}
               layout
@@ -743,7 +745,7 @@ export default function HomeClient({ cvHref }: { cvHref: string }) {
       <section id="education" className="max-w-7xl mx-auto px-4 sm:px-6 py-16 w-full">
         <SectionHeader title={tAbout('title')} subtitle={tAbout('subtitle')} />
         <div className="relative">
-          {educationTimeline.map((item, index) => (
+          {educationTimeline.slice(0, EDUCATION_PREVIEW_COUNT).map((item, index) => (
             <TimelineItem
               key={item.id}
               title={item.degree}
@@ -760,6 +762,7 @@ export default function HomeClient({ cvHref }: { cvHref: string }) {
             />
           ))}
         </div>
+        <ViewAll href={'/about'} label="View full education" />
       </section>
 
       {/* ════════════════════════════════════════════════════ SKILLS
