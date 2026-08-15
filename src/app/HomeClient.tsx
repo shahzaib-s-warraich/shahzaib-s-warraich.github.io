@@ -121,11 +121,11 @@ const MOBILE_NAME_ACCENT_RATIO = 1.067;
 const TAGLINE_MAX_REM = 1.25;
 const TAGLINE_MIN_REM = 0.6875;
 
-/* Home-page section preview caps — see ShowMoreButton. */
-const EDUCATION_PREVIEW_COUNT = 1;
-const RESEARCH_PREVIEW_COUNT = 2;
-const EXPERIENCE_PREVIEW_COUNT = 3;
-const PROJECTS_PREVIEW_COUNT = 4;
+/* Home-page section preview caps — see ShowMoreButton. Education, Research
+ * Experience, Research Publications, Industry Experience, and Projects show
+ * every item in full (each item instead truncates its own highlight bullets
+ * — see TimelineItem's per-item "Read more"); only Skills and Books still
+ * cap the number of cards shown. */
 const SKILLS_PREVIEW_COUNT = 3;
 const BOOKS_PREVIEW_COUNT = 2;
 
@@ -187,6 +187,7 @@ export default function HomeClient({ cvHref }: { cvHref: string }) {
   const t          = useTranslations('home');
   const tAbout     = useTranslations('about');
   const tResearch  = useTranslations('research');
+  const tResearchExp = useTranslations('researchExperience');
   const tExp       = useTranslations('experience');
   const tProj      = useTranslations('projects');
   const tSkills    = useTranslations('skills');
@@ -201,13 +202,9 @@ export default function HomeClient({ cvHref }: { cvHref: string }) {
   const [projectFilter, setProjectFilter]     = useState<Category>('all');
 
   // One-page home shows every section back-to-back — these gate the longer
-  // lists to a short preview by default so the page doesn't scroll forever;
-  // "Show more" reveals the rest in place, and "View all" (further down)
-  // still goes to that section's dedicated page.
-  const [showAllEducation, setShowAllEducation]   = useState(false);
-  const [showAllResearch, setShowAllResearch]     = useState(false);
-  const [showAllExperience, setShowAllExperience] = useState(false);
-  const [showAllProjects, setShowAllProjects]     = useState(false);
+  // Skills/Books lists to a short preview by default so the page doesn't
+  // scroll forever; "Show more" reveals the rest in place, and "View all"
+  // (further down) still goes to that section's dedicated page.
   const [showAllSkills, setShowAllSkills]         = useState(false);
   const [showAllBooks, setShowAllBooks]           = useState(false);
   const [photoSize, setPhotoSize]             = useState(372);
@@ -319,6 +316,7 @@ export default function HomeClient({ cvHref }: { cvHref: string }) {
 
   const educationTimeline = tAbout.raw('timeline')   as EducationItem[];
   const researchPapers    = tResearch.raw('papers')   as ResearchPaper[];
+  const researchPositions = tResearchExp.raw('positions') as JobItem[];
   const jobs              = tExp.raw('jobs')          as JobItem[];
   const allProjects       = tProj.raw('items')        as ProjectData[];
   const projectFilters    = tProj.raw('filters')      as Record<string, string>;
@@ -600,7 +598,7 @@ export default function HomeClient({ cvHref }: { cvHref: string }) {
       <section id="experience" className="max-w-7xl mx-auto px-4 sm:px-6 py-16 w-full">
         <SectionHeader title={tExp('title')} subtitle={tExp('subtitle')} />
         <div className="relative">
-          {(showAllExperience ? jobs : jobs.slice(0, EXPERIENCE_PREVIEW_COUNT)).map((job, index) => (
+          {jobs.map((job, index) => (
             <TimelineItem
               key={job.id}
               title={job.role}
@@ -617,13 +615,36 @@ export default function HomeClient({ cvHref }: { cvHref: string }) {
             />
           ))}
         </div>
-        {!showAllExperience && jobs.length > EXPERIENCE_PREVIEW_COUNT && (
-          <ShowMoreButton
-            remaining={jobs.length - EXPERIENCE_PREVIEW_COUNT}
-            onClick={() => setShowAllExperience(true)}
-          />
-        )}
         <ViewAll href={'/experience'} label="View full experience" />
+      </section>
+
+      {/* ═══════════════════════════════════════════ RESEARCH EXPERIENCE
+           Mirrors: research-experience/page.tsx → max-w-4xl mx-auto px-6 py-16 */}
+      <Divider />
+      <section id="research-experience" className="max-w-7xl mx-auto px-4 sm:px-6 py-16 w-full">
+        <SectionHeader title={tResearchExp('title')} subtitle={tResearchExp('subtitle')} />
+        <p className="text-xs font-semibold text-text-primary uppercase tracking-wider mb-4">
+          {tResearchExp('positionsLabel')}
+        </p>
+        <div className="relative">
+          {researchPositions.map((position, index) => (
+            <TimelineItem
+              key={position.id}
+              title={position.role}
+              institution={position.company}
+              period={position.period}
+              location={position.location}
+              description={position.description}
+              highlights={position.highlights}
+              tech={position.tech}
+              logo={position.logo}
+              type={position.type ?? 'academia'}
+              index={index}
+              url={position.url || undefined}
+            />
+          ))}
+        </div>
+        <ViewAll href={'/research-experience'} label="View full research experience" />
       </section>
 
       {/* ══════════════════════════════════════════════════ RESEARCH
@@ -632,7 +653,7 @@ export default function HomeClient({ cvHref }: { cvHref: string }) {
       <section id="research" className="max-w-7xl mx-auto px-4 sm:px-6 py-16 w-full">
         <SectionHeader title={tResearch('title')} subtitle={tResearch('subtitle')} />
         <div className="relative">
-          {(showAllResearch ? researchPapers : researchPapers.slice(0, RESEARCH_PREVIEW_COUNT)).map((paper, index) => (
+          {researchPapers.map((paper, index) => (
             <TimelineItem
               key={paper.id}
               title={paper.title}
@@ -649,13 +670,7 @@ export default function HomeClient({ cvHref }: { cvHref: string }) {
             />
           ))}
         </div>
-        {!showAllResearch && researchPapers.length > RESEARCH_PREVIEW_COUNT && (
-          <ShowMoreButton
-            remaining={researchPapers.length - RESEARCH_PREVIEW_COUNT}
-            onClick={() => setShowAllResearch(true)}
-          />
-        )}
-        <ViewAll href={'/research'} label="View full research" />
+        <ViewAll href={'/research'} label="View full research publications" />
       </section>
 
       {/* ══════════════════════════════════════════════════ PROJECTS
@@ -669,7 +684,7 @@ export default function HomeClient({ cvHref }: { cvHref: string }) {
           {(Object.keys(projectFilters) as Category[]).map((key) => (
             <button
               key={key}
-              onClick={() => { setProjectFilter(key); setShowAllProjects(false); }}
+              onClick={() => setProjectFilter(key)}
               className={`px-4 py-1.5 rounded-full text-sm font-medium transition-all duration-200 border ${
                 projectFilter === key
                   ? 'bg-accent text-bg-primary border-accent'
@@ -682,7 +697,7 @@ export default function HomeClient({ cvHref }: { cvHref: string }) {
         </div>
 
         <motion.div layout className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          {(showAllProjects ? filteredProjects : filteredProjects.slice(0, PROJECTS_PREVIEW_COUNT)).map((item, index) => (
+          {filteredProjects.map((item, index) => (
             <motion.div
               key={item.id}
               layout
@@ -713,13 +728,6 @@ export default function HomeClient({ cvHref }: { cvHref: string }) {
           <p className="text-center text-text-muted text-sm mt-12">No projects in this category yet.</p>
         )}
 
-        {!showAllProjects && filteredProjects.length > PROJECTS_PREVIEW_COUNT && (
-          <ShowMoreButton
-            remaining={filteredProjects.length - PROJECTS_PREVIEW_COUNT}
-            onClick={() => setShowAllProjects(true)}
-          />
-        )}
-
         {/* Disclaimer */}
         <div className="mt-14 flex flex-col items-center gap-2 text-center px-2">
           <div className="inline-flex flex-col sm:flex-row items-center gap-2 px-4 py-3 sm:py-2 rounded-2xl sm:rounded-full bg-accent/8 border border-accent/20 max-w-full">
@@ -739,7 +747,7 @@ export default function HomeClient({ cvHref }: { cvHref: string }) {
       <section id="education" className="max-w-7xl mx-auto px-4 sm:px-6 py-16 w-full">
         <SectionHeader title={tAbout('title')} subtitle={tAbout('subtitle')} />
         <div className="relative">
-          {(showAllEducation ? educationTimeline : educationTimeline.slice(0, EDUCATION_PREVIEW_COUNT)).map((item, index) => (
+          {educationTimeline.map((item, index) => (
             <TimelineItem
               key={item.id}
               title={item.degree}
@@ -756,12 +764,6 @@ export default function HomeClient({ cvHref }: { cvHref: string }) {
             />
           ))}
         </div>
-        {!showAllEducation && educationTimeline.length > EDUCATION_PREVIEW_COUNT && (
-          <ShowMoreButton
-            remaining={educationTimeline.length - EDUCATION_PREVIEW_COUNT}
-            onClick={() => setShowAllEducation(true)}
-          />
-        )}
         <ViewAll href={'/about'} label="View full education" />
       </section>
 

@@ -2,7 +2,8 @@
   "nav": {
     "home": "Home",
     "about": "Education",
-    "research": "Research",
+    "research": "Publications",
+    "researchExperience": "Research",
     "experience": "Experience",
     "projects": "Projects",
     "skills": "Skills",
@@ -104,8 +105,8 @@
     ]
   },
   "research": {
-    "title": "Research Experience",
-    "subtitle": "Publications & research positions",
+    "title": "Research Publications",
+    "subtitle": "Peer-reviewed papers & preprints",
     "papers": [
       {
         "id": "congrs",
@@ -177,6 +178,34 @@
       }
     ]
   },
+  "researchExperience": {
+    "title": "Research Experience",
+    "subtitle": "Research positions and academic appointments",
+    "positionsLabel": "Research Positions",
+    "positions": [
+      {
+        "id": "dill-lab",
+        "company": "USC-NLP Group · The Data, Interpretability, Language and Learning (DILL) Lab",
+        "role": "Researcher",
+        "location": "Los Angeles, CA 🇺🇸",
+        "period": "Jan 2024 – Jan 2026",
+        "type": "academia",
+        "description": "AI interpretability, alignment, reasoning, and evaluation research advised by [Dr. Swabha Swayamdipta](https://swabhs.com), mentored by [Gregory Yauney](https://gyauney.github.io).",
+        "highlights": [
+          "**Sample, Align, Synthesize: Graph-Based Response Synthesis with ConGrs** (COLM 2026) · test-time scaling, reasoning, factuality, hallucinations",
+          "**How Reliable is Language Model Micro-Benchmarking?** (ICLR 2026 Oral) · efficient evaluation, meta-evaluation, language models"
+        ],
+        "tech": [
+          "AI Interpretability",
+          "Alignment",
+          "Reasoning",
+          "Evaluation"
+        ],
+        "logo": "/images/usc_logo.png",
+        "url": "https://dill-lab.github.io"
+      }
+    ]
+  },
   "experience": {
     "title": "Industry Experience",
     "subtitle": "Applied AI roles across research and production",
@@ -202,27 +231,6 @@
         ],
         "logo": "/images/turon_logo.png",
         "url": "https://www.turon.ai"
-      },
-      {
-        "id": "dill-lab",
-        "company": "USC-NLP Group · The Data, Interpretability, Language and Learning (DILL) Lab",
-        "role": "Researcher",
-        "location": "Los Angeles, CA 🇺🇸",
-        "period": "Jan 2024 – Jan 2026",
-        "type": "academia",
-        "description": "AI interpretability, alignment, reasoning, and evaluation research advised by [Dr. Swabha Swayamdipta](https://swabhs.com), mentored by [Gregory Yauney](https://gyauney.github.io).",
-        "highlights": [
-          "**Sample, Align, Synthesize: Graph-Based Response Synthesis with ConGrs** (COLM 2026) · test-time scaling, reasoning, factuality, hallucinations",
-          "**How Reliable is Language Model Micro-Benchmarking?** (ICLR 2026 Oral) · efficient evaluation, meta-evaluation, language models"
-        ],
-        "tech": [
-          "AI Interpretability",
-          "Alignment",
-          "Reasoning",
-          "Evaluation"
-        ],
-        "logo": "/images/usc_logo.png",
-        "url": "https://dill-lab.github.io"
       },
       {
         "id": "paramount",

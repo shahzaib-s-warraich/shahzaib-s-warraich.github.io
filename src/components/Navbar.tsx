@@ -16,6 +16,7 @@ const PRIMARY_LINKS = [
 ] as const;
 
 const MORE_LINKS = [
+  { key: 'researchExperience', href: '/research-experience' },
   { key: 'about', href: '/about' },
   { key: 'skills', href: '/skills' },
   { key: 'leadership', href: '/leadership' },
@@ -29,6 +30,7 @@ const MORE_LINKS = [
 const NAV_LINKS = [
   { key: 'home', href: '/' },
   { key: 'experience', href: '/experience' },
+  { key: 'researchExperience', href: '/research-experience' },
   { key: 'research', href: '/research' },
   { key: 'projects', href: '/projects' },
   { key: 'about', href: '/about' },

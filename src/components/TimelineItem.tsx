@@ -66,6 +66,7 @@ export default function TimelineItem({
 }: TimelineItemProps) {
   const [logoFailed, setLogoFailed] = useState(false);
   const [venueLogoFailed, setVenueLogoFailed] = useState(false);
+  const [expanded, setExpanded] = useState(false);
 
   const BadgeColor: Record<string, string> = {
     exchange: 'bg-blue-500/10 text-blue-400 border-blue-500/20',
@@ -200,14 +201,24 @@ export default function TimelineItem({
         )}
 
         {highlights && highlights.length > 0 && (
-          <ul className="space-y-1.5 mb-4">
-            {highlights.map((h, i) => (
+          <ul className="space-y-1.5 mb-1.5">
+            {(expanded ? highlights : highlights.slice(0, 1)).map((h, i) => (
               <li key={i} className="flex items-start gap-2 text-sm text-text-secondary">
                 <span className="mt-1.5 flex-shrink-0 w-1 h-1 rounded-full bg-accent" />
                 <span>{renderRich(h)}</span>
               </li>
             ))}
           </ul>
+        )}
+
+        {highlights && highlights.length > 1 && (
+          <button
+            type="button"
+            onClick={() => setExpanded((v) => !v)}
+            className="text-xs font-medium text-accent hover:underline underline-offset-2 mb-4 inline-block"
+          >
+            {expanded ? 'Show less' : `Read more (${highlights.length - 1} more)`}
+          </button>
         )}
 
         {courses && courses.length > 0 && (
