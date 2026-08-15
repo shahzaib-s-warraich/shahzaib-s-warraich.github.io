@@ -557,18 +557,28 @@
           "MongoDB",
           "Figma"
         ]
+      }
+    ]
+  },
+  "languages": {
+    "title": "Languages",
+    "subtitle": "Spoken and written proficiency",
+    "items": [
+      {
+        "id": "en",
+        "name": "English",
+        "level": "Professional"
       },
       {
-        "id": "languages_spoken",
-        "title": "Languages & Interests",
-        "icon": "code",
-        "skills": [
-          "English",
-          "French",
-          "AI Ethics & Responsibility",
-          "Hackathons",
-          "UX Design"
-        ]
+        "id": "ur",
+        "name": "Urdu",
+        "level": "Native"
+      },
+      {
+        "id": "fr",
+        "name": "French",
+        "level": "Intermediate",
+        "note": "DELF A2 certified"
       }
     ]
   },

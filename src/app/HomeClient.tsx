@@ -1,6 +1,6 @@
 'use client';
 import { useState, useEffect, useRef, useLayoutEffect, useCallback, useMemo } from 'react';
-import { useTranslations, useLocale } from 'next-intl';
+import { useTranslations } from 'next-intl';
 import { motion } from 'framer-motion';
 
 function renderRich(text: string): React.ReactNode[] {
@@ -23,6 +23,7 @@ import TimelineItem from '@/components/TimelineItem';
 import ProjectCard from '@/components/ProjectCard';
 import ProjectModal from '@/components/ProjectModal';
 import SkillCategory from '@/components/SkillCategory';
+import LanguagesList from '@/components/LanguagesList';
 import ContactForm from '@/components/ContactForm';
 import SectionNav from '@/components/SectionNav';
 import OrgIcon from '@/components/OrgIcon';
@@ -194,7 +195,6 @@ export default function HomeClient({ cvHref }: { cvHref: string }) {
   const tBooks     = useTranslations('books');
   const tAwards    = useTranslations('awards');
   const tContact   = useTranslations('contact');
-  const locale     = useLocale();
 
   const [selectedProject, setSelectedProject] = useState<ProjectData | null>(null);
   const [projectFilter, setProjectFilter]     = useState<Category>('all');
@@ -501,7 +501,7 @@ export default function HomeClient({ cvHref }: { cvHref: string }) {
               className="flex flex-wrap items-center gap-2"
             >
               <a
-                href={`/${locale}/contact`}
+                href={'/contact'}
                 className="px-4 py-2.5 bg-accent text-bg-primary font-semibold rounded-lg text-sm
                            hover:bg-accent-muted transition-colors duration-200"
               >
@@ -509,7 +509,7 @@ export default function HomeClient({ cvHref }: { cvHref: string }) {
               </a>
 
               <a
-                href={`/${locale}/projects`}
+                href={'/projects'}
                 className="px-4 py-2.5 border border-accent/40 text-accent font-semibold rounded-lg text-sm
                            hover:bg-accent-glow transition-colors duration-200"
               >
@@ -621,7 +621,7 @@ export default function HomeClient({ cvHref }: { cvHref: string }) {
             onClick={() => setShowAllEducation(true)}
           />
         )}
-        <ViewAll href={`/${locale}/about`} label="View full education" />
+        <ViewAll href={'/about'} label="View full education" />
       </section>
 
       {/* ══════════════════════════════════════════════════ RESEARCH
@@ -653,7 +653,7 @@ export default function HomeClient({ cvHref }: { cvHref: string }) {
             onClick={() => setShowAllResearch(true)}
           />
         )}
-        <ViewAll href={`/${locale}/research`} label="View full research" />
+        <ViewAll href={'/research'} label="View full research" />
       </section>
 
       {/* ════════════════════════════════════════════════ EXPERIENCE
@@ -685,7 +685,7 @@ export default function HomeClient({ cvHref }: { cvHref: string }) {
             onClick={() => setShowAllExperience(true)}
           />
         )}
-        <ViewAll href={`/${locale}/experience`} label="View full experience" />
+        <ViewAll href={'/experience'} label="View full experience" />
       </section>
 
       {/* ══════════════════════════════════════════════════ PROJECTS
@@ -760,7 +760,7 @@ export default function HomeClient({ cvHref }: { cvHref: string }) {
           </div>
         </div>
 
-        <ViewAll href={`/${locale}/projects`} label="Open full projects page" />
+        <ViewAll href={'/projects'} label="Open full projects page" />
       </section>
 
       {/* ════════════════════════════════════════════════════ SKILLS
@@ -785,7 +785,8 @@ export default function HomeClient({ cvHref }: { cvHref: string }) {
             onClick={() => setShowAllSkills(true)}
           />
         )}
-        <ViewAll href={`/${locale}/skills`} label="View full skills breakdown" />
+        <LanguagesList />
+        <ViewAll href={'/skills'} label="View full skills breakdown" />
       </section>
 
       {/* ═══════════════════════════════════════════════ LEADERSHIP
@@ -830,7 +831,7 @@ export default function HomeClient({ cvHref }: { cvHref: string }) {
             </motion.div>
           ))}
         </div>
-        <ViewAll href={`/${locale}/leadership`} label="View full leadership" />
+        <ViewAll href={'/leadership'} label="View full leadership" />
       </section>
 
       {/* ═══════════════════════════════════════════════════ TEACHING
@@ -879,7 +880,7 @@ export default function HomeClient({ cvHref }: { cvHref: string }) {
             </motion.div>
           ))}
         </div>
-        <ViewAll href={`/${locale}/teaching`} label="View full teaching" />
+        <ViewAll href={'/teaching'} label="View full teaching" />
       </section>
 
       {/* ═══════════════════════════════════════════════════════ BLOG
@@ -961,7 +962,7 @@ export default function HomeClient({ cvHref }: { cvHref: string }) {
             );
           })}
         </div>
-        <ViewAll href={`/${locale}/blog`} label="View full blog" />
+        <ViewAll href={'/blog'} label="View full blog" />
       </section>
 
       {/* ══════════════════════════════════════════════════════ BOOKS
@@ -1004,7 +1005,7 @@ export default function HomeClient({ cvHref }: { cvHref: string }) {
             </motion.a>
           ))}
         </div>
-        <ViewAll href={`/${locale}/books`} label="View full reading list" />
+        <ViewAll href={'/books'} label="View full reading list" />
       </section>
 
       {/* ══════════════════════════════════════════════════ AWARDS
@@ -1048,7 +1049,7 @@ export default function HomeClient({ cvHref }: { cvHref: string }) {
             );
           })}
         </div>
-        <ViewAll href={`/${locale}/awards`} label="View all distinctions" />
+        <ViewAll href={'/awards'} label="View all distinctions" />
       </section>
 
       {/* ════════════════════════════════════════════════ CONTACT

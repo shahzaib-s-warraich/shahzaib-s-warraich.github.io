@@ -1,19 +1,12 @@
-import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { useTranslations } from 'next-intl';
 import SectionHeader from '@/components/SectionHeader';
 import SkillCategory from '@/components/SkillCategory';
+import LanguagesList from '@/components/LanguagesList';
+import messages from '@/lib/messages';
 
-type Props = { params: Promise<{ locale: string }> };
+export const metadata = { title: `${messages.skills.title}, Shahzaib Warraich` };
 
-export async function generateMetadata({ params }: Props) {
-  const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: 'skills' });
-  return { title: `${t("title")}, Shahzaib Warraich` };
-}
-
-export default async function SkillsPage({ params }: Props) {
-  const { locale } = await params;
-  setRequestLocale(locale);
+export default function SkillsPage() {
   return <SkillsContent />;
 }
 
@@ -40,6 +33,7 @@ function SkillsContent() {
           />
         ))}
       </div>
+      <LanguagesList />
     </section>
   );
 }

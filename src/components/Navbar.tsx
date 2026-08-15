@@ -1,6 +1,6 @@
 'use client';
 import { useState, useEffect } from 'react';
-import { useTranslations, useLocale } from 'next-intl';
+import { useTranslations } from 'next-intl';
 import { usePathname } from 'next/navigation';
 import { motion, AnimatePresence } from 'framer-motion';
 import ThemeToggle from './ThemeToggle';
@@ -43,7 +43,6 @@ const NAV_LINKS = [
 
 export default function Navbar({ cvHref }: { cvHref: string }) {
   const t = useTranslations('nav');
-  const locale = useLocale();
   const pathname = usePathname();
 
   const [scrolled, setScrolled] = useState(false);
@@ -61,11 +60,8 @@ export default function Navbar({ cvHref }: { cvHref: string }) {
 
 
   const isActive = (href: string) => {
-    const localePrefix = `/${locale}`;
-    // Home is only active on the exact locale root (e.g. /en), not every sub-page
-    if (href === '/') return pathname === localePrefix;
-    const fullPath = `${localePrefix}${href}`;
-    return pathname === fullPath || pathname.startsWith(fullPath + '/');
+    if (href === '/') return pathname === '/';
+    return pathname === href || pathname.startsWith(href + '/');
   };
 
   const isMoreActive = MORE_LINKS.some(({ href }) => isActive(href));
@@ -81,7 +77,7 @@ export default function Navbar({ cvHref }: { cvHref: string }) {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 h-16 flex items-center justify-between">
         {/* Logo */}
         <a
-          href={`/${locale}`}
+          href="/"
           className="font-mono text-xl font-bold text-accent hover:text-glow transition-all duration-200"
         >
           SSW<span className="text-text-secondary">.</span>
@@ -92,7 +88,7 @@ export default function Navbar({ cvHref }: { cvHref: string }) {
           {PRIMARY_LINKS.map(({ key, href }) => (
             <a
               key={key}
-              href={`/${locale}${href}`}
+              href={href}
               className={`relative px-3 py-2 text-sm font-medium rounded-md transition-colors duration-200 ${
                 isActive(href)
                   ? 'text-accent'
@@ -150,7 +146,7 @@ export default function Navbar({ cvHref }: { cvHref: string }) {
                   {MORE_LINKS.map(({ key, href }) => (
                     <a
                       key={key}
-                      href={`/${locale}${href}`}
+                      href={href}
                       className={`block px-4 py-2 text-sm font-medium transition-colors duration-200 ${
                         isActive(href)
                           ? 'text-accent bg-accent-glow'
@@ -208,7 +204,7 @@ export default function Navbar({ cvHref }: { cvHref: string }) {
               {NAV_LINKS.map(({ key, href }) => (
                 <a
                   key={key}
-                  href={`/${locale}${href}`}
+                  href={href}
                   className={`px-3 py-2.5 rounded-md text-sm font-medium transition-colors ${
                     isActive(href)
                       ? 'text-accent bg-accent-glow'

@@ -1,19 +1,11 @@
-import { getTranslations, setRequestLocale } from 'next-intl/server';
 import { useTranslations } from 'next-intl';
 import SectionHeader from '@/components/SectionHeader';
 import TimelineItem from '@/components/TimelineItem';
+import messages from '@/lib/messages';
 
-type Props = { params: Promise<{ locale: string }> };
+export const metadata = { title: `${messages.experience.title}, Shahzaib Warraich` };
 
-export async function generateMetadata({ params }: Props) {
-  const { locale } = await params;
-  const t = await getTranslations({ locale, namespace: 'experience' });
-  return { title: `${t("title")}, Shahzaib Warraich` };
-}
-
-export default async function ExperiencePage({ params }: Props) {
-  const { locale } = await params;
-  setRequestLocale(locale);
+export default function ExperiencePage() {
   return <ExperienceContent />;
 }
 

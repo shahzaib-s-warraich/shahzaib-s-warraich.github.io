@@ -4,8 +4,8 @@ Personal portfolio site for **Shahzaib Saqib Warraich**, AI Research Scientist (
 
 ## Structure
 
-- `messages/en.json` / `messages/fr.json` — all site copy (bio, education, research, industry experience, projects, skills, leadership, teaching, blog, books, awards, contact). `fr.json` currently mirrors the English text 1:1 (pending real French translation).
-- `src/app/[locale]/` — one route per section (`about`, `research`, `experience`, `projects`, `skills`, `leadership`, `teaching`, `blog`, `books`, `awards`, `contact`), plus `HomeClient.tsx` which renders the single-page scroll version of all of them.
+- `messages/en.json` — all site copy (bio, education, research, industry experience, projects, skills, leadership, teaching, blog, books, awards, contact). English only — there is no locale routing.
+- `src/app/` — one route per section (`about`, `research`, `experience`, `projects`, `skills`, `leadership`, `teaching`, `blog`, `books`, `awards`, `contact`) at the site root, plus `HomeClient.tsx` which renders the single-page scroll version of all of them.
 - `src/components/` — shared UI (Navbar, SectionNav, TimelineItem, ProjectCard/ProjectModal, SkillCategory, ContactForm, etc.).
 - `public/images/` — headshots, org/institution logos, publication-venue logos, book covers.
 - `public/projects/` — project card/case-study images.
@@ -24,10 +24,10 @@ Personal portfolio site for **Shahzaib Saqib Warraich**, AI Research Scientist (
 ## Setup (first time)
 
 ```bash
-npm install --legacy-peer-deps
+npm install
 ```
 
-`--legacy-peer-deps` is currently required due to a peer-dependency conflict between `next-intl` and Next.js 16.
+`.npmrc` sets `legacy-peer-deps=true` (there's a peer-dependency conflict between `next-intl` and Next.js 16), so plain `npm install`/`npm ci` work without extra flags.
 
 ## Run locally
 
@@ -43,7 +43,7 @@ Then open `http://localhost:3000`. The dev server hot-reloads on code changes.
 npm run build
 ```
 
-This statically prerenders every route for both locales (`/en/...`, `/fr/...`).
+This statically prerenders every route directly at the site root (`/`, `/about`, `/research`, ...).
 
 ## Lint
 
