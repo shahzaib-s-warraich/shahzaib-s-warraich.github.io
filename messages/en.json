@@ -181,7 +181,6 @@
   "researchExperience": {
     "title": "Research Experience",
     "subtitle": "Research and Development roles",
-    "positionsLabel": "Research Positions",
     "positions": [
       {
         "id": "independent-researcher",
@@ -189,12 +188,12 @@
         "role": "Independent Researcher",
         "location": "Remote",
         "period": "Jan 2026 – Present",
-        "description": "Independent research in AI interpretability, evaluation, reasoning, and alignment.",
+        "description": "Independent research in AI interpretability, alignment, reasoning, and evaluation.",
         "tech": [
           "AI Interpretability",
-          "Evaluation",
+          "Alignment",
           "Reasoning",
-          "Alignment"
+          "Evaluation"
         ]
       },
       {

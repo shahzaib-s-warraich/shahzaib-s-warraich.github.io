@@ -121,13 +121,15 @@ const MOBILE_NAME_ACCENT_RATIO = 1.067;
 const TAGLINE_MAX_REM = 1.25;
 const TAGLINE_MIN_REM = 0.6875;
 
-/* Home-page section preview caps. Research Experience, Research
- * Publications, and Industry Experience show every item in full (each item
- * instead truncates its own highlight bullets — see TimelineItem's
- * per-item "Read more"). Education, Projects, Skills, and Books show a
- * fixed preview with a "View full X" link for the rest (no expand-in-place
- * for Education/Projects/Books; Skills still expands in place). */
+/* Home-page section preview caps. Research Experience and Industry
+ * Experience show every item in full (each item instead truncates its own
+ * highlight bullets — see TimelineItem's per-item "Read more"). Education,
+ * Research Publications, Projects, Skills, and Books show a fixed preview
+ * with a "View full X" link for the rest (no expand-in-place for
+ * Education/Research Publications/Projects/Books; Skills still expands in
+ * place). */
 const EDUCATION_PREVIEW_COUNT = 1;
+const RESEARCH_PREVIEW_COUNT = 2;
 const PROJECTS_PREVIEW_COUNT = 4;
 const SKILLS_PREVIEW_COUNT = 3;
 const BOOKS_PREVIEW_COUNT = 3;
@@ -624,9 +626,6 @@ export default function HomeClient({ cvHref }: { cvHref: string }) {
       <Divider />
       <section id="research-experience" className="max-w-7xl mx-auto px-4 sm:px-6 py-16 w-full">
         <SectionHeader title={tResearchExp('title')} subtitle={tResearchExp('subtitle')} />
-        <p className="text-xs font-semibold text-text-primary uppercase tracking-wider mb-4">
-          {tResearchExp('positionsLabel')}
-        </p>
         <div className="relative">
           {researchPositions.map((position, index) => (
             <TimelineItem
@@ -720,7 +719,7 @@ export default function HomeClient({ cvHref }: { cvHref: string }) {
       <section id="research" className="max-w-7xl mx-auto px-4 sm:px-6 py-16 w-full">
         <SectionHeader title={tResearch('title')} subtitle={tResearch('subtitle')} />
         <div className="relative">
-          {researchPapers.map((paper, index) => (
+          {researchPapers.slice(0, RESEARCH_PREVIEW_COUNT).map((paper, index) => (
             <TimelineItem
               key={paper.id}
               title={paper.title}
@@ -737,6 +736,7 @@ export default function HomeClient({ cvHref }: { cvHref: string }) {
             />
           ))}
         </div>
+        <ViewAll href={'/research'} label="View full research publications" />
       </section>
 
       {/* ══════════════════════════════════════════════════ EDUCATION

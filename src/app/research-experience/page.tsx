@@ -27,9 +27,6 @@ function ResearchExperienceContent() {
   return (
     <section className="max-w-7xl mx-auto px-6 py-16">
       <SectionHeader title={t('title')} subtitle={t('subtitle')} />
-      <p className="text-xs font-semibold text-text-primary uppercase tracking-wider mb-4">
-        {t('positionsLabel')}
-      </p>
       <div className="relative">
         {positions.map((position, index) => (
           <TimelineItem
