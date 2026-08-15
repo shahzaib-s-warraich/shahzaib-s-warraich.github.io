@@ -206,7 +206,7 @@
         "role": "Graduate Research Assistant",
         "location": "Los Angeles, CA 🇺🇸",
         "period": "Jan 2024 – Jan 2026",
-        "description": "AI interpretability, alignment, reasoning, and evaluation research advised by [Dr. Swabha Swayamdipta](https://swabhs.com), mentored by Dr. Xueze (Max) Ma and [Dr. Gregory Yauney](https://gyauney.github.io).",
+        "description": "AI interpretability, alignment, reasoning, and evaluation research advised by [Dr. Swabha Swayamdipta](https://swabhs.com), mentored by [Dr. Gregory Yauney](https://gyauney.github.io).",
         "highlights": [
           "**Sample, Align, Synthesize: Graph-Based Response Synthesis with ConGrs** (COLM 2026) · test-time scaling, reasoning, factuality, hallucinations",
           "**How Reliable is Language Model Micro-Benchmarking?** (ICLR 2026 Oral) · efficient evaluation, meta-evaluation, language models"
@@ -640,6 +640,18 @@
         "highlights": [
           "Produced course content and supported instruction for graduate-level Applied NLP",
           "Worked with **Dr. Swabha Swayamdipta**"
+        ]
+      },
+      {
+        "id": "csci544-spring25",
+        "type": "teaching",
+        "title": "Course Producer, CSCI 544: Applied Natural Language Processing",
+        "org": "University of Southern California, Viterbi School of Engineering",
+        "location": "Los Angeles, CA 🇺🇸",
+        "period": "Jan 2025 – May 2025",
+        "highlights": [
+          "Produced course content and supported instruction for graduate-level Applied NLP",
+          "Worked with **Dr. Xueze (Max) Ma**"
         ]
       }
     ]

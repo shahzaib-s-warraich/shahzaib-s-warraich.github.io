@@ -836,7 +836,10 @@ export default function HomeClient({ cvHref }: { cvHref: string }) {
       <section id="teaching" className="max-w-7xl mx-auto px-4 sm:px-6 py-16 w-full">
         <SectionHeader title={tTeaching('title')} subtitle={tTeaching('subtitle')} />
         <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-          {teachingItems.map((item, index) => (
+          {/* Home page shows only the Dr. Swabha Swayamdipta term; the other
+              CSCI 544 term (with Dr. Xueze (Max) Ma) is on the full teaching
+              page only — see /teaching. */}
+          {teachingItems.filter((item) => item.id === 'csci544-fall24').map((item, index) => (
             <motion.div
               key={item.id}
               initial={{ opacity: 0, y: 20 }}
