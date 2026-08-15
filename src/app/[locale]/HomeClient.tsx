@@ -120,6 +120,12 @@ const MOBILE_NAME_ACCENT_RATIO = 1.067;
 const TAGLINE_MAX_REM = 1.25;
 const TAGLINE_MIN_REM = 0.6875;
 
+/* Home-page section preview caps — see ShowMoreButton. */
+const RESEARCH_PREVIEW_COUNT = 2;
+const EXPERIENCE_PREVIEW_COUNT = 3;
+const PROJECTS_PREVIEW_COUNT = 4;
+const SKILLS_PREVIEW_COUNT = 4;
+
 function heroNameOverlapsPhoto(nameH1: HTMLElement, photoEl: HTMLElement, gap = 10) {
   const photo = photoEl.getBoundingClientRect();
   const lines = nameH1.querySelectorAll<HTMLElement>('[data-name-line]');
@@ -155,6 +161,24 @@ function ViewAll({ href, label }: { href: string; label: string }) {
   );
 }
 
+/* ─── "Read more" — expands a capped section preview in place ────────────── */
+function ShowMoreButton({ remaining, onClick }: { remaining: number; onClick: () => void }) {
+  return (
+    <div className="mt-6 flex justify-center">
+      <button
+        type="button"
+        onClick={onClick}
+        className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border border-dashed border-border text-sm font-medium text-text-secondary hover:text-accent hover:border-accent/40 transition-all duration-200"
+      >
+        Read more ({remaining} more)
+        <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+          <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
+        </svg>
+      </button>
+    </div>
+  );
+}
+
 /* ─── Main component ──────────────────────────────────────────────────────── */
 export default function HomeClient({ cvHref }: { cvHref: string }) {
   const t          = useTranslations('home');
@@ -173,6 +197,15 @@ export default function HomeClient({ cvHref }: { cvHref: string }) {
 
   const [selectedProject, setSelectedProject] = useState<ProjectData | null>(null);
   const [projectFilter, setProjectFilter]     = useState<Category>('all');
+
+  // One-page home shows every section back-to-back — these gate the longer
+  // lists to a short preview by default so the page doesn't scroll forever;
+  // "Show more" reveals the rest in place, and "View all" (further down)
+  // still goes to that section's dedicated page.
+  const [showAllResearch, setShowAllResearch]     = useState(false);
+  const [showAllExperience, setShowAllExperience] = useState(false);
+  const [showAllProjects, setShowAllProjects]     = useState(false);
+  const [showAllSkills, setShowAllSkills]         = useState(false);
   const [photoSize, setPhotoSize]             = useState(372);
   const [compactPhotoSize, setCompactPhotoSize] = useState(140);
   const [mobileNameFontRem, setMobileNameFontRem] = useState<number>(MOBILE_NAME_FONT_STEPS[0]);
@@ -589,7 +622,7 @@ export default function HomeClient({ cvHref }: { cvHref: string }) {
       <section id="research" className="max-w-7xl mx-auto px-4 sm:px-6 py-16 w-full">
         <SectionHeader title={tResearch('title')} subtitle={tResearch('subtitle')} />
         <div className="relative">
-          {researchPapers.map((paper, index) => (
+          {(showAllResearch ? researchPapers : researchPapers.slice(0, RESEARCH_PREVIEW_COUNT)).map((paper, index) => (
             <TimelineItem
               key={paper.id}
               title={paper.title}
@@ -606,6 +639,12 @@ export default function HomeClient({ cvHref }: { cvHref: string }) {
             />
           ))}
         </div>
+        {!showAllResearch && researchPapers.length > RESEARCH_PREVIEW_COUNT && (
+          <ShowMoreButton
+            remaining={researchPapers.length - RESEARCH_PREVIEW_COUNT}
+            onClick={() => setShowAllResearch(true)}
+          />
+        )}
         <ViewAll href={`/${locale}/research`} label="View full research" />
       </section>
 
@@ -615,7 +654,7 @@ export default function HomeClient({ cvHref }: { cvHref: string }) {
       <section id="experience" className="max-w-7xl mx-auto px-4 sm:px-6 py-16 w-full">
         <SectionHeader title={tExp('title')} subtitle={tExp('subtitle')} />
         <div className="relative">
-          {jobs.map((job, index) => (
+          {(showAllExperience ? jobs : jobs.slice(0, EXPERIENCE_PREVIEW_COUNT)).map((job, index) => (
             <TimelineItem
               key={job.id}
               title={job.role}
@@ -632,6 +671,12 @@ export default function HomeClient({ cvHref }: { cvHref: string }) {
             />
           ))}
         </div>
+        {!showAllExperience && jobs.length > EXPERIENCE_PREVIEW_COUNT && (
+          <ShowMoreButton
+            remaining={jobs.length - EXPERIENCE_PREVIEW_COUNT}
+            onClick={() => setShowAllExperience(true)}
+          />
+        )}
         <ViewAll href={`/${locale}/experience`} label="View full experience" />
       </section>
 
@@ -646,7 +691,7 @@ export default function HomeClient({ cvHref }: { cvHref: string }) {
           {(Object.keys(projectFilters) as Category[]).map((key) => (
             <button
               key={key}
-              onClick={() => setProjectFilter(key)}
+              onClick={() => { setProjectFilter(key); setShowAllProjects(false); }}
               className={`px-4 py-1.5 rounded-full text-sm font-medium transition-all duration-200 border ${
                 projectFilter === key
                   ? 'bg-accent text-bg-primary border-accent'
@@ -659,7 +704,7 @@ export default function HomeClient({ cvHref }: { cvHref: string }) {
         </div>
 
         <motion.div layout className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
-          {filteredProjects.map((item, index) => (
+          {(showAllProjects ? filteredProjects : filteredProjects.slice(0, PROJECTS_PREVIEW_COUNT)).map((item, index) => (
             <motion.div
               key={item.id}
               layout
@@ -690,6 +735,13 @@ export default function HomeClient({ cvHref }: { cvHref: string }) {
           <p className="text-center text-text-muted text-sm mt-12">No projects in this category yet.</p>
         )}
 
+        {!showAllProjects && filteredProjects.length > PROJECTS_PREVIEW_COUNT && (
+          <ShowMoreButton
+            remaining={filteredProjects.length - PROJECTS_PREVIEW_COUNT}
+            onClick={() => setShowAllProjects(true)}
+          />
+        )}
+
         {/* Disclaimer */}
         <div className="mt-14 flex flex-col items-center gap-2 text-center px-2">
           <div className="inline-flex flex-col sm:flex-row items-center gap-2 px-4 py-3 sm:py-2 rounded-2xl sm:rounded-full bg-accent/8 border border-accent/20 max-w-full">
@@ -709,7 +761,7 @@ export default function HomeClient({ cvHref }: { cvHref: string }) {
       <section id="skills" className="max-w-7xl mx-auto px-4 sm:px-6 py-16 w-full">
         <SectionHeader title={tSkills('title')} subtitle={tSkills('subtitle')} />
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
-          {skillCategories.map((cat, index) => (
+          {(showAllSkills ? skillCategories : skillCategories.slice(0, SKILLS_PREVIEW_COUNT)).map((cat, index) => (
             <SkillCategory
               key={cat.id}
               title={cat.title}
@@ -719,6 +771,12 @@ export default function HomeClient({ cvHref }: { cvHref: string }) {
             />
           ))}
         </div>
+        {!showAllSkills && skillCategories.length > SKILLS_PREVIEW_COUNT && (
+          <ShowMoreButton
+            remaining={skillCategories.length - SKILLS_PREVIEW_COUNT}
+            onClick={() => setShowAllSkills(true)}
+          />
+        )}
         <ViewAll href={`/${locale}/skills`} label="View full skills breakdown" />
       </section>
 
