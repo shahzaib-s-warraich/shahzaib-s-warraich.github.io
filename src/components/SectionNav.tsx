@@ -3,10 +3,10 @@ import { useState, useEffect } from 'react';
 
 const SECTIONS = [
   { id: 'hero',        label: 'Home' },
-  { id: 'education',   label: 'Education' },
-  { id: 'research',    label: 'Research' },
   { id: 'experience',  label: 'Experience' },
+  { id: 'research',    label: 'Research' },
   { id: 'projects',    label: 'Projects' },
+  { id: 'education',   label: 'Education' },
   { id: 'skills',      label: 'Skills' },
   { id: 'leadership',  label: 'Leadership' },
   { id: 'teaching',    label: 'Teaching' },

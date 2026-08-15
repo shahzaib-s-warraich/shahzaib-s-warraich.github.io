@@ -9,8 +9,8 @@ import ThemeToggle from './ThemeToggle';
 // nest under a "More" dropdown so the bar doesn't overflow at 12 sections.
 const PRIMARY_LINKS = [
   { key: 'home', href: '/' },
-  { key: 'research', href: '/research' },
   { key: 'experience', href: '/experience' },
+  { key: 'research', href: '/research' },
   { key: 'projects', href: '/projects' },
   { key: 'contact', href: '/contact' },
 ] as const;
@@ -28,10 +28,10 @@ const MORE_LINKS = [
 // Flat order used for the mobile drawer (matches one-page scroll order).
 const NAV_LINKS = [
   { key: 'home', href: '/' },
-  { key: 'about', href: '/about' },
-  { key: 'research', href: '/research' },
   { key: 'experience', href: '/experience' },
+  { key: 'research', href: '/research' },
   { key: 'projects', href: '/projects' },
+  { key: 'about', href: '/about' },
   { key: 'skills', href: '/skills' },
   { key: 'leadership', href: '/leadership' },
   { key: 'teaching', href: '/teaching' },

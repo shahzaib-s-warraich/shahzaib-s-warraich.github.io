@@ -594,36 +594,36 @@ export default function HomeClient({ cvHref }: { cvHref: string }) {
 
       </div>
 
-      {/* ══════════════════════════════════════════════════ EDUCATION
-           Mirrors: about/page.tsx → max-w-4xl mx-auto px-6 py-16        */}
+      {/* ════════════════════════════════════════════════ EXPERIENCE
+           Mirrors: experience/page.tsx → max-w-4xl mx-auto px-6 py-16  */}
       <Divider />
-      <section id="education" className="max-w-7xl mx-auto px-4 sm:px-6 py-16 w-full">
-        <SectionHeader title={tAbout('title')} subtitle={tAbout('subtitle')} />
+      <section id="experience" className="max-w-7xl mx-auto px-4 sm:px-6 py-16 w-full">
+        <SectionHeader title={tExp('title')} subtitle={tExp('subtitle')} />
         <div className="relative">
-          {(showAllEducation ? educationTimeline : educationTimeline.slice(0, EDUCATION_PREVIEW_COUNT)).map((item, index) => (
+          {(showAllExperience ? jobs : jobs.slice(0, EXPERIENCE_PREVIEW_COUNT)).map((job, index) => (
             <TimelineItem
-              key={item.id}
-              title={item.degree}
-              institution={item.institution}
-              period={item.period}
-              location={item.location}
-              description={item.description}
-              courses={item.courses}
-              highlights={item.highlights}
-              logo={item.logo}
-              url={item.url || undefined}
-              type={item.type}
+              key={job.id}
+              title={job.role}
+              institution={job.company}
+              period={job.period}
+              location={job.location}
+              description={job.description}
+              highlights={job.highlights}
+              tech={job.tech}
+              logo={job.logo}
+              type={job.type ?? 'work'}
               index={index}
+              url={job.url || undefined}
             />
           ))}
         </div>
-        {!showAllEducation && educationTimeline.length > EDUCATION_PREVIEW_COUNT && (
+        {!showAllExperience && jobs.length > EXPERIENCE_PREVIEW_COUNT && (
           <ShowMoreButton
-            remaining={educationTimeline.length - EDUCATION_PREVIEW_COUNT}
-            onClick={() => setShowAllEducation(true)}
+            remaining={jobs.length - EXPERIENCE_PREVIEW_COUNT}
+            onClick={() => setShowAllExperience(true)}
           />
         )}
-        <ViewAll href={'/about'} label="View full education" />
+        <ViewAll href={'/experience'} label="View full experience" />
       </section>
 
       {/* ══════════════════════════════════════════════════ RESEARCH
@@ -656,38 +656,6 @@ export default function HomeClient({ cvHref }: { cvHref: string }) {
           />
         )}
         <ViewAll href={'/research'} label="View full research" />
-      </section>
-
-      {/* ════════════════════════════════════════════════ EXPERIENCE
-           Mirrors: experience/page.tsx → max-w-4xl mx-auto px-6 py-16  */}
-      <Divider />
-      <section id="experience" className="max-w-7xl mx-auto px-4 sm:px-6 py-16 w-full">
-        <SectionHeader title={tExp('title')} subtitle={tExp('subtitle')} />
-        <div className="relative">
-          {(showAllExperience ? jobs : jobs.slice(0, EXPERIENCE_PREVIEW_COUNT)).map((job, index) => (
-            <TimelineItem
-              key={job.id}
-              title={job.role}
-              institution={job.company}
-              period={job.period}
-              location={job.location}
-              description={job.description}
-              highlights={job.highlights}
-              tech={job.tech}
-              logo={job.logo}
-              type={job.type ?? 'work'}
-              index={index}
-              url={job.url || undefined}
-            />
-          ))}
-        </div>
-        {!showAllExperience && jobs.length > EXPERIENCE_PREVIEW_COUNT && (
-          <ShowMoreButton
-            remaining={jobs.length - EXPERIENCE_PREVIEW_COUNT}
-            onClick={() => setShowAllExperience(true)}
-          />
-        )}
-        <ViewAll href={'/experience'} label="View full experience" />
       </section>
 
       {/* ══════════════════════════════════════════════════ PROJECTS
@@ -763,6 +731,38 @@ export default function HomeClient({ cvHref }: { cvHref: string }) {
         </div>
 
         <ViewAll href={'/projects'} label="Open full projects page" />
+      </section>
+
+      {/* ══════════════════════════════════════════════════ EDUCATION
+           Mirrors: about/page.tsx → max-w-4xl mx-auto px-6 py-16        */}
+      <Divider />
+      <section id="education" className="max-w-7xl mx-auto px-4 sm:px-6 py-16 w-full">
+        <SectionHeader title={tAbout('title')} subtitle={tAbout('subtitle')} />
+        <div className="relative">
+          {(showAllEducation ? educationTimeline : educationTimeline.slice(0, EDUCATION_PREVIEW_COUNT)).map((item, index) => (
+            <TimelineItem
+              key={item.id}
+              title={item.degree}
+              institution={item.institution}
+              period={item.period}
+              location={item.location}
+              description={item.description}
+              courses={item.courses}
+              highlights={item.highlights}
+              logo={item.logo}
+              url={item.url || undefined}
+              type={item.type}
+              index={index}
+            />
+          ))}
+        </div>
+        {!showAllEducation && educationTimeline.length > EDUCATION_PREVIEW_COUNT && (
+          <ShowMoreButton
+            remaining={educationTimeline.length - EDUCATION_PREVIEW_COUNT}
+            onClick={() => setShowAllEducation(true)}
+          />
+        )}
+        <ViewAll href={'/about'} label="View full education" />
       </section>
 
       {/* ════════════════════════════════════════════════════ SKILLS
