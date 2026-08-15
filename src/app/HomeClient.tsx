@@ -127,6 +127,7 @@ const RESEARCH_PREVIEW_COUNT = 2;
 const EXPERIENCE_PREVIEW_COUNT = 3;
 const PROJECTS_PREVIEW_COUNT = 4;
 const SKILLS_PREVIEW_COUNT = 3;
+const BOOKS_PREVIEW_COUNT = 2;
 
 function heroNameOverlapsPhoto(nameH1: HTMLElement, photoEl: HTMLElement, gap = 10) {
   const photo = photoEl.getBoundingClientRect();
@@ -208,6 +209,7 @@ export default function HomeClient({ cvHref }: { cvHref: string }) {
   const [showAllExperience, setShowAllExperience] = useState(false);
   const [showAllProjects, setShowAllProjects]     = useState(false);
   const [showAllSkills, setShowAllSkills]         = useState(false);
+  const [showAllBooks, setShowAllBooks]           = useState(false);
   const [photoSize, setPhotoSize]             = useState(372);
   const [compactPhotoSize, setCompactPhotoSize] = useState(140);
   const [mobileNameFontRem, setMobileNameFontRem] = useState<number>(MOBILE_NAME_FONT_STEPS[0]);
@@ -971,7 +973,7 @@ export default function HomeClient({ cvHref }: { cvHref: string }) {
       <section id="books" className="max-w-7xl mx-auto px-4 sm:px-6 py-16 w-full">
         <SectionHeader title={tBooks('title')} subtitle={tBooks('subtitle')} />
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-          {bookItems.map((item, index) => (
+          {(showAllBooks ? bookItems : bookItems.slice(0, BOOKS_PREVIEW_COUNT)).map((item, index) => (
             <motion.a
               key={item.id}
               href={item.url}
@@ -1005,6 +1007,12 @@ export default function HomeClient({ cvHref }: { cvHref: string }) {
             </motion.a>
           ))}
         </div>
+        {!showAllBooks && bookItems.length > BOOKS_PREVIEW_COUNT && (
+          <ShowMoreButton
+            remaining={bookItems.length - BOOKS_PREVIEW_COUNT}
+            onClick={() => setShowAllBooks(true)}
+          />
+        )}
         <ViewAll href={'/books'} label="View full reading list" />
       </section>
 
