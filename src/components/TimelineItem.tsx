@@ -68,22 +68,20 @@ export default function TimelineItem({
   const [venueLogoFailed, setVenueLogoFailed] = useState(false);
   const [expanded, setExpanded] = useState(false);
 
+  // No badge for 'work'/'academia' — industry vs. academic positions aren't
+  // tagged separately anymore. Degree/paper-type badges are still useful.
   const BadgeColor: Record<string, string> = {
     exchange: 'bg-blue-500/10 text-blue-400 border-blue-500/20',
     master: 'bg-purple-500/10 text-purple-400 border-purple-500/20',
     bachelor: 'bg-accent-glow text-accent border-accent/20',
-    work: 'bg-green-500/10 text-green-400 border-green-500/20',
     paper: 'bg-accent-glow text-accent border-accent/20',
-    academia: 'bg-sky-500/10 text-sky-400 border-sky-500/20',
   };
 
   const badgeLabel: Record<string, string> = {
     exchange: 'Erasmus+',
     master: "Master's",
     bachelor: "Bachelor's",
-    work: 'Industry',
     paper: 'Paper',
-    academia: 'Academia',
   };
 
   const linkProps = url
@@ -166,8 +164,8 @@ export default function TimelineItem({
                 <h3 className="text-base font-semibold text-text-primary leading-snug">{title}</h3>
               )}
 
-              {type && (
-                <span className={`text-xs px-2 py-0.5 rounded-full border font-medium ${BadgeColor[type] ?? 'bg-bg-card text-text-muted border-border'}`}>
+              {type && badgeLabel[type] && (
+                <span className={`text-xs px-2 py-0.5 rounded-full border font-medium ${BadgeColor[type]}`}>
                   {badgeLabel[type]}
                 </span>
               )}
@@ -217,7 +215,7 @@ export default function TimelineItem({
             onClick={() => setExpanded((v) => !v)}
             className="text-xs font-medium text-accent hover:underline underline-offset-2 mb-4 inline-block"
           >
-            {expanded ? 'Show less' : `Read more (${highlights.length - 1} more)`}
+            {expanded ? 'Show less' : 'Read more'}
           </button>
         )}
 

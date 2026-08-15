@@ -10,8 +10,8 @@ import ThemeToggle from './ThemeToggle';
 const PRIMARY_LINKS = [
   { key: 'home', href: '/' },
   { key: 'experience', href: '/experience' },
-  { key: 'research', href: '/research' },
   { key: 'projects', href: '/projects' },
+  { key: 'research', href: '/research' },
   { key: 'contact', href: '/contact' },
 ] as const;
 
@@ -31,8 +31,8 @@ const NAV_LINKS = [
   { key: 'home', href: '/' },
   { key: 'experience', href: '/experience' },
   { key: 'researchExperience', href: '/research-experience' },
-  { key: 'research', href: '/research' },
   { key: 'projects', href: '/projects' },
+  { key: 'research', href: '/research' },
   { key: 'about', href: '/about' },
   { key: 'skills', href: '/skills' },
   { key: 'leadership', href: '/leadership' },

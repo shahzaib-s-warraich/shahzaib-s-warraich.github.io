@@ -22,7 +22,6 @@ function ResearchExperienceContent() {
     tech: string[];
     logo: string;
     url: string;
-    type?: 'work' | 'academia';
   }>;
 
   return (
@@ -43,7 +42,6 @@ function ResearchExperienceContent() {
             highlights={position.highlights}
             tech={position.tech}
             logo={position.logo}
-            type={position.type ?? 'academia'}
             index={index}
             url={position.url || undefined}
           />

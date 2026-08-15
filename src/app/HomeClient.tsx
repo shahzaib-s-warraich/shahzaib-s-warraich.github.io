@@ -121,13 +121,14 @@ const MOBILE_NAME_ACCENT_RATIO = 1.067;
 const TAGLINE_MAX_REM = 1.25;
 const TAGLINE_MIN_REM = 0.6875;
 
-/* Home-page section preview caps — see ShowMoreButton. Education, Research
- * Experience, Research Publications, Industry Experience, and Projects show
- * every item in full (each item instead truncates its own highlight bullets
- * — see TimelineItem's per-item "Read more"); only Skills and Books still
- * cap the number of cards shown. */
+/* Home-page section preview caps. Education, Research Experience, Research
+ * Publications, Industry Experience, and Projects show every item in full
+ * (each item instead truncates its own highlight bullets — see
+ * TimelineItem's per-item "Read more"). Skills still expands in place via
+ * ShowMoreButton; Books just shows a fixed preview with a "View full
+ * reading list" link (no expand-in-place). */
 const SKILLS_PREVIEW_COUNT = 3;
-const BOOKS_PREVIEW_COUNT = 2;
+const BOOKS_PREVIEW_COUNT = 3;
 
 function heroNameOverlapsPhoto(nameH1: HTMLElement, photoEl: HTMLElement, gap = 10) {
   const photo = photoEl.getBoundingClientRect();
@@ -165,7 +166,7 @@ function ViewAll({ href, label }: { href: string; label: string }) {
 }
 
 /* ─── "Read more" — expands a capped section preview in place ────────────── */
-function ShowMoreButton({ remaining, onClick }: { remaining: number; onClick: () => void }) {
+function ShowMoreButton({ onClick }: { onClick: () => void }) {
   return (
     <div className="mt-6 flex justify-center">
       <button
@@ -173,7 +174,7 @@ function ShowMoreButton({ remaining, onClick }: { remaining: number; onClick: ()
         onClick={onClick}
         className="inline-flex items-center gap-2 px-5 py-2.5 rounded-lg border border-dashed border-border text-sm font-medium text-text-secondary hover:text-accent hover:border-accent/40 transition-all duration-200"
       >
-        Read more ({remaining} more)
+        Read more
         <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
           <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 8.25l-7.5 7.5-7.5-7.5" />
         </svg>
@@ -201,12 +202,11 @@ export default function HomeClient({ cvHref }: { cvHref: string }) {
   const [selectedProject, setSelectedProject] = useState<ProjectData | null>(null);
   const [projectFilter, setProjectFilter]     = useState<Category>('all');
 
-  // One-page home shows every section back-to-back — these gate the longer
-  // Skills/Books lists to a short preview by default so the page doesn't
-  // scroll forever; "Show more" reveals the rest in place, and "View all"
-  // (further down) still goes to that section's dedicated page.
+  // One-page home shows every section back-to-back — this gates the longer
+  // Skills list to a short preview by default so the page doesn't scroll
+  // forever; "Show more" reveals the rest in place, and "View all" (further
+  // down) still goes to the dedicated page.
   const [showAllSkills, setShowAllSkills]         = useState(false);
-  const [showAllBooks, setShowAllBooks]           = useState(false);
   const [photoSize, setPhotoSize]             = useState(372);
   const [compactPhotoSize, setCompactPhotoSize] = useState(140);
   const [mobileNameFontRem, setMobileNameFontRem] = useState<number>(MOBILE_NAME_FONT_STEPS[0]);
@@ -615,7 +615,6 @@ export default function HomeClient({ cvHref }: { cvHref: string }) {
             />
           ))}
         </div>
-        <ViewAll href={'/experience'} label="View full experience" />
       </section>
 
       {/* ═══════════════════════════════════════════ RESEARCH EXPERIENCE
@@ -638,39 +637,11 @@ export default function HomeClient({ cvHref }: { cvHref: string }) {
               highlights={position.highlights}
               tech={position.tech}
               logo={position.logo}
-              type={position.type ?? 'academia'}
               index={index}
               url={position.url || undefined}
             />
           ))}
         </div>
-        <ViewAll href={'/research-experience'} label="View full research experience" />
-      </section>
-
-      {/* ══════════════════════════════════════════════════ RESEARCH
-           Mirrors: research/page.tsx → max-w-4xl mx-auto px-6 py-16     */}
-      <Divider />
-      <section id="research" className="max-w-7xl mx-auto px-4 sm:px-6 py-16 w-full">
-        <SectionHeader title={tResearch('title')} subtitle={tResearch('subtitle')} />
-        <div className="relative">
-          {researchPapers.map((paper, index) => (
-            <TimelineItem
-              key={paper.id}
-              title={paper.title}
-              institution={`${paper.venue} · ${paper.supervisor}`}
-              venueLogo={paper.venueLogo}
-              period={paper.period}
-              location={paper.authors}
-              description={paper.description}
-              highlights={paper.highlights}
-              tech={paper.tech}
-              type="paper"
-              index={index}
-              url={paper.paper || undefined}
-            />
-          ))}
-        </div>
-        <ViewAll href={'/research'} label="View full research publications" />
       </section>
 
       {/* ══════════════════════════════════════════════════ PROJECTS
@@ -741,6 +712,31 @@ export default function HomeClient({ cvHref }: { cvHref: string }) {
         <ViewAll href={'/projects'} label="Open full projects page" />
       </section>
 
+      {/* ══════════════════════════════════════════════════ RESEARCH
+           Mirrors: research/page.tsx → max-w-4xl mx-auto px-6 py-16     */}
+      <Divider />
+      <section id="research" className="max-w-7xl mx-auto px-4 sm:px-6 py-16 w-full">
+        <SectionHeader title={tResearch('title')} subtitle={tResearch('subtitle')} />
+        <div className="relative">
+          {researchPapers.map((paper, index) => (
+            <TimelineItem
+              key={paper.id}
+              title={paper.title}
+              institution={`${paper.venue} · ${paper.supervisor}`}
+              venueLogo={paper.venueLogo}
+              period={paper.period}
+              location={paper.authors}
+              description={paper.description}
+              highlights={paper.highlights}
+              tech={paper.tech}
+              type="paper"
+              index={index}
+              url={paper.paper || undefined}
+            />
+          ))}
+        </div>
+      </section>
+
       {/* ══════════════════════════════════════════════════ EDUCATION
            Mirrors: about/page.tsx → max-w-4xl mx-auto px-6 py-16        */}
       <Divider />
@@ -764,7 +760,6 @@ export default function HomeClient({ cvHref }: { cvHref: string }) {
             />
           ))}
         </div>
-        <ViewAll href={'/about'} label="View full education" />
       </section>
 
       {/* ════════════════════════════════════════════════════ SKILLS
@@ -784,10 +779,7 @@ export default function HomeClient({ cvHref }: { cvHref: string }) {
           ))}
         </div>
         {!showAllSkills && skillCategories.length > SKILLS_PREVIEW_COUNT && (
-          <ShowMoreButton
-            remaining={skillCategories.length - SKILLS_PREVIEW_COUNT}
-            onClick={() => setShowAllSkills(true)}
-          />
+          <ShowMoreButton onClick={() => setShowAllSkills(true)} />
         )}
         <LanguagesList />
         <ViewAll href={'/skills'} label="View full skills breakdown" />
@@ -884,7 +876,7 @@ export default function HomeClient({ cvHref }: { cvHref: string }) {
             </motion.div>
           ))}
         </div>
-        <ViewAll href={'/teaching'} label="View full teaching" />
+        <ViewAll href={'/teaching'} label="View full teaching experience" />
       </section>
 
       {/* ═══════════════════════════════════════════════════════ BLOG
@@ -975,7 +967,7 @@ export default function HomeClient({ cvHref }: { cvHref: string }) {
       <section id="books" className="max-w-7xl mx-auto px-4 sm:px-6 py-16 w-full">
         <SectionHeader title={tBooks('title')} subtitle={tBooks('subtitle')} />
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
-          {(showAllBooks ? bookItems : bookItems.slice(0, BOOKS_PREVIEW_COUNT)).map((item, index) => (
+          {bookItems.slice(0, BOOKS_PREVIEW_COUNT).map((item, index) => (
             <motion.a
               key={item.id}
               href={item.url}
@@ -1009,12 +1001,6 @@ export default function HomeClient({ cvHref }: { cvHref: string }) {
             </motion.a>
           ))}
         </div>
-        {!showAllBooks && bookItems.length > BOOKS_PREVIEW_COUNT && (
-          <ShowMoreButton
-            remaining={bookItems.length - BOOKS_PREVIEW_COUNT}
-            onClick={() => setShowAllBooks(true)}
-          />
-        )}
         <ViewAll href={'/books'} label="View full reading list" />
       </section>
 
