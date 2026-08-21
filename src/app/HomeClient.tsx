@@ -966,7 +966,6 @@ export default function HomeClient({ cvHref }: { cvHref: string }) {
             );
           })}
         </div>
-        <ViewAll href={'/blog'} label="View full blog" />
       </section>
 
       {/* ══════════════════════════════════════════════════════ BOOKS
