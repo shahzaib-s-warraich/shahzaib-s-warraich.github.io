@@ -953,8 +953,7 @@ export default function HomeClient({ cvHref }: { cvHref: string }) {
               <motion.a
                 key={item.id}
                 href={item.url}
-                target="_blank"
-                rel="noopener noreferrer"
+                {...(item.url.startsWith('/') ? {} : { target: '_blank', rel: 'noopener noreferrer' })}
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true, margin: '-40px' }}

@@ -666,14 +666,24 @@
         "status": "live"
       },
       {
-        "id": "dawn-pakistans-ai-future",
+        "id": "digital-print-media",
         "type": "press",
+        "title": "Digital and Print Media",
+        "description": "Op-eds, articles, and features in digital and print media.",
+        "cta": "View Articles",
+        "url": "/blog",
+        "status": "live"
+      }
+    ],
+    "articles": [
+      {
+        "id": "dawn-pakistans-ai-future",
         "title": "Pakistan's AI Future",
+        "publication": "Dawn",
         "description": "Op-ed on how Pakistan can leverage its surplus electricity capacity to build AI data centres, generating foreign exchange while cutting the fiscal burden of unused power.",
         "cta": "Read on Dawn",
         "url": "https://www.dawn.com/news/2024271/pakistans-ai-future",
-        "image": "/images/press/dawn-pakistans-ai-future.svg",
-        "status": "live"
+        "image": "/images/press/dawn-pakistans-ai-future.svg"
       }
     ]
   },
