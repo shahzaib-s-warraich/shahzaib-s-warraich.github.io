@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" width="800" height="450">
+  <defs>
+    <linearGradient id="bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0d12"/>
+      <stop offset="100%" stop-color="#10131c"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="80%" cy="15%" r="70%">
+      <stop offset="0%" stop-color="#2f6690" stop-opacity="0.35"/>
+      <stop offset="100%" stop-color="#2f6690" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="800" height="450" fill="url(#bg)"/>
+  <rect width="800" height="450" fill="url(#glow)"/>
+
+  <!-- subtle grid texture -->
+  <g stroke="#ffffff" stroke-opacity="0.03" stroke-width="1">
+    <line x1="0" y1="150" x2="800" y2="150"/>
+    <line x1="0" y1="300" x2="800" y2="300"/>
+    <line x1="200" y1="0" x2="200" y2="450"/>
+    <line x1="600" y1="0" x2="600" y2="450"/>
+  </g>
+
+  <!-- accent corner mark -->
+  <rect x="0" y="0" width="6" height="450" fill="#2f6690"/>
+
+  <!-- eyebrow label -->
+  <text x="56" y="100" font-family="JetBrains Mono, monospace" font-size="18" letter-spacing="3" fill="#4f8ab8" font-weight="600">OP-ED &#183; DAWN</text>
+
+  <!-- headline -->
+  <text x="54" y="180" font-family="Inter, system-ui, sans-serif" font-size="46" font-weight="700" fill="#eef1f5">Pakistan&#8217;s</text>
+  <text x="54" y="238" font-family="Inter, system-ui, sans-serif" font-size="46" font-weight="700" fill="#eef1f5">AI Future</text>
+
+  <!-- byline -->
+  <text x="56" y="300" font-family="Inter, system-ui, sans-serif" font-size="17" fill="#a3adba">By Shahzaib Saqib Warraich</text>
+  <text x="56" y="326" font-family="Inter, system-ui, sans-serif" font-size="17" fill="#a3adba">&amp; Muhammad Hassan Dajana</text>
+
+  <!-- footer rule + date -->
+  <line x1="56" y1="368" x2="744" y2="368" stroke="#232a38" stroke-width="1"/>
+  <text x="56" y="400" font-family="JetBrains Mono, monospace" font-size="14" fill="#6f7a89">dawn.com &#183; August 2026</text>
+</svg>

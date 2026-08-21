@@ -51,7 +51,7 @@ type LeadershipItem = {
 };
 type BlogItem = {
   id: string; type: 'linkedin' | 'press'; title: string; description: string;
-  cta: string; url: string; status: 'live' | 'coming-soon';
+  cta: string; url: string; status: 'live' | 'coming-soon'; image?: string;
 };
 type BookItem = {
   id: string; title: string; author: string; description: string; cover: string; url: string;
@@ -902,39 +902,55 @@ export default function HomeClient({ cvHref }: { cvHref: string }) {
                 <path strokeLinecap="round" strokeLinejoin="round" d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z" />
               </svg>
             );
-            const content = (
+            const hasImage = !!item.image;
+            const body = (
+              <div className="flex-1 min-w-0">
+                <div className="flex flex-wrap items-start justify-between gap-2 mb-1">
+                  <h3 className={`text-base font-semibold leading-snug transition-colors duration-200 ${
+                    isComingSoon ? 'text-text-secondary' : 'text-text-primary group-hover:text-accent'
+                  }`}>
+                    {item.title}
+                  </h3>
+                  {isComingSoon && (
+                    <span className="text-xs font-medium px-2 py-0.5 rounded-full border border-border bg-bg-secondary text-text-muted flex-shrink-0">
+                      Coming Soon
+                    </span>
+                  )}
+                </div>
+                <p className="text-sm text-text-secondary leading-relaxed mb-3">{item.description}</p>
+                <span className={`inline-flex items-center gap-1.5 text-sm font-medium ${isComingSoon ? 'text-text-muted' : 'text-accent'}`}>
+                  {item.cta}
+                  {!isComingSoon && (
+                    <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
+                    </svg>
+                  )}
+                </span>
+              </div>
+            );
+            const content = hasImage ? (
+              <>
+                <div className="relative aspect-video overflow-hidden rounded-t-xl bg-bg-secondary -m-6 mb-0">
+                  <img
+                    src={item.image}
+                    alt={`${item.title} thumbnail`}
+                    className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                    loading="lazy"
+                  />
+                </div>
+                <div className="pt-5">{body}</div>
+              </>
+            ) : (
               <>
                 <div className={`flex-shrink-0 w-12 h-12 rounded-xl border flex items-center justify-center transition-transform duration-300 ${
                   isComingSoon ? 'bg-bg-secondary border-border text-text-muted' : 'bg-accent/10 border-accent/20 text-accent group-hover:scale-110'
                 }`}>
                   {icon}
                 </div>
-                <div className="flex-1 min-w-0">
-                  <div className="flex flex-wrap items-start justify-between gap-2 mb-1">
-                    <h3 className={`text-base font-semibold leading-snug transition-colors duration-200 ${
-                      isComingSoon ? 'text-text-secondary' : 'text-text-primary group-hover:text-accent'
-                    }`}>
-                      {item.title}
-                    </h3>
-                    {isComingSoon && (
-                      <span className="text-xs font-medium px-2 py-0.5 rounded-full border border-border bg-bg-secondary text-text-muted flex-shrink-0">
-                        Coming Soon
-                      </span>
-                    )}
-                  </div>
-                  <p className="text-sm text-text-secondary leading-relaxed mb-3">{item.description}</p>
-                  <span className={`inline-flex items-center gap-1.5 text-sm font-medium ${isComingSoon ? 'text-text-muted' : 'text-accent'}`}>
-                    {item.cta}
-                    {!isComingSoon && (
-                      <svg className="w-3.5 h-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
-                      </svg>
-                    )}
-                  </span>
-                </div>
+                {body}
               </>
             );
-            const base = 'group glass rounded-xl p-6 border transition-colors duration-300 flex gap-5';
+            const base = `group glass rounded-xl border overflow-hidden transition-colors duration-300 ${hasImage ? 'flex flex-col p-6' : 'p-6 flex gap-5'}`;
             return isComingSoon ? (
               <motion.div
                 key={item.id}

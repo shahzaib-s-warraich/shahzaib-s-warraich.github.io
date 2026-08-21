@@ -9,7 +9,7 @@
     "skills": "Skills",
     "leadership": "Leadership",
     "teaching": "Teaching",
-    "blog": "Blog",
+    "blog": "Writing",
     "books": "Books",
     "awards": "Awards",
     "contact": "Contact",
@@ -653,7 +653,7 @@
     ]
   },
   "blog": {
-    "title": "Blog",
+    "title": "Writing & Media",
     "subtitle": "Writing on AI infrastructure, governance, safety, and building in applied AI",
     "items": [
       {
@@ -666,13 +666,14 @@
         "status": "live"
       },
       {
-        "id": "press",
+        "id": "dawn-pakistans-ai-future",
         "type": "press",
-        "title": "Press & Articles",
-        "description": "Articles and features in digital and print media, coming soon.",
-        "cta": "Coming Soon",
-        "url": "",
-        "status": "coming-soon"
+        "title": "Pakistan's AI Future",
+        "description": "Op-ed on how Pakistan can leverage its surplus electricity capacity to build AI data centres — generating foreign exchange while cutting the fiscal burden of unused power.",
+        "cta": "Read on Dawn",
+        "url": "https://www.dawn.com/news/2024271/pakistans-ai-future",
+        "image": "/images/press/dawn-pakistans-ai-future.svg",
+        "status": "live"
       }
     ]
   },
