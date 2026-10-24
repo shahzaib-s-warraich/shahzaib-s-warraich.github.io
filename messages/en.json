@@ -677,6 +677,15 @@
     ],
     "articles": [
       {
+        "id": "dawn-data-centre-water-question",
+        "title": "The Data Centre and Water Question",
+        "publication": "Dawn",
+        "description": "Op-ed on the water footprint of data centres in Pakistan, arguing the risk is local rather than national, with a roadmap of closed-loop cooling mandates, wastewater reuse, and agricultural water reform.",
+        "cta": "Read on Dawn",
+        "url": "https://www.dawn.com/news/2038149/the-data-centre-and-water-question",
+        "image": "/images/press/dawn-data-centre-water-question.svg"
+      },
+      {
         "id": "dawn-pakistans-ai-future",
         "title": "Pakistan's AI Future",
         "publication": "Dawn",
