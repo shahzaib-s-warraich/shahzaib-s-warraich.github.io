@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     template: '%s | Shahzaib Warraich',
   },
   description:
-    'AI Research Scientist working on AI Safety and Alignment through interpretability and evaluation. M.S. Applied Data Science, USC. Co-Founder & COO of Turon AI. Papers at COLM 2026 and ICLR 2026 (Oral).',
+    'AI Research Scientist working on AI interpretability, evaluation, and alignment. M.S. Applied Data Science, USC. Co-Founder & COO of Turon AI. Papers at COLM 2026 and ICLR 2026 (Oral).',
   keywords: [
     'Shahzaib Saqib Warraich',
     'AI Research Scientist',
@@ -65,7 +65,7 @@ export const metadata: Metadata = {
     siteName: 'Shahzaib Warraich',
     title: 'Shahzaib Saqib Warraich: AI Research Scientist',
     description:
-      'AI Research Scientist working on AI Safety and Alignment through interpretability and evaluation. M.S. Applied Data Science, USC. Co-Founder & COO of Turon AI.',
+      'AI Research Scientist working on AI interpretability, evaluation, and alignment. M.S. Applied Data Science, USC. Co-Founder & COO of Turon AI.',
     images: [
       {
         url: '/images/headshot.jpg',
@@ -79,7 +79,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Shahzaib Saqib Warraich: AI Research Scientist',
     description:
-      'AI Research Scientist working on AI Safety and Alignment through interpretability and evaluation. Co-Founder & COO of Turon AI.',
+      'AI Research Scientist working on AI interpretability, evaluation, and alignment. Co-Founder & COO of Turon AI.',
     images: ['/images/headshot.jpg'],
   },
 };

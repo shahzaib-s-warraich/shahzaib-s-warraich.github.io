@@ -315,7 +315,7 @@ export default function HomeClient({ cvHref }: { cvHref: string }) {
   }, []);
 
   const roles      = t.raw('roles') as string[];
-  const expertise  = t.raw('expertise') as string[];
+  const expertise  = t.raw('expertise') as { label: string; items: string[] }[];
   const highlights = t.raw('highlights') as Record<string, { value: string; label: string; sublabel?: string }>;
 
   const educationTimeline = tAbout.raw('timeline')   as EducationItem[];
@@ -458,16 +458,20 @@ export default function HomeClient({ cvHref }: { cvHref: string }) {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: 0.32 }}
-              className="mb-6"
+              className="mb-6 space-y-3"
             >
-              <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-text-muted mb-2">
-                {t('expertiseLabel')}
-              </p>
-              <div className="flex flex-wrap gap-1.5">
-                {expertise.map((item) => (
-                  <span key={item} className="tech-tag">{item}</span>
-                ))}
-              </div>
+              {expertise.map((group) => (
+                <div key={group.label}>
+                  <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-text-muted mb-2">
+                    {group.label}
+                  </p>
+                  <div className="flex flex-wrap gap-1.5">
+                    {group.items.map((item) => (
+                      <span key={item} className="tech-tag">{item}</span>
+                    ))}
+                  </div>
+                </div>
+              ))}
             </motion.div>
 
             {/* Inline stat chips */}

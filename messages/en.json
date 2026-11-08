@@ -27,15 +27,24 @@
       "Computer Vision",
       "World Models"
     ],
-    "description": "AI Research Scientist working on **AI Safety and Alignment** through **interpretability** and **evaluation**: understanding what language models truly know and building rigorous methods to measure it. M.S. in Applied Data Science at **USC**, researched with **Dr. Swabha Swayamdipta**, with papers at **COLM 2026** and **ICLR 2026 (Oral)**. Co-Founder & COO of **Turon AI**, building research-depth, production-grade B2B AI solutions for enterprises.",
+    "description": "AI Research Scientist working on **AI interpretability, evaluation, and alignment**: understanding what language models truly know and building rigorous methods to measure it. M.S. in Applied Data Science at **USC**, researched with **Dr. Swabha Swayamdipta**, with papers at **COLM 2026** and **ICLR 2026 (Oral)**. Co-Founder & COO of **Turon AI**, building research-depth, production-grade **computer vision systems for QA/QC and inspections** and **multimodal agentic systems for context ingestion and automation** for enterprises.",
     "expertise": [
-      "AI Interpretability Research",
-      "Agentic AI",
-      "Multimodal LLMs",
-      "Computer Vision",
-      "World Models"
+      {
+        "label": "Research Expertise",
+        "items": [
+          "AI Interpretability",
+          "Evaluation",
+          "Alignment"
+        ]
+      },
+      {
+        "label": "Product & Solution Development",
+        "items": [
+          "Computer Vision systems for QA/QC and inspections",
+          "Multimodal agentic systems for context ingestion and automation"
+        ]
+      }
     ],
-    "expertiseLabel": "Areas of Expertise",
     "ctaContact": "Contact",
     "ctaProjects": "Projects",
     "ctaCV": "Download CV",
