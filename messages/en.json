@@ -27,7 +27,7 @@
       "Computer Vision",
       "World Models"
     ],
-    "description": "AI Research Scientist working on **AI Safety and Alignment** through **interpretability** and **evaluation**: understanding what language models truly know and building rigorous methods to measure it. M.S. in Applied Data Science at **USC**, researched with **Dr. Swabha Swayamdipta**, with papers at **COLM 2026** and **ICLR 2026 (Oral)**. Co-Founder & COO of **Turon AI**, building research-depth, production-grade B2B AI solutions for the Fortune 500.",
+    "description": "AI Research Scientist working on **AI Safety and Alignment** through **interpretability** and **evaluation**: understanding what language models truly know and building rigorous methods to measure it. M.S. in Applied Data Science at **USC**, researched with **Dr. Swabha Swayamdipta**, with papers at **COLM 2026** and **ICLR 2026 (Oral)**. Co-Founder & COO of **Turon AI**, building research-depth, production-grade B2B AI solutions for enterprises.",
     "expertise": [
       "AI Interpretability Research",
       "Agentic AI",
@@ -73,9 +73,9 @@
         ],
         "highlights": [
           "**USC Andrew J. Viterbi Scholarship** recipient, 2024–2025",
-          "**William J. Fulbright Scholarship** recipient, 2024–2025",
+          "**Fulbright Scholar** (U.S. Department of State, 2023 cohort)",
           "Course Producer for **CSCI 544: Applied Natural Language Processing**",
-          "Vice President, **Viterbi Graduate Student Association (VGSA)**"
+          "Vice President of Outreach, **Viterbi Graduate Student Association (VGSA)**"
         ],
         "logo": "/images/usc_logo.png",
         "url": "https://viterbischool.usc.edu",
@@ -111,7 +111,7 @@
       {
         "id": "congrs",
         "title": "Sample, Align, Synthesize: Graph-Based Response Synthesis with ConGrs",
-        "venue": "COLM 2026",
+        "venue": "COLM 2026 · ER@NeurIPS 2025",
         "venueLogo": "/images/colm_logo.png",
         "supervisor": "Prof. Swabha Swayamdipta",
         "authors": "S. Ghosh, S.S. Warraich, D. Tarsadiya, G. Yauney, S. Swayamdipta",
@@ -202,7 +202,7 @@
         "role": "Graduate Research Assistant",
         "location": "Los Angeles, CA 🇺🇸",
         "period": "Jan 2024 – Jan 2026",
-        "description": "AI interpretability, alignment, reasoning, and evaluation research advised by [Dr. Swabha Swayamdipta](https://swabhs.com), mentored by [Dr. Gregory Yauney](https://gyauney.github.io).",
+        "description": "AI interpretability, alignment, reasoning, and evaluation research advised by [Dr. Swabha Swayamdipta](https://swabhs.com), mentored by [Dr. Gregory Yauney](https://gyauney.github.io), Matthew Finlayson, and Sayan Ghosh.",
         "highlights": [
           "**Sample, Align, Synthesize: Graph-Based Response Synthesis with ConGrs** (COLM 2026) · test-time scaling, reasoning, factuality, hallucinations",
           "**How Reliable is Language Model Micro-Benchmarking?** (ICLR 2026 Oral) · efficient evaluation, meta-evaluation, language models"
@@ -226,13 +226,35 @@
         "id": "turon",
         "company": "Turon AI",
         "role": "Co-Founder & COO",
-        "location": "Miami, FL 🇺🇸",
+        "location": "Lahore, Pakistan 🇵🇰",
         "period": "Jan 2026 – Present",
-        "description": "Applied AI R&D and Production Engineering. We build research-depth, production-grade B2B AI solutions for the Fortune 500.",
+        "description": "Strategic Partnerships & Customer Success: applied AI R&D and production engineering for manufacturing, automotive, and construction clients. We build research-depth, production-grade B2B AI solutions for enterprises.",
         "highlights": [
-          "Own **solution architecture and technical pre-sales**: leading discovery, scoping system designs, and converting them into signed engagements and delivery plans",
-          "Architect and ship **production agentic systems and AI infrastructure** for enterprise clients",
-          "Built and run the firm's commercial and operating layer: entity structure, GTM, engineering infrastructure, and technical hiring"
+          "Own **solution architecture and technical pre-sales**: lead client discovery, scope system designs, and convert them into signed engagements and delivery plans",
+          "Lead **strategic partnerships and customer success** across North American and Asian time zones",
+          "Built and run the firm's **commercial and operating layer**: entity structure, go-to-market, engineering infrastructure, and technical hiring"
+        ],
+        "tech": [
+          "Strategic Partnerships",
+          "Customer Success",
+          "Operations Management",
+          "Solution Architecture",
+          "Agentic AI"
+        ],
+        "logo": "/images/turon_logo.png",
+        "url": "https://www.turon.ai"
+      },
+      {
+        "id": "turon-cto",
+        "company": "Turon AI",
+        "role": "Co-Founder & CTO",
+        "location": "Los Angeles, CA 🇺🇸",
+        "period": "Jun 2024 – Dec 2025",
+        "description": "Technical Leadership & Solution Architecture: applied AI R&D and production engineering for manufacturing, automotive, and construction clients.",
+        "highlights": [
+          "Architected and shipped **production agentic systems and AI infrastructure** for enterprise clients",
+          "Led **solution architecture** from client discovery and system design through production delivery",
+          "Built the firm's **engineering infrastructure** and led technical hiring"
         ],
         "tech": [
           "Agentic AI",
@@ -247,7 +269,7 @@
       {
         "id": "paramount",
         "company": "Paramount",
-        "role": "Data Scientist",
+        "role": "Data Scientist Intern",
         "location": "Los Angeles, CA 🇺🇸",
         "period": "May 2025 – Oct 2025",
         "description": "Entertainment Analytics & AI: content performance forecasting and GenAI explainability for a major media organization.",
@@ -269,14 +291,14 @@
       {
         "id": "retrocausal",
         "company": "Retrocausal",
-        "role": "Research Engineer II (AI)",
-        "location": "Redmond, WA 🇺🇸",
+        "role": "AI Engineer II",
+        "location": "Redmond, WA (Remote) 🇺🇸",
         "period": "Dec 2022 – Dec 2023",
         "description": "Computer Vision & Manufacturing Intelligence: precision assembly verification and ergonomics assessment for Fortune 500 manufacturing clients.",
         "highlights": [
           "Designed and deployed precision assembly verification (**Assembly Copilot**) achieving **98% detection accuracy** for clients including Schneider Electric, Carrier, and Honda, using state-of-the-art object detection and activity recognition",
           "Architected automated model training infrastructure with **cut-paste-mix augmentation** to generate photorealistic synthetic data, reducing manual annotation overhead by **80%**",
-          "Conceptualized and led development of a computer-vision **ergonomics risk assessment module** for Ergo Copilot, addressing workplace safety and regulatory compliance"
+          "Conceived and led development of a computer-vision **ergonomics risk-assessment module**, a new product capability for workplace safety (**Kaizen Copilot**)"
         ],
         "tech": [
           "Object Detection",
@@ -291,8 +313,8 @@
       {
         "id": "adlytic",
         "company": "Adlytic AI",
-        "role": "AI Engineer",
-        "location": "San Jose, CA 🇺🇸",
+        "role": "AI Engineer I",
+        "location": "Lahore, Pakistan 🇵🇰",
         "period": "Jun 2021 – Dec 2022",
         "description": "Edge AI & Recommender Systems: model optimization for edge inference and a cloud-based recommendation engine.",
         "highlights": [
@@ -397,7 +419,7 @@
           "80% reduction in manual annotation overhead",
           "Shipped to multiple Fortune 500 manufacturing clients"
         ],
-        "role": "Research Engineer II (AI), Retrocausal",
+        "role": "AI Engineer II, Retrocausal",
         "tech": [
           "Object Detection",
           "Activity Recognition",
@@ -414,17 +436,17 @@
       },
       {
         "id": "ergo-copilot",
-        "title": "Ergo Copilot: Computer-Vision Ergonomics Risk Assessment",
+        "title": "Kaizen Copilot: Computer-Vision Ergonomics Risk Assessment",
         "category": "computerVision",
         "description": "A computer-vision ergonomics risk assessment module for continuous, objective monitoring of workplace safety and regulatory compliance on manufacturing floors.",
         "problem": "Manufacturing floors need continuous, objective ergonomic-risk monitoring for regulatory compliance and worker safety, which is hard to do manually or consistently at scale.",
         "approach": [
-          "Conceived and led development of a CV-based ergonomics risk assessment module built on top of the Ergo Copilot product"
+          "Conceived and led development of a CV-based ergonomics risk assessment module as a new capability in the Kaizen Copilot product"
         ],
         "impact": [
           "Shipped as a differentiated product capability addressing workplace safety optimization and regulatory compliance"
         ],
-        "role": "Research Engineer II (AI), Retrocausal",
+        "role": "AI Engineer II, Retrocausal",
         "tech": [
           "Computer Vision",
           "Ergonomics Analysis",
@@ -433,7 +455,7 @@
         ],
         "image": "/projects/ergo-copilot.webp",
         "github": "",
-        "demo": "https://retrocausal.ai/ergo-copilot/",
+        "demo": "https://retrocausal.ai/kaizen/",
         "paper": "",
         "video": "",
         "featured": false
@@ -453,7 +475,7 @@
           "Recommender achieved 97% prediction accuracy",
           "Drove a 3× increase in product conversion rate"
         ],
-        "role": "AI Engineer, Adlytic AI",
+        "role": "AI Engineer I, Adlytic AI",
         "tech": [
           "Knowledge Distillation",
           "TensorRT",
@@ -482,7 +504,7 @@
           "Up to 20% improvement in content performance forecasting accuracy across critical KPIs",
           "Democratized ML insights for non-technical stakeholders org-wide"
         ],
-        "role": "Data Scientist, Paramount",
+        "role": "Data Scientist Intern, Paramount",
         "tech": [
           "LLM-as-Judge",
           "Forecasting",
@@ -511,6 +533,7 @@
           "PyTorch",
           "Hugging Face",
           "vLLM",
+          "NVIDIA TensorRT",
           "Fine-tuning",
           "LLM Evaluation",
           "Model Architecture Development"
@@ -574,6 +597,7 @@
         "icon": "robot",
         "skills": [
           "Docker",
+          "Kubernetes",
           "MongoDB",
           "Figma"
         ]
@@ -609,15 +633,27 @@
       {
         "id": "vgsa",
         "type": "leadership",
-        "title": "Vice President",
+        "title": "Vice President of Outreach",
         "org": "Viterbi Graduate Student Association (VGSA)",
         "logo": "/images/vgsa_logo.jpg",
         "location": "Los Angeles, CA 🇺🇸",
         "period": "May 2025 – Dec 2025",
         "highlights": [
-          "Led student advocacy initiatives representing **6,000 graduate students** as primary liaison between the student body and university administration",
+          "Represented **nearly 6,000 Viterbi graduate students** as primary liaison to university administration",
           "Managed strategic partnerships with internal stakeholders and external organizations to enhance graduate student resources and professional opportunities",
           "Delivered monthly progress reports to the **Viterbi School Dean**, communicating student concerns and actionable recommendations"
+        ]
+      },
+      {
+        "id": "vgsa-senator",
+        "type": "leadership",
+        "title": "Senator",
+        "org": "Viterbi Graduate Student Association (VGSA)",
+        "logo": "/images/vgsa_logo.jpg",
+        "location": "Los Angeles, CA 🇺🇸",
+        "period": "Aug 2024 – Apr 2025",
+        "highlights": [
+          "Represented Viterbi graduate students in the **VGSA Senate**, raising student concerns with university administration"
         ]
       }
     ]
@@ -647,7 +683,7 @@
         "period": "Jan 2025 – May 2025",
         "highlights": [
           "Produced course content and supported instruction for graduate-level Applied NLP",
-          "Worked with **Dr. Xueze (Max) Ma**"
+          "Worked with **Dr. Xuezhe (Max) Ma**"
         ]
       }
     ]
@@ -748,10 +784,10 @@
       },
       {
         "id": "fulbright",
-        "title": "William J. Fulbright Scholarship",
+        "title": "Fulbright Scholar",
         "org": "U.S. Department of State",
-        "year": "2024-2025",
-        "description": "Awarded the William J. Fulbright Scholarship, a flagship international educational exchange program, to pursue graduate studies at USC.",
+        "year": "2023",
+        "description": "Selected as a Fulbright Scholar (U.S. Department of State, 2023 cohort), a flagship international educational exchange program, to pursue graduate studies at USC.",
         "type": "scholarship"
       }
     ]
