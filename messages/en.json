@@ -20,29 +20,38 @@
   "home": {
     "greeting": "Hello, I'm",
     "name": "Shahzaib Saqib Warraich",
-    "tagline": "I work at the intersection of",
+    "tagline": "I work on",
     "roles": [
-      "Agentic AI",
-      "Multimodal LLMs",
-      "Computer Vision",
-      "World Models"
+      "AI Interpretability",
+      "AI Evaluation",
+      "AI Alignment",
+      "Computer Vision Systems",
+      "Agentic AI Systems"
     ],
     "description": "AI Research Scientist working on **AI interpretability, evaluation, and alignment**: understanding what language models truly know and building rigorous methods to measure it. M.S. in Applied Data Science at **USC**, researched with **Dr. Swabha Swayamdipta**, with papers at **COLM 2026** and **ICLR 2026 (Oral)**. Co-Founder & COO of **Turon AI**, building research-depth, production-grade **computer vision systems for QA/QC and inspections** and **multimodal agentic systems for context ingestion and automation** for enterprises.",
     "expertise": [
       {
-        "label": "Research Expertise",
-        "items": [
-          "AI Interpretability",
-          "Evaluation",
-          "Alignment"
-        ]
+        "label": "Research",
+        "field": "Machine Learning · NLP",
+        "title": "Interpretability, Evaluation & Alignment of AI",
+        "summary": "Understanding what language models actually know, and building rigorous methods to measure it.",
+        "points": [
+          "Benchmark reliability and meta-evaluation of LLMs",
+          "Response synthesis for factuality and calibrated abstention",
+          "LLM-as-a-judge evaluation methods"
+        ],
+        "proof": "ICLR 2026 (Oral) · COLM 2026 · USC NLP"
       },
       {
-        "label": "Product & Solution Development",
-        "items": [
-          "Computer Vision systems for QA/QC and inspections",
+        "label": "Industry",
+        "field": "Computer Vision · Agentic AI",
+        "title": "B2B Applied AI Solutions",
+        "summary": "Research-depth, production-grade systems for manufacturing, automotive, and construction enterprises, from discovery and solution architecture to deployment.",
+        "points": [
+          "Computer vision systems for QA/QC and inspections",
           "Multimodal agentic systems for context ingestion and automation"
-        ]
+        ],
+        "proof": "Turon AI · Retrocausal · Paramount"
       }
     ],
     "ctaContact": "Contact",

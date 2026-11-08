@@ -315,7 +315,9 @@ export default function HomeClient({ cvHref }: { cvHref: string }) {
   }, []);
 
   const roles      = t.raw('roles') as string[];
-  const expertise  = t.raw('expertise') as { label: string; items: string[] }[];
+  const expertise  = t.raw('expertise') as {
+    label: string; field: string; title: string; summary: string; points: string[]; proof: string;
+  }[];
   const highlights = t.raw('highlights') as Record<string, { value: string; label: string; sublabel?: string }>;
 
   const educationTimeline = tAbout.raw('timeline')   as EducationItem[];
@@ -453,23 +455,38 @@ export default function HomeClient({ cvHref }: { cvHref: string }) {
               {renderRich(t('description'))}
             </motion.p>
 
-            {/* Areas of expertise — scannable chip row, reuses the tech-tag visual language */}
+            {/* Expertise cards: research (ML/NLP) and industry (B2B applied AI) */}
             <motion.div
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.4, delay: 0.32 }}
-              className="mb-6 space-y-3"
+              className="mb-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-1 xl:grid-cols-2 gap-3"
             >
-              {expertise.map((group) => (
-                <div key={group.label}>
-                  <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-text-muted mb-2">
-                    {group.label}
-                  </p>
-                  <div className="flex flex-wrap gap-1.5">
-                    {group.items.map((item) => (
-                      <span key={item} className="tech-tag">{item}</span>
-                    ))}
+              {expertise.map((card) => (
+                <div
+                  key={card.label}
+                  className="glass rounded-xl border border-border border-t-2 border-t-accent/60 p-4 flex flex-col
+                             hover:border-accent/35 transition-colors duration-300"
+                >
+                  <div className="flex flex-wrap items-baseline justify-between gap-x-2 gap-y-0.5 mb-1.5">
+                    <span className="text-[11px] font-semibold uppercase tracking-[0.2em] text-accent">
+                      {card.label}
+                    </span>
+                    <span className="text-[10px] font-mono text-text-muted">{card.field}</span>
                   </div>
+                  <h3 className="text-sm font-semibold text-text-primary leading-snug mb-1.5">{card.title}</h3>
+                  <p className="text-xs text-text-secondary leading-relaxed mb-2.5">{card.summary}</p>
+                  <ul className="space-y-1.5 mb-3">
+                    {card.points.map((point) => (
+                      <li key={point} className="flex items-start gap-2 text-xs text-text-secondary leading-snug">
+                        <span className="mt-[0.4rem] flex-shrink-0 w-1 h-1 rounded-full bg-accent" />
+                        <span>{point}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <p className="mt-auto pt-2 border-t border-border/60 text-[10px] font-mono text-text-muted leading-snug">
+                    {card.proof}
+                  </p>
                 </div>
               ))}
             </motion.div>
