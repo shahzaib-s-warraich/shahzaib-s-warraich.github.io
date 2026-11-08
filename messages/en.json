@@ -28,17 +28,18 @@
       "Computer Vision Systems",
       "Agentic AI Systems"
     ],
-    "description": "AI Research Scientist working on **AI interpretability, evaluation, and alignment**: understanding what language models truly know and building rigorous methods to measure it. M.S. in Applied Data Science at **USC**, researched with **Dr. Swabha Swayamdipta**, with papers at **COLM 2026** and **ICLR 2026 (Oral)**. Co-Founder & COO of **Turon AI**, building research-depth, production-grade **computer vision systems for QA/QC and inspections** and **multimodal agentic systems for context ingestion and automation** for enterprises.",
+    "description": "AI Research Scientist working on **interpretability, evaluation, and alignment** of language models, with papers at **ICLR 2026 (Oral)** and **COLM 2026**. M.S. in Applied Data Science from **USC**, advised by **Prof. Swabha Swayamdipta**; Fulbright Scholar. Co-Founder & COO of **Turon AI**, building research-depth, production-grade B2B AI solutions for enterprises: **computer vision systems for QA/QC and inspections** and **multimodal agentic systems for context ingestion and automation**.",
     "expertise": [
       {
         "label": "Research",
         "field": "Machine Learning · NLP",
         "title": "Interpretability, Evaluation & Alignment of AI",
-        "summary": "Understanding what language models actually know, and building rigorous methods to measure it.",
+        "summary": "Understanding what language models actually know, building rigorous methods to measure it, and developing robust alignment solutions.",
         "points": [
-          "Benchmark reliability and meta-evaluation of LLMs",
-          "Response synthesis for factuality and calibrated abstention",
-          "LLM-as-a-judge evaluation methods"
+          "Mechanistic and behavioral interpretability",
+          "Reinforcement learning for alignment and reasoning",
+          "Evaluation, benchmarking, and micro-benchmarking",
+          "Reasoning in language models"
         ],
         "proof": "ICLR 2026 (Oral) · COLM 2026 · USC NLP"
       },
@@ -46,10 +47,11 @@
         "label": "Industry",
         "field": "Computer Vision · Agentic AI",
         "title": "B2B Applied AI Solutions",
-        "summary": "Research-depth, production-grade systems for manufacturing, automotive, and construction enterprises, from discovery and solution architecture to deployment.",
+        "summary": "Research-depth, production-grade AI systems for manufacturing, automotive, and construction enterprises.",
         "points": [
           "Computer vision systems for QA/QC and inspections",
-          "Multimodal agentic systems for context ingestion and automation"
+          "Multimodal agentic systems for context ingestion and automation",
+          "End-to-end delivery: discovery, solution architecture, deployment, and reliability engineering"
         ],
         "proof": "Turon AI · Retrocausal · Paramount"
       }
@@ -206,7 +208,7 @@
         "role": "Graduate Research Assistant",
         "location": "Los Angeles, CA 🇺🇸",
         "period": "Jan 2024 – Jan 2026",
-        "description": "AI interpretability, alignment, reasoning, and evaluation research advised by [Dr. Swabha Swayamdipta](https://swabhs.com), mentored by [Dr. Gregory Yauney](https://gyauney.github.io), Matthew Finlayson, and Sayan Ghosh.",
+        "description": "AI interpretability, alignment, reasoning, and evaluation research advised by [Prof. Swabha Swayamdipta](https://swabhs.com), mentored by [Dr. Gregory Yauney](https://gyauney.github.io), Matthew Finlayson, and Sayan Ghosh.",
         "highlights": [
           "**Sample, Align, Synthesize: Graph-Based Response Synthesis with ConGrs** (COLM 2026) · test-time scaling, reasoning, factuality, hallucinations",
           "**How Reliable is Language Model Micro-Benchmarking?** (ICLR 2026 Oral) · efficient evaluation, meta-evaluation, language models"
@@ -365,7 +367,7 @@
           "Increased abstention rate by up to 56% on refusal-based tasks, and improved MATH/AIME reasoning accuracy by up to 6 points",
           "Accepted to COLM 2026"
         ],
-        "role": "Researcher, under Dr. Swabha Swayamdipta, USC",
+        "role": "Researcher, under Prof. Swabha Swayamdipta, USC",
         "tech": [
           "LLM Reasoning",
           "Test-Time Scaling",
@@ -395,7 +397,7 @@
           "More than half of pairwise comparisons are not preserved on 25-example MMLU-Pro micro-benchmarks of 8B instruction-tuned models",
           "Accepted to ICLR 2026 as an Oral presentation"
         ],
-        "role": "Researcher, under Dr. Swabha Swayamdipta, USC",
+        "role": "Researcher, under Prof. Swabha Swayamdipta, USC",
         "tech": [
           "Efficient Evaluation",
           "LLM Evaluation",
@@ -675,7 +677,7 @@
         "period": "Aug 2024 – Dec 2024",
         "highlights": [
           "Produced course content and supported instruction for graduate-level Applied NLP",
-          "Worked with **Dr. Swabha Swayamdipta**"
+          "Worked with **Prof. Swabha Swayamdipta**"
         ]
       },
       {
