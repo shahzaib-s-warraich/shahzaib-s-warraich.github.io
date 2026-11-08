@@ -183,20 +183,6 @@
     "subtitle": "Research and Development roles",
     "positions": [
       {
-        "id": "independent-researcher",
-        "company": "",
-        "role": "Independent Researcher",
-        "location": "Remote",
-        "period": "Jan 2026 – Present",
-        "description": "Independent research in AI interpretability, alignment, reasoning, and evaluation.",
-        "tech": [
-          "AI Interpretability",
-          "Alignment",
-          "Reasoning",
-          "Evaluation"
-        ]
-      },
-      {
         "id": "dill-lab",
         "company": "USC-NLP Group · The Data, Interpretability, Language and Learning (DILL) Lab",
         "role": "Graduate Research Assistant",
